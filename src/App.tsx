@@ -39,10 +39,10 @@ export default function App() {
       <header className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            <div className="w-10 h-10 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] rounded-full flex items-center justify-center text-black shadow-[0_0_15px_rgba(191,149,63,0.3)]">
               <MonitorSmartphone className="w-5 h-5" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-white">Presenza <span className="text-indigo-400">Digitale</span></span>
+            <span className="text-2xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
@@ -115,8 +115,8 @@ export default function App() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
             >
-              Siti Web che <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-400 animate-gradient-x">Attirano Clienti.</span>
+              Trasformiamo la tua attività locale in un'esperienza digitale <br />
+              <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>di lusso.</span>
             </motion.h1>
             
             <motion.p 
@@ -125,7 +125,7 @@ export default function App() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-light max-w-xl"
             >
-              Realizziamo <strong className="text-white font-medium">landing page ad alta conversione</strong> progettate per far crescere il tuo business locale. Design premium, velocità esplosiva e SEO ottimizzata.
+              Non creiamo semplici siti web. Progettiamo strumenti di vendita rapidi, eleganti e ottimizzati per la provincia di Piacenza. Più prenotazioni, zero canoni mensili, 100% identità.
             </motion.p>
             
             <motion.div 
@@ -183,6 +183,19 @@ export default function App() {
             </div>
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* Specializzazione Ristorazione */}
+      <section className="py-20 px-6 relative bg-[#050505] z-20">
+        <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.1)]" style={{ borderColor: 'rgba(191,149,63,0.3)' }}>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a150c] to-[#050505] -z-10" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/10 blur-[100px] pointer-events-none" />
+          
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Specialisti nella Ristorazione</h2>
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-light">
+            Dal pesce fresco della bassa alle pizzerie storiche, sappiamo come far venire l'acquolina in bocca ai tuoi clienti prima ancora che si siedano a tavola. Design <strong className="text-white font-medium">Dark Luxury</strong> e prenotazioni istantanee su WhatsApp.
+          </p>
         </div>
       </section>
 
@@ -467,7 +480,7 @@ export default function App() {
                 <textarea id="message" name="message" rows={4} required className="w-full bg-zinc-950/50 border border-white/10 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none" placeholder="Voglio rifare il sito per la mia azienda a Piacenza..."></textarea>
               </div>
 
-              <button type="submit" className="w-full bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 mt-4 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <button type="submit" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 mt-4 shadow-[0_0_30px_rgba(191,149,63,0.3)] hover:shadow-[0_0_50px_rgba(191,149,63,0.6)] animate-[pulse_3s_ease-in-out_infinite] hover:animate-none">
                 Invia Messaggio <Send className="w-4 h-4" />
               </button>
               <p className="text-zinc-500 text-sm text-center mt-3">
@@ -484,16 +497,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-black">
+              <div className="w-8 h-8 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] rounded-full flex items-center justify-center text-black">
                 <MonitorSmartphone className="w-4 h-4" />
               </div>
-              <span className="text-lg font-bold text-white tracking-tight">Presenza Digitale</span>
+              <span className="text-xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
             </div>
             <span className="hidden md:inline text-zinc-700">|</span>
             <span className="text-sm">Web Agency partner per Piacenza e Provincia.</span>
           </div>
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
-            <span>&copy; {new Date().getFullYear()} Presenza Digitale. Tutti i diritti riservati.</span>
+            <span>&copy; {new Date().getFullYear()} Presenza Digitale. Tutti i diritti riservati.<br/><span className="mt-1 inline-block text-zinc-400">Made with ❤️ in Piacenza.</span></span>
             <div className="flex gap-4 justify-center">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Termini</a>
