@@ -9,6 +9,26 @@ export default function App() {
   const [isAnnual, setIsAnnual] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const inviaWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const mioNumero = "393398156719"; 
+
+    const nome = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const messaggioCorpo = (document.getElementById('message') as HTMLTextAreaElement).value;
+
+    const testo = `*Nuovo Contatto da Presenza Digitale*%0A%0A` +
+                  `👤 *Nome:* ${nome}%0A` +
+                  `📧 *Email:* ${email}%0A` +
+                  `💬 *Messaggio:* ${messaggioCorpo}`;
+
+    const url = `https://wa.me/${mioNumero}?text=${testo}`;
+
+    window.open(url, '_blank')?.focus();
+    (document.getElementById('contact-form') as HTMLFormElement).reset();
+  };
+
   // WhatsApp number
   const WA_NUMBER = "393398156719"; 
   const waLink = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sui%20vostri%20servizi%20di%20Web%20Design%20a%20Piacenza.`;
@@ -423,11 +443,8 @@ export default function App() {
 
           <div className="bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2.5rem] shadow-2xl">
             <h3 className="text-2xl font-bold text-white mb-6">Inviaci un messaggio</h3>
-            {/* Standard Form - Update action with actual Web3Forms key if desired! */}
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-5">
-              {/* Replace value with your Web3Forms Access Key */}
-              <input type="hidden" name="access_key" value="5874fcd3-6365-497d-89e4-828e3157f56b" />
-              <input type="hidden" name="subject" value="Nuovo contatto da Landing Page Presenza Digitale" />
+            {/* WhatsApp Direct Form */}
+            <form id="contact-form" onSubmit={inviaWhatsApp} className="space-y-5">
               
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-2">Nome Completo</label>
@@ -453,6 +470,9 @@ export default function App() {
               <button type="submit" className="w-full bg-white text-black py-4 rounded-xl font-bold hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 mt-4 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                 Invia Messaggio <Send className="w-4 h-4" />
               </button>
+              <p className="text-zinc-500 text-sm text-center mt-3">
+                Il messaggio verrà inviato istantaneamente tramite WhatsApp.
+              </p>
             </form>
           </div>
 
