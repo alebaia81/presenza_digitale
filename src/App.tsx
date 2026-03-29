@@ -327,11 +327,6 @@ export default function App() {
                   alt="Mockup Ristorante Pizzeria Delfino" 
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
-                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
-                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
-                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
-                  </div>
-                </div>
               </div>
 
               <div className="space-y-6">
@@ -374,11 +369,6 @@ export default function App() {
                   alt="Mockup Fabbro Armelloni" 
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
-                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
-                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
-                    <MonitorSmartphone className="w-4 h-4" /> Scopri il Mockup
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -399,11 +389,6 @@ export default function App() {
                   alt="Mockup Landing Page Matrimonio" 
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
-                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
-                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
-                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
-                  </div>
-                </div>
               </div>
 
               <div className="space-y-6">
@@ -446,11 +431,6 @@ export default function App() {
                   alt="Mockup Pizzeria Al Cascinetto" 
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
-                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
-                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
-                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -608,15 +588,6 @@ export default function App() {
              <p className="text-xl text-zinc-400 font-light">
                Non aspettare che i tuoi concorrenti prendano tutti i clienti della provincia. Contattaci oggi per una consulenza gratuita.
              </p>
-             
-             <div className="space-y-6 pt-6 text-lg">
-                <div className="flex items-center gap-4 text-zinc-300">
-                  <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10 shrink-0">
-                    <MapPin className="w-5 h-5 text-white" />
-                  </div>
-                  <span>Operiamo in tutta la Provincia di Piacenza</span>
-                </div>
-             </div>
           </div>
 
           <div className="bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2.5rem] shadow-2xl">
@@ -671,7 +642,7 @@ export default function App() {
             <span className="text-sm">Web Agency partner per Piacenza e Provincia.</span>
           </div>
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
-            <span>&copy; {new Date().getFullYear()} Presenza Digitale. Tutti i diritti riservati.<br/><span className="mt-1 inline-block text-zinc-400">Made with ❤️ in Piacenza.</span></span>
+            <span>&copy; {new Date().getFullYear()} Presenza Digitale - Sviluppato a Piacenza.</span>
             <div className="flex gap-4 justify-center">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Termini</a>
