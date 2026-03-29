@@ -293,6 +293,169 @@ export default function App() {
         </div>
       </section>
 
+      {/* Portfolio / I Nostri Progetti */}
+      <section id="progetti" className="py-24 px-6 relative bg-[#0a0a0a] border-t border-white/5 overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#d4af37]/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#d4af37]/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>I Nostri Progetti</h2>
+            <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto font-light leading-relaxed">
+              Scopri come trasformiamo le attività locali in vere e proprie macchine di conversione digitale.
+            </p>
+          </div>
+
+          <div className="space-y-32">
+            
+            {/* Progetto 1: Delfino */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              <div className="relative group rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.05)] aspect-[4/3] flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10 pointer-events-none"></div>
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  src="/images/mockup-delfino.webp" 
+                  alt="Mockup Ristorante Pizzeria Delfino" 
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                />
+                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
+                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
+                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Ristorante Pizzeria Delfino
+                </h3>
+                <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Restyling Premium & WhatsApp Booking</h4>
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">
+                  Un'esperienza digitale scura ed elegante, progettata per risaltare la cucina di mare e ottimizzare le prenotazioni a Monticelli d'Ongina.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Progetto 2: Fabbro Armelloni */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              {/* Testo a Sinistra per monitor grandi (alternato) */}
+              <div className="space-y-6 order-2 lg:order-1">
+                <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Fabbro Armelloni
+                </h3>
+                <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Solidità Artigiana & Conversione Rapida</h4>
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">
+                  Un sito tecnico e pulito che trasmette sicurezza e competenza. Focus sulla facilità di contatto per servizi di emergenza e carpenteria.
+                </p>
+              </div>
+
+              {/* Immagine a Destra */}
+              <div className="relative group rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.05)] aspect-[4/3] flex items-center justify-center order-1 lg:order-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10 pointer-events-none"></div>
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  src="/images/mockup-fabbro.webp" 
+                  alt="Mockup Fabbro Armelloni" 
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                />
+                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
+                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
+                    <MonitorSmartphone className="w-4 h-4" /> Scopri il Mockup
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Progetto 3: Eventi & Matrimoni */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              <div className="relative group rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.05)] aspect-[4/3] flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10 pointer-events-none"></div>
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  src="/images/mockup-matrimonio.webp" 
+                  alt="Mockup Landing Page Matrimonio" 
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                />
+                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
+                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
+                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Eventi & Matrimoni
+                </h3>
+                <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Landing Page Emozionale & Condivisione Gallery</h4>
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">
+                  Un formato digitale romantico ed evocativo pensato per informare gli invitati e condividere le gallerie fotografiche dopo l'evento. Design lussuoso in chiave autunnale per un'esperienza unica.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Progetto 4: Al Cascinetto */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            >
+              {/* Testo a Sinistra per monitor grandi (alternato) */}
+              <div className="space-y-6 order-2 lg:order-1">
+                <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Pizzeria Al Cascinetto
+                </h3>
+                <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Tradizione & Posizionamento Locale</h4>
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">
+                  Una vetrina digitale accogliente per la storica pizzeria di Monticelli d'Ongina. Progettata per massimizzare la visibilità locale e incrementare rapidamente le prenotazioni.
+                </p>
+              </div>
+
+              {/* Immagine a Destra */}
+              <div className="relative group rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-white/10 shadow-[0_0_50px_rgba(212,175,55,0.05)] aspect-[4/3] flex items-center justify-center order-1 lg:order-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10 pointer-events-none"></div>
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  src="/images/mockup-cascinetto.webp" 
+                  alt="Mockup Pizzeria Al Cascinetto" 
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                />
+                <div className="relative z-20 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-95 group-hover:scale-100 pointer-events-none flex items-center justify-center h-full">
+                  <div className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 text-sm font-semibold text-[#d4af37]">
+                    <Sparkles className="w-4 h-4" /> Scopri il Mockup
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section id="prezzi" className="py-24 px-6 relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05)_0,transparent_100%)]"></div>
