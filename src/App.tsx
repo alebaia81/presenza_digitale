@@ -212,7 +212,7 @@ export default function App() {
             <p className="text-xl text-zinc-400 max-w-2xl font-light">Non creiamo semplici siti vetrina, ma strumenti digitali studiati per superare i tuoi concorrenti e portare risultati concreti.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[340px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[340px]">
             {/* Bento Item 1 - Large */}
             <motion.div 
               whileHover={{ scale: 0.98 }}
