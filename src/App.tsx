@@ -47,6 +47,7 @@ export default function App() {
           
           <nav className="hidden md:flex items-center gap-8">
             <a href="#servizi" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Servizi</a>
+            <a href="#progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Progetti</a>
             <a href="#prezzi" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Prezzi</a>
             <a href="#contatti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contatti</a>
           </nav>
@@ -76,6 +77,7 @@ export default function App() {
             className="md:hidden absolute top-20 left-0 w-full bg-[#050505]/95 backdrop-blur-2xl border-b border-white/5 py-8 px-6 flex flex-col gap-6 shadow-2xl"
           >
             <a href="#servizi" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Servizi</a>
+            <a href="#progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Progetti</a>
             <a href="#prezzi" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Prezzi</a>
             <a href="#contatti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Contatti</a>
             <div className="h-px bg-white/10 w-full my-2"></div>
