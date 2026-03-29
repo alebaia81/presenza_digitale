@@ -32,6 +32,9 @@ export default function App() {
   // WhatsApp number
   const WA_NUMBER = "393398156719"; 
   const waLink = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sui%20vostri%20servizi%20di%20Web%20Design%20a%20Piacenza.`;
+  const waLinkBasic = `https://wa.me/${WA_NUMBER}?text=Ciao,%20sono%20interessato%20al%20piano%20Landing%20Page%20Basic%20per%20la%20mia%20attivit%C3%A0.`;
+  const waLinkPro = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20maggiori%20informazioni%20sul%20piano%20Gestione%20Pro%20per%20avere%20una%20presenza%20online%20senza%20pensieri.`;
+  const waLinkEnterprise = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20una%20consulenza%20per%20un%20Sito%20Web%20Multi-Pagina%20strutturato.`;
 
   return (
     <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-indigo-500/30">
@@ -324,7 +327,8 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-delfino.webp" 
-                  alt="Mockup Ristorante Pizzeria Delfino" 
+                  alt="Anteprima sito web dark luxury per Ristorante Pizzeria Delfino a Monticelli d'Ongina" 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
               </div>
@@ -366,7 +370,8 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-fabbro.webp" 
-                  alt="Mockup Fabbro Armelloni" 
+                  alt="Sito web corporate per Fabbro Armelloni a Piacenza" 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
               </div>
@@ -386,7 +391,8 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-matrimonio.webp" 
-                  alt="Mockup Landing Page Matrimonio" 
+                  alt="Landing page emozionale per condividere foto di eventi e matrimoni" 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
               </div>
@@ -428,7 +434,8 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-cascinetto.webp" 
-                  alt="Mockup Pizzeria Al Cascinetto" 
+                  alt="Sito vetrina locale per Pizzeria Al Cascinetto a Monticelli d'Ongina" 
+                  loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
               </div>
@@ -446,132 +453,119 @@ export default function App() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Investimento Garantito</h2>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-12 font-light">Scegli la soluzione perfetta per la tua attività piacentina. Prezzi chiari, nessun costo nascosto.</p>
             
-            {/* Billing Toggle */}
-            <div className="flex items-center justify-center gap-4 bg-zinc-900/80 backdrop-blur-md inline-flex p-1.5 rounded-full border border-white/10 shadow-xl">
-              <button 
-                onClick={() => setIsAnnual(false)}
-                className={`px-6 py-3 rounded-full text-sm font-bold transition-all ${!isAnnual ? 'bg-indigo-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'}`}
-              >
-                Mensile
-              </button>
-              <button 
-                onClick={() => setIsAnnual(true)}
-                className={`px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${isAnnual ? 'bg-indigo-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'}`}
-              >
-                Annuale <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full ${isAnnual ? 'bg-white text-indigo-600' : 'bg-indigo-500/20 text-indigo-300'}`}>-10%</span>
-              </button>
-            </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
-            {/* Plan 1 */}
-            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-white/5 flex flex-col hover:bg-zinc-900/60 hover:border-white/10 transition-all duration-300">
-              <h3 className="text-2xl font-bold text-white mb-2">Landing Page Basic</h3>
-              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Perfetta per chi inizia. Paghi una sola volta, il sito è totalmente tuo.</p>
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch mt-12">
+            
+            {/* Card 1: Basic */}
+            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 hover:border-[#d4af37]/40 flex flex-col hover:bg-zinc-900/60 transition-all duration-300 shadow-xl">
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Landing Page Basic</h3>
+              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Ideale per professionisti e piccoli artigiani.</p>
               
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold text-white tracking-tighter">299€</span>
-                  <span className="text-zinc-500 font-medium">/ una tantum</span>
+                  <span className="text-5xl font-extrabold text-white tracking-tighter">€499</span>
+                  <span className="text-[#d4af37]/70 font-medium text-sm">/ una tantum</span>
                 </div>
               </div>
 
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Sito One-Page professionale',
-                  'Design Responsive',
-                  'Ottimizzazione Base (Velocità)',
-                  'Modulo Contatti',
-                  'Tasto WhatsApp'
+                  'Design Single-Page',
+                  'Ottimizzazione Mobile',
+                  'Collegamento WhatsApp Diretto',
+                  'SEO Base'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-zinc-300 shrink-0" />
+                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-zinc-300">{feature}</span>
                   </div>
                 ))}
               </div>
               
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-white/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-white/20">
-                Seleziona Basic
+              <a href={waLinkBasic} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
+                Inizia il Progetto
               </a>
             </div>
 
-            {/* Plan 2 - PRO */}
-            <div className="bg-gradient-to-b from-indigo-600/20 to-zinc-900/80 rounded-[2.5rem] p-8 border border-indigo-500/50 relative flex flex-col transform lg:-translate-y-4 shadow-[0_0_50px_-15px_rgba(99,102,241,0.4)]">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-6 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase shadow-xl border border-white/10">
-                Consigliato
+            {/* Card 2: Pro (Consigliato) */}
+            <div className="bg-gradient-to-b from-[#1a150c] to-black rounded-[2.5rem] p-8 border border-[#d4af37] relative flex flex-col transform lg:-translate-y-4 shadow-[0_0_50px_rgba(212,175,55,0.15)] hover:shadow-[0_0_70px_rgba(212,175,55,0.3)] transition-shadow duration-500">
+              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-6 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-xl border border-[#d4af37]/50 whitespace-nowrap">
+                SCELTO DAI RISTORANTI
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Landing + Gestione (Pro)</h3>
-              <p className="text-indigo-200/80 text-sm mb-8 h-10 line-clamp-2">Creiamo la tua landing, ottimizziamo per la SEO Locale e la gestiamo per te.</p>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif">Gestione Pro</h3>
+              <p className="text-[#d4af37] text-sm mb-8 h-10 line-clamp-2">La tua presenza digitale sempre aggiornata senza pensieri.</p>
               
-              <div className="mb-2">
+              <div className="mb-1">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-zinc-300 tracking-tighter line-through decoration-indigo-500/50">299€</span>
-                  <span className="text-3xl font-extrabold text-white tracking-tighter ml-2">199€</span>
-                  <span className="text-zinc-500 font-medium text-sm">/ setup iniziale</span>
+                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€199</span>
+                  <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
                 </div>
               </div>
-              <div className="mb-8">
+              <div className="mb-6">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold text-indigo-400 tracking-tighter">+ {isAnnual ? Math.round(39 * 0.9) : 39}€</span>
-                  <span className="text-zinc-400 font-medium">/ mese</span>
+                  <span className="text-6xl font-extrabold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">€49</span>
+                  <span className="text-[#d4af37] font-bold">/ mese</span>
                 </div>
+                <p className="text-sm text-zinc-400 font-medium mt-2">Disdisci quando vuoi. Nessun vincolo di durata.</p>
               </div>
               
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Tutto del piano Basic',
-                  'Hosting + Dominio incluso',
-                  'Ricerca Keyword Locali (Piacenza)',
-                  'Aggiornamenti & 1 Modifica/mese',
-                  'Supporto Tecnico Rapido'
+                  'Design Luxury Personalizzato',
+                  'Aggiornamenti Menù/Testi Illimitati',
+                  'Hosting & Manutenzione inclusi',
+                  'Local SEO Avanzata (Schema Markup)',
+                  'Sistema Prenotazioni WhatsApp'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0" />
+                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-white font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full bg-white text-black hover:bg-zinc-200 py-4 rounded-full font-bold transition-transform hover:scale-105 text-center block shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                Inizia ora con Pro
+              <a href={waLinkPro} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">
+                Inizia il Progetto <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Plan 3 - BUSINESS */}
-            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-white/5 flex flex-col hover:bg-zinc-900/60 hover:border-white/10 transition-all duration-300">
-              <h3 className="text-2xl font-bold text-white mb-2">Sito Web Multi-Pagina</h3>
+            {/* Card 3: Enterprise */}
+            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 flex flex-col hover:bg-zinc-900/60 hover:border-[#d4af37]/40 transition-all duration-300 shadow-xl">
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sito Multi-Pagina</h3>
               <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Per aziende che hanno bisogno di una presenza molto strutturata.</p>
               
-              <div className="mb-2">
+              <div className="mb-1">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-3xl font-extrabold text-white tracking-tighter">da 899€</span>
-                  <span className="text-zinc-500 font-medium text-sm">/ una tantum</span>
+                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€899</span>
+                  <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
                 </div>
               </div>
-              <div className="mb-8">
-                <div className="flex items-baseline gap-1 text-sm text-zinc-500">
-                  <span className="font-medium">+ Setup SEO Avanzato</span>
+              <div className="mb-6">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-extrabold text-white tracking-tighter">€79</span>
+                  <span className="text-[#d4af37]/70 font-medium">/ mese</span>
                 </div>
+                <p className="text-sm text-zinc-400 font-medium mt-2">Disdisci quando vuoi. Nessun vincolo di durata.</p>
               </div>
 
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Sito multipagina (fino a 10)',
+                  'Tutto del piano Pro',
+                  'Struttura complessa (Home, Blog, ecc.)',
                   'UI/UX Design Personalizzato',
-                  'Integrazione CMS (Blog/Casi Studio)',
-                  'SEO Avanzata per ogni pagina',
-                  'Strategia Lead Generation'
+                  'Integrazione CMS',
+                  'Supporto prioritario (Dominio + Hosting)'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-zinc-300 shrink-0" />
+                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-zinc-300">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-white/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-white/20">
-                Richiedi Consulenza
+              <a href={waLinkEnterprise} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
+                Inizia il Progetto
               </a>
             </div>
           </div>
