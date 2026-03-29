@@ -327,7 +327,7 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-delfino.webp" 
-                  alt="Anteprima sito web dark luxury per Ristorante Pizzeria Delfino a Monticelli d'Ongina" 
+                  alt="Anteprima sito web dark luxury per Ristorante Pizzeria" 
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
@@ -335,11 +335,11 @@ export default function App() {
 
               <div className="space-y-6">
                 <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Ristorante Pizzeria Delfino
+                  Ristorante Pizzeria
                 </h3>
                 <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Restyling Premium & WhatsApp Booking</h4>
                 <p className="text-lg text-zinc-400 leading-relaxed font-light">
-                  Un'esperienza digitale scura ed elegante, progettata per risaltare la cucina di mare e ottimizzare le prenotazioni a Monticelli d'Ongina.
+                  Un'esperienza digitale scura ed elegante, progettata per risaltare la proposta culinaria e ottimizzare le prenotazioni locali.
                 </p>
               </div>
             </motion.div>
@@ -355,7 +355,7 @@ export default function App() {
               {/* Testo a Sinistra per monitor grandi (alternato) */}
               <div className="space-y-6 order-2 lg:order-1">
                 <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Fabbro Armelloni
+                  Fabbro
                 </h3>
                 <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Solidità Artigiana & Conversione Rapida</h4>
                 <p className="text-lg text-zinc-400 leading-relaxed font-light">
@@ -370,7 +370,7 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-fabbro.webp" 
-                  alt="Sito web corporate per Fabbro Armelloni a Piacenza" 
+                  alt="Sito web corporate per Fabbro a Piacenza" 
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
@@ -419,11 +419,11 @@ export default function App() {
               {/* Testo a Sinistra per monitor grandi (alternato) */}
               <div className="space-y-6 order-2 lg:order-1">
                 <h3 className="text-4xl md:text-5xl font-extrabold text-white font-serif leading-tight" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Pizzeria Al Cascinetto
+                  Pizzeria
                 </h3>
                 <h4 className="text-2xl text-[#d4af37] font-medium tracking-wide">Tradizione & Posizionamento Locale</h4>
                 <p className="text-lg text-zinc-400 leading-relaxed font-light">
-                  Una vetrina digitale accogliente per la storica pizzeria di Monticelli d'Ongina. Progettata per massimizzare la visibilità locale e incrementare rapidamente le prenotazioni.
+                  Una vetrina digitale accogliente per una storica pizzeria locale. Progettata per massimizzare la visibilità sul territorio e incrementare rapidamente le prenotazioni.
                 </p>
               </div>
 
@@ -434,7 +434,7 @@ export default function App() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   src="/images/mockup-cascinetto.webp" 
-                  alt="Sito vetrina locale per Pizzeria Al Cascinetto a Monticelli d'Ongina" 
+                  alt="Sito vetrina locale per Pizzeria" 
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
