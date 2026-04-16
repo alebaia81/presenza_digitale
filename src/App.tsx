@@ -191,15 +191,15 @@ export default function App() {
         </div>
       </section>
 
-      {/* Specializzazione Ristorazione */}
+      {/* Specializzazione Eccellenze Locali */}
       <section className="py-20 px-6 relative bg-[#050505] z-20">
-        <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.1)]" style={{ borderColor: 'rgba(191,149,63,0.3)' }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1a150c] to-[#050505] -z-10" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/10 blur-[100px] pointer-events-none" />
+        <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.15)] group hover:shadow-[0_0_80px_rgba(191,149,63,0.25)] transition-all duration-700" style={{ borderColor: 'rgba(191,149,63,0.4)' }}>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a150c] via-[#050505] to-[#1a150c] -z-10" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
           
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Specialisti nella Ristorazione</h2>
-          <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-light">
-            Dal pesce fresco della bassa alle pizzerie storiche, sappiamo come far venire l'acquolina in bocca ai tuoi clienti prima ancora che si siedano a tavola. Design <strong className="text-white font-medium">Dark Luxury</strong> e prenotazioni istantanee su WhatsApp.
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sarti del Digital per le Eccellenze Locali</h2>
+          <p className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto leading-relaxed font-light">
+            Dall'artigiano di fiducia al ristorante storico, sappiamo come far brillare il tuo business a Piacenza. Progettiamo esperienze digitali <strong className="text-white font-medium">Dark Luxury</strong> e sistemi di vendita su WhatsApp studiati per il mercato locale.
           </p>
         </div>
       </section>
@@ -450,7 +450,7 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05)_0,transparent_100%)]"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Investimento Garantito</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Le Nostre Soluzioni Premium</h2>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-12 font-light">Scegli la soluzione perfetta per la tua attività piacentina. Prezzi chiari, nessun costo nascosto.</p>
             
           </div>
@@ -491,7 +491,7 @@ export default function App() {
             {/* Card 2: Pro (Consigliato) */}
             <div className="bg-gradient-to-b from-[#1a150c] to-black rounded-[2.5rem] p-8 border border-[#d4af37] relative flex flex-col transform lg:-translate-y-4 shadow-[0_0_50px_rgba(212,175,55,0.15)] hover:shadow-[0_0_70px_rgba(212,175,55,0.3)] transition-shadow duration-500">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-6 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-xl border border-[#d4af37]/50 whitespace-nowrap">
-                SCELTO DAI RISTORANTI
+                SCELTA CONSIGLIATA
               </div>
               <h3 className="text-2xl font-bold text-white mb-2 font-serif">Gestione Pro</h3>
               <p className="text-[#d4af37] text-sm mb-8 h-10 line-clamp-2">La tua presenza digitale sempre aggiornata senza pensieri.</p>
