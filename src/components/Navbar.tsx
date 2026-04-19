@@ -44,7 +44,6 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <>
               <Link to="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Home</Link>
               <Link to="/progetti" className="text-sm font-bold text-white transition-colors">Progetti</Link>
-              <Link to="/#contatti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Lavora con noi</Link>
             </>
           )}
         </nav>
