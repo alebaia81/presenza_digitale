@@ -32,7 +32,7 @@ export default function App() {
   // WhatsApp number
   const WA_NUMBER = "393398156719"; 
   const waLink = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sui%20vostri%20servizi%20di%20Web%20Design%20a%20Piacenza.`;
-  const waLinkBasic = `https://wa.me/${WA_NUMBER}?text=Ciao,%20sono%20interessato%20al%20piano%20Landing%20Page%20Basic%20per%20la%20mia%20attivit%C3%A0.`;
+  const waLinkStarter = `https://wa.me/${WA_NUMBER}?text=Ciao,%20sono%20interessato%20al%20piano%20Starter%20per%20la%20mia%20attivit%C3%A0.`;
   const waLinkPro = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20maggiori%20informazioni%20sul%20piano%20Gestione%20Pro%20per%20avere%20una%20presenza%20online%20senza%20pensieri.`;
   const waLinkEnterprise = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20una%20consulenza%20per%20un%20Sito%20Web%20Multi-Pagina%20strutturato.`;
 
@@ -457,10 +457,10 @@ export default function App() {
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch mt-12">
             
-            {/* Card 1: Basic */}
+            {/* Card 1: Starter */}
             <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 hover:border-[#d4af37]/40 flex flex-col hover:bg-zinc-900/60 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Landing Page Basic</h3>
-              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Ideale per professionisti e piccoli artigiani.</p>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Starter</h3>
+              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Perfetto per una presenza online professionale e dinamica.</p>
               
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
@@ -471,10 +471,12 @@ export default function App() {
 
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Design Single-Page',
-                  'Ottimizzazione Mobile',
-                  'Collegamento WhatsApp Diretto',
-                  'SEO Base'
+                  'Sito web multi-pagina (fino a 5 pagine)',
+                  'Design responsive (mobile, tablet, desktop)',
+                  'Sviluppo assistito da AI per consegna rapida',
+                  'Configurazione SEO base (meta tag, sitemap)',
+                  'Integrazione modulo di contatto',
+                  'Fino a 5 sezioni di contenuto'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
@@ -483,7 +485,7 @@ export default function App() {
                 ))}
               </div>
               
-              <a href={waLinkBasic} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
+              <a href={waLinkStarter} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
                 Inizia il Progetto
               </a>
             </div>
