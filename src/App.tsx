@@ -33,7 +33,7 @@ export default function App() {
   const WA_NUMBER = "393398156719"; 
   const waLink = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sui%20vostri%20servizi%20di%20Web%20Design%20a%20Piacenza.`;
   const waLinkStarter = `https://wa.me/${WA_NUMBER}?text=Ciao,%20sono%20interessato%20al%20piano%20Starter%20per%20la%20mia%20attivit%C3%A0.`;
-  const waLinkPro = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20maggiori%20informazioni%20sul%20piano%20Gestione%20Pro%20per%20avere%20una%20presenza%20online%20senza%20pensieri.`;
+  const waLinkProfessional = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sul%20piano%20Professional%20(Abbonamento%20o%20Una%20Tantum).`;
   const waLinkEnterprise = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20una%20consulenza%20per%20un%20Sito%20Web%20Multi-Pagina%20strutturato.`;
 
   return (
@@ -490,44 +490,54 @@ export default function App() {
               </a>
             </div>
 
-            {/* Card 2: Pro (Consigliato) */}
+            {/* Card 2: Professional (Consigliato) */}
             <div className="bg-gradient-to-b from-[#1a150c] to-black rounded-[2.5rem] p-8 border border-[#d4af37] relative flex flex-col transform lg:-translate-y-4 shadow-[0_0_50px_rgba(212,175,55,0.15)] hover:shadow-[0_0_70px_rgba(212,175,55,0.3)] transition-shadow duration-500">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-6 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-xl border border-[#d4af37]/50 whitespace-nowrap">
                 SCELTA CONSIGLIATA
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif">Gestione Pro</h3>
-              <p className="text-[#d4af37] text-sm mb-8 h-10 line-clamp-2">La tua presenza digitale sempre aggiornata senza pensieri.</p>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif">Professional</h3>
+              <p className="text-[#d4af37] text-sm mb-8 h-10 line-clamp-2">La soluzione completa per una crescita costante e professionale.</p>
               
-              <div className="mb-1">
-                <div className="flex items-baseline gap-1">
+              <div className="mb-4">
+                <div className="flex items-baseline gap-1 mb-1">
                   <span className="text-xl font-bold text-zinc-400 tracking-tighter">€199</span>
                   <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
                 </div>
-              </div>
-              <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-6xl font-extrabold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">€49</span>
                   <span className="text-[#d4af37] font-bold">/ mese</span>
                 </div>
-                <p className="text-sm text-zinc-400 font-medium mt-2">Disdisci quando vuoi. Nessun vincolo di durata.</p>
+                <p className="text-xs text-[#d4af37] font-bold mt-2 uppercase tracking-wide">6 mesi + 1 mese OMAGGIO</p>
+              </div>
+              
+              <div className="mb-8 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="text-xs text-zinc-400 mb-1 uppercase tracking-widest font-bold">Versione Una Tantum</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-white">€799</span>
+                  <span className="text-zinc-500 text-[10px] font-medium">(escl. hosting/revisioni)</span>
+                </div>
               </div>
               
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Design Luxury Personalizzato',
-                  'Aggiornamenti Menù/Testi Illimitati',
-                  'Hosting & Manutenzione inclusi',
-                  'Local SEO Avanzata (Schema Markup)',
-                  'Sistema Prenotazioni WhatsApp'
+                  'Sito web multi-pagina (fino a 8 pagine)',
+                  'Hosting + Dominio incluso*',
+                  'Design responsive (mobile, tablet, desktop)',
+                  'Sviluppo assistito da AI per consegna rapida',
+                  'Configurazione SEO avanzata (Schema/OG)',
+                  'Modulo di contatto WhatsApp',
+                  'Fino a 8 sezioni per pagina',
+                  '2 cicli di revisioni al mese*'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
-                    <span className="text-white font-medium">{feature}</span>
+                    <span className="text-white text-sm font-medium">{feature}</span>
                   </div>
                 ))}
+                <p className="text-[10px] text-zinc-500 italic mt-2">*Incluso solo nella versione in abbonamento</p>
               </div>
 
-              <a href={waLinkPro} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">
+              <a href={waLinkProfessional} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">
                 Inizia il Progetto <ArrowRight className="w-4 h-4" />
               </a>
             </div>
