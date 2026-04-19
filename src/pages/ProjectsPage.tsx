@@ -4,13 +4,13 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: "Ristorante Gourmet",
-    subtitle: "Ristorazione d'Alta Classe",
+    title: "Pizzeria Artigianale",
+    subtitle: "Pizza & Cucina Italiana",
     description: "Design moderno per una delle location più esclusive del territorio. Focus sull'eleganza visiva e sulla facilità di prenotazione.",
     image: "/images/mockup-cascinetto.webp"
   },
   {
-    title: "Ristorante di Pesce",
+    title: "Specialità di Mare",
     subtitle: "Sapori di Mare & Tradizione",
     description: "Un'identità digitale dedicata alla freschezza e alla qualità del pescato. Design elegante per una navigazione fluida e invitante.",
     image: "/images/mockup-delfino.webp"
