@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
 
@@ -28,6 +30,8 @@ function AnimatedRoutes() {
           <Routes location={location}>
             <Route path="/" element={<HomePage />} />
             <Route path="/progetti" element={<ProjectsPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/termini" element={<TermsPage />} />
           </Routes>
         </motion.div>
       </AnimatePresence>

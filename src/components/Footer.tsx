@@ -1,5 +1,6 @@
 import React from 'react';
 import { MonitorSmartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -18,8 +19,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
           <span>&copy; {new Date().getFullYear()} Presenza Digitale - Sviluppato a Piacenza.</span>
           <div className="flex gap-4 justify-center">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Termini</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/termini" className="hover:text-white transition-colors">Termini</Link>
           </div>
         </div>
       </div>
