@@ -34,7 +34,7 @@ export default function App() {
   const waLink = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sui%20vostri%20servizi%20di%20Web%20Design%20a%20Piacenza.`;
   const waLinkStarter = `https://wa.me/${WA_NUMBER}?text=Ciao,%20sono%20interessato%20al%20piano%20Starter%20per%20la%20mia%20attivit%C3%A0.`;
   const waLinkProfessional = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sul%20piano%20Professional%20(Abbonamento%20o%20Una%20Tantum).`;
-  const waLinkEnterprise = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20una%20consulenza%20per%20un%20Sito%20Web%20Multi-Pagina%20strutturato.`;
+  const waLinkBusiness = `https://wa.me/${WA_NUMBER}?text=Ciao,%20vorrei%20informazioni%20sul%20piano%20Business%20(Abbonamento%20o%20Una%20Tantum).`;
 
   return (
     <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-indigo-500/30">
@@ -542,41 +542,51 @@ export default function App() {
               </a>
             </div>
 
-            {/* Card 3: Enterprise */}
+            {/* Card 3: Business */}
             <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 flex flex-col hover:bg-zinc-900/60 hover:border-[#d4af37]/40 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sito Multi-Pagina</h3>
-              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Per aziende che hanno bisogno di una presenza molto strutturata.</p>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Business</h3>
+              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">La soluzione definitiva per aziende consolidate che puntano all'eccellenza.</p>
               
-              <div className="mb-1">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€899</span>
+              <div className="mb-4">
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€399</span>
                   <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
                 </div>
-              </div>
-              <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-extrabold text-white tracking-tighter">€79</span>
                   <span className="text-[#d4af37]/70 font-medium">/ mese</span>
                 </div>
-                <p className="text-sm text-zinc-400 font-medium mt-2">Disdisci quando vuoi. Nessun vincolo di durata.</p>
+              </div>
+              
+              <div className="mb-8 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="text-xs text-zinc-400 mb-1 uppercase tracking-widest font-bold">Versione Una Tantum</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-2xl font-bold text-white">€1249</span>
+                  <span className="text-zinc-500 text-[10px] font-medium">(escl. manutenzione)</span>
+                </div>
               </div>
 
               <div className="space-y-4 flex-1 mb-8">
                 {[
-                  'Tutto del piano Pro',
-                  'Struttura complessa (Home, Blog, ecc.)',
-                  'UI/UX Design Personalizzato',
-                  'Integrazione CMS',
-                  'Supporto prioritario (Dominio + Hosting)'
+                  'Sito web multi-pagina (fino a 10 pagine)',
+                  'Sviluppo AI & Design Responsive',
+                  'SEO Completa (Audit & OG)',
+                  'Modulo Contatto & Notifiche Email',
+                  'Sezione Blog/News con categorie',
+                  'Supporto Multi-lingua (EN/IT)',
+                  'Fino a 12 sezioni per pagina',
+                  '3 cicli di revisioni al mese*',
+                  'E-commerce & Prenotazioni'
                 ].map((feature, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
-                    <span className="text-zinc-300">{feature}</span>
+                    <span className="text-zinc-300 text-sm">{feature}</span>
                   </div>
                 ))}
+                <p className="text-[10px] text-zinc-500 italic mt-2">*Revisioni incluse nella versione mensile</p>
               </div>
 
-              <a href={waLinkEnterprise} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
+              <a href={waLinkBusiness} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">
                 Inizia il Progetto
               </a>
             </div>
