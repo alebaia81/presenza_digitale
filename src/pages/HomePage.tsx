@@ -55,7 +55,7 @@ export default function HomePage() {
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
             >
               Non ti serve solo un sito. <br />
-              <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Ti serve presenza.</span>
+              Ti serve <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
             </motion.h1>
             
             <motion.p 
