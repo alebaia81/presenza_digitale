@@ -10,9 +10,9 @@ const projects = [
     image: "/images/mockup-cascinetto.webp"
   },
   {
-    title: "Centro Sportivo",
-    subtitle: "Benessere & Tempo Libero",
-    description: "Un'interfaccia vivace e dinamica per riflettere energia e relax. Ottimizzata per la massima velocità di navigazione su mobile.",
+    title: "Ristorante di Pesce",
+    subtitle: "Sapori di Mare & Tradizione",
+    description: "Un'identità digitale dedicata alla freschezza e alla qualità del pescato. Design elegante per una navigazione fluida e invitante.",
     image: "/images/mockup-delfino.webp"
   },
   {
