@@ -54,8 +54,8 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
             >
-              Trasformiamo la tua attività locale in un'esperienza digitale <br />
-              <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>di lusso.</span>
+              Non ti serve solo un sito. <br />
+              <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Ti serve presenza.</span>
             </motion.h1>
             
             <motion.p 
@@ -64,7 +64,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-light max-w-xl"
             >
-              Non creiamo semplici siti web. Progettiamo strumenti di vendita rapidi, eleganti e ottimizzati per la provincia di Piacenza. Più prenotazioni, zero canoni mensili, 100% identità.
+              Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
             </motion.p>
             
             <motion.div 
