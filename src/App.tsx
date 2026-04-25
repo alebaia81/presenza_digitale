@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 import TermsPage from './pages/TermsPage';
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
@@ -31,6 +33,7 @@ function AnimatedRoutes() {
             <Route path="/" element={<HomePage />} />
             <Route path="/progetti" element={<ProjectsPage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
             <Route path="/termini" element={<TermsPage />} />
           </Routes>
         </motion.div>
@@ -38,6 +41,7 @@ function AnimatedRoutes() {
 
       <Footer />
       <StickyWhatsApp />
+      <CookieBanner />
     </div>
   );
 }

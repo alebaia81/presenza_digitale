@@ -14,14 +14,15 @@ export default function Footer() {
             <span className="text-xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
           </div>
           <span className="hidden md:inline text-zinc-700">|</span>
-          <span className="text-sm">Web Agency partner per Piacenza e Provincia.</span>
+          <span className="text-sm">Siti web professionali per Piacenza e Provincia.</span>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm">
-          <span>&copy; {new Date().getFullYear()} Presenza Digitale - Sviluppato a Piacenza.</span>
-          <div className="flex gap-4 justify-center">
+        <div className="flex flex-col items-center md:items-end gap-4 text-sm">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-end">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link to="/termini" className="hover:text-white transition-colors">Termini</Link>
           </div>
+          <span className="text-zinc-600">&copy; {new Date().getFullYear()} Presenza Digitale — Piacenza</span>
         </div>
       </div>
     </footer>
