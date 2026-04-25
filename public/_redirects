@@ -1,0 +1,4 @@
+https://www.presenzadigitale.com/* https://presenzadigitale.com/:splat 301
+https://presenzadigitale.it/* https://presenzadigitale.com/:splat 301
+https://www.presenzadigitale.it/* https://presenzadigitale.com/:splat 301
+/* /index.html 200
