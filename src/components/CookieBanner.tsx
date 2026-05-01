@@ -21,13 +21,9 @@ export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Small delay to avoid layout shift on first paint
-    const timer = setTimeout(() => {
-      if (!isConsentValid()) {
-        setIsVisible(true);
-      }
-    }, 1000);
-    return () => clearTimeout(timer);
+    if (!isConsentValid()) {
+      setIsVisible(true);
+    }
   }, []);
 
   const handleAccept = () => {
