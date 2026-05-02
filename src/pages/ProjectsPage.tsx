@@ -32,6 +32,12 @@ const projects = [
     subtitle: "Tradizione & Sapori",
     description: "Un'identità digitale calda e accogliente che valorizza la tradizione e la storia. Ottimizzazione delle prenotazioni rapide.",
     image: "/images/mockup-ennio.webp"
+  },
+  {
+    title: "Centro Benessere",
+    subtitle: "Estetica & Relax",
+    description: "Un'identità digitale raffinata e rilassante, studiata per attrarre nuova clientela. Design pulito e percorsi di navigazione ottimizzati per incentivare i contatti.",
+    image: "/images/mockup-soave.webp"
   }
 ];
 
