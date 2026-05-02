@@ -8,9 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] rounded-full flex items-center justify-center text-black">
-              <MonitorSmartphone className="w-4 h-4" />
-            </div>
+            <img src="/pd-4.png" alt="Presenza Digitale Logo" className="w-16 h-16 object-contain drop-shadow-[0_0_10px_rgba(191,149,63,0.2)]" />
             <span className="text-xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
           </div>
           <span className="hidden md:inline text-zinc-700">|</span>
