@@ -1,5 +1,5 @@
 import React from 'react';
-import { MonitorSmartphone } from 'lucide-react';
+import { MonitorSmartphone, Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -19,6 +19,14 @@ export default function Footer() {
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link to="/termini" className="hover:text-white transition-colors">Termini</Link>
+          </div>
+          <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Facebook">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Instagram">
+              <Instagram className="w-5 h-5" />
+            </a>
           </div>
           <span className="text-zinc-600">&copy; {new Date().getFullYear()} Presenza Digitale — Piacenza</span>
         </div>

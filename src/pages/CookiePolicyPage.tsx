@@ -34,6 +34,7 @@ export default function CookiePolicyPage() {
         
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-collapse">
+            <caption className="sr-only">Tipologie di cookie utilizzati e durata</caption>
             <thead>
               <tr className="border-b border-white/10">
                 <th className="py-3 pr-4 text-white font-semibold">Cookie</th>

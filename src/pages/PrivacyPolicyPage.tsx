@@ -45,6 +45,7 @@ export default function PrivacyPolicyPage() {
         <p>I dati personali sono trattati per le seguenti finalità:</p>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-collapse">
+            <caption className="sr-only">Tipologie di dati raccolti e finalità</caption>
             <thead>
               <tr className="border-b border-white/10">
                 <th className="py-3 pr-4 text-white font-semibold">Finalità</th>
