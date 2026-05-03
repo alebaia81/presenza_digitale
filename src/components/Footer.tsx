@@ -28,7 +28,10 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
           </div>
-          <span className="text-zinc-600">&copy; {new Date().getFullYear()} Presenza Digitale — Piacenza</span>
+          <span className="text-zinc-600 text-[10px] md:text-xs text-center md:text-right">
+            &copy; {new Date().getFullYear()} Presenza Digitale — Tutti i diritti riservati. <br className="md:hidden" />
+            Marchio, logo e contenuti sono proprietà intellettuale protetta.
+          </span>
         </div>
       </div>
     </footer>
