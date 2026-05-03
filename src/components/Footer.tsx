@@ -21,7 +21,7 @@ export default function Footer() {
             <Link to="/termini" className="hover:text-white transition-colors">Termini e Condizioni</Link>
           </div>
           <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Instagram">

@@ -33,7 +33,7 @@ export default function HomePage() {
     >
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none"></div>
+        <div className="absolute inset-0 bg-black/40 opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
@@ -94,9 +94,11 @@ export default function HomePage() {
               <PlayCircle className="w-16 h-16 text-indigo-500/50 animate-pulse" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
-            <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out" poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000">
-              <source src="https://cdn.pixabay.com/video/2023/10/22/186115-877685601_large.mp4" type="video/mp4" />
-            </video>
+            <img 
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000" 
+              alt="Design e Sviluppo Web"
+              className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+            />
             <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
               <div className="bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 shadow-xl">
                 <div className="flex items-center gap-3 mb-1">
@@ -312,8 +314,9 @@ export default function HomePage() {
                     <span className="text-white text-sm font-medium">{feature}</span>
                   </li>
                 ))}
-                <p className="text-[10px] text-zinc-500 italic mt-2">*Incluso solo nella versione in abbonamento</p>
               </ul>
+              <p className="text-[10px] text-zinc-500 italic mt-2 mb-8">*Incluso solo nella versione in abbonamento</p>
+
               <a href={waLinkProfessional} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">Inizia il Progetto <ArrowRight className="w-4 h-4" /></a>
             </div>
 
@@ -355,8 +358,9 @@ export default function HomePage() {
                     <span className="text-zinc-300 text-sm">{feature}</span>
                   </li>
                 ))}
-                <p className="text-[10px] text-zinc-500 italic mt-2">*Revisioni incluse nella versione mensile</p>
               </ul>
+              <p className="text-[10px] text-zinc-500 italic mt-2 mb-8">*Revisioni incluse nella versione mensile</p>
+
               <a href={waLinkBusiness} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">Inizia il Progetto</a>
             </div>
           </div>
