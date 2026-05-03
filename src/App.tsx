@@ -7,7 +7,7 @@ import CookieBanner from './components/CookieBanner';
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
 
-const HomePage = React.lazy(() => import('./pages/HomePage'));
+import HomePage from './pages/HomePage';
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage'));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage'));
