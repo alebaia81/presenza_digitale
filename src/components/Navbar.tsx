@@ -26,7 +26,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
     <header className="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src="/pd-4.png" alt="Presenza Digitale Logo" width="76" height="76" className="w-[76px] h-[76px] object-contain drop-shadow-[0_0_15px_rgba(191,149,63,0.3)]" />
+          <img src="/pd-4.png" alt="Presenza Digitale - Web Agency Piacenza" width="76" height="76" className="w-[76px] h-[76px] object-contain drop-shadow-[0_0_15px_rgba(191,149,63,0.3)]" />
           <span className="text-2xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
         </Link>
         

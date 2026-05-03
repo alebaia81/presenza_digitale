@@ -48,7 +48,9 @@ export default function HomePage() {
               <span>Web Agency a Piacenza e Provincia</span>
             </motion.div>
             
-            <motion.h1 
+            <h1 className="sr-only">Non ti serve solo un sito. Ti serve presenza.</h1>
+            <motion.div 
+              aria-hidden="true"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -56,7 +58,7 @@ export default function HomePage() {
             >
               Non ti serve solo un sito. <br />
               Ti serve <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
-            </motion.h1>
+            </motion.div>
             
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
@@ -253,7 +255,7 @@ export default function HomePage() {
                   <span className="text-[#d4af37]/70 font-medium text-sm">/ una tantum</span>
                 </div>
               </div>
-              <div className="space-y-4 flex-1 mb-8">
+              <ul className="space-y-4 flex-1 mb-8">
                 {[
                   'Sito web multi-pagina (fino a 5 pagine)',
                   'Design responsive (mobile, tablet, desktop)',
@@ -262,12 +264,12 @@ export default function HomePage() {
                   'Integrazione modulo di contatto',
                   'Fino a 5 sezioni di contenuto'
                 ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-zinc-300">{feature}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <a href={waLinkStarter} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">Inizia il Progetto</a>
             </div>
 
@@ -294,7 +296,7 @@ export default function HomePage() {
                   <span className="text-zinc-500 text-[10px] font-medium">(escl. hosting/revisioni)</span>
                 </div>
               </div>
-              <div className="space-y-4 flex-1 mb-8">
+              <ul className="space-y-4 flex-1 mb-8">
                 {[
                   'Sito web multi-pagina (fino a 8 pagine)',
                   'Hosting + Dominio incluso*',
@@ -305,13 +307,13 @@ export default function HomePage() {
                   'Fino a 8 sezioni per pagina',
                   '2 cicli di revisioni al mese*'
                 ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-white text-sm font-medium">{feature}</span>
-                  </div>
+                  </li>
                 ))}
                 <p className="text-[10px] text-zinc-500 italic mt-2">*Incluso solo nella versione in abbonamento</p>
-              </div>
+              </ul>
               <a href={waLinkProfessional} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">Inizia il Progetto <ArrowRight className="w-4 h-4" /></a>
             </div>
 
@@ -336,7 +338,7 @@ export default function HomePage() {
                   <span className="text-zinc-500 text-[10px] font-medium">(escl. manutenzione)</span>
                 </div>
               </div>
-              <div className="space-y-4 flex-1 mb-8">
+              <ul className="space-y-4 flex-1 mb-8">
                 {[
                   'Sito web multi-pagina (fino a 10 pagine)',
                   'Sviluppo AI & Design Responsive',
@@ -348,13 +350,13 @@ export default function HomePage() {
                   '3 cicli di revisioni al mese*',
                   'E-commerce & Prenotazioni'
                 ].map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3">
+                  <li key={i} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
                     <span className="text-zinc-300 text-sm">{feature}</span>
-                  </div>
+                  </li>
                 ))}
                 <p className="text-[10px] text-zinc-500 italic mt-2">*Revisioni incluse nella versione mensile</p>
-              </div>
+              </ul>
               <a href={waLinkBusiness} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">Inizia il Progetto</a>
             </div>
           </div>
@@ -389,7 +391,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-indigo-500/5 mix-blend-color-burn" />
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
-             <h2 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">Facciamo decollare <br/><span className="text-indigo-400">il tuo business.</span></h2>
+             <h2 className="sr-only">Facciamo decollare il tuo business.</h2>
+             <div aria-hidden="true" className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">Facciamo decollare <br/><span className="text-indigo-400">il tuo business.</span></div>
              <p className="text-xl text-zinc-400 font-light">Non aspettare che i tuoi concorrenti prendano tutti i clienti della provincia. Contattaci oggi per una consulenza gratuita.</p>
           </div>
           <div className="bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[2.5rem] shadow-2xl">
