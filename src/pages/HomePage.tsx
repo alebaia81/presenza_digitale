@@ -48,7 +48,7 @@ export default function HomePage() {
               <span>Web Agency a Piacenza e Provincia</span>
             </motion.div>
             
-            <h1 className="sr-only">Non ti serve solo un sito. Ti serve presenza.</h1>
+            <h1 className="sr-only">Creazione Siti Web Piacenza e Realizzazione Siti Internet Professionali</h1>
             <motion.div 
               aria-hidden="true"
               initial={{ opacity: 0, y: 30 }}
@@ -96,7 +96,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
             <img 
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000" 
-              alt="Design e Sviluppo Web"
+              alt="Creazione Siti Web Piacenza - Web Agency Presenza Digitale"
               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
@@ -386,6 +386,16 @@ export default function HomePage() {
             <p>
               Investire nella tua infrastruttura digitale oggi significa proteggere e scalare il fatturato di domani. Affidati a professionisti del settore digital per curare ogni aspetto tecnico, strategico e visivo: dall'hosting ultraveloce alla stabilità del codice, per far sì che la tua azienda sia sempre un passo avanti ed emerga con un'immagine premium e inconfondibile.
             </p>
+
+            <div className="pt-12 border-t border-white/5">
+              <h3 className="text-xl font-bold text-white mb-6">Agenzia Web a Piacenza, Rivergaro, Pontenure e Provincia</h3>
+              <p className="text-base text-zinc-400 font-light">
+                Cerchi un'<strong>agenzia web a Piacenza</strong> capace di trasformare il tuo business locale? <strong>Presenza Digitale</strong> non è solo una <strong>web agency a Piacenza</strong>, ma il partner strategico per chi cerca la <strong>creazione di siti web professionali a Piacenza e provincia</strong>. Operiamo capillarmente su tutto il territorio emiliano, offrendo soluzioni di <strong>sviluppo siti internet a Rivergaro, Pontenure e Podenzano</strong>, garantendo visibilità massima ai professionisti di <strong>Gossolengo, Vigolzone e Rottofreno</strong>.
+              </p>
+              <p className="text-base text-zinc-400 font-light mt-4">
+                Ogni nostro progetto parte da un'analisi accurata del mercato locale. Se hai bisogno di un <strong>preventivo sito web a Piacenza</strong>, siamo pronti a offrirti una consulenza su misura che include studio della concorrenza, design 'Dark Luxury' e ottimizzazione per i motori di ricerca. Non ci limitiamo alla semplice <strong>realizzazione di siti internet</strong>, ma costruiamo ecosistemi digitali che scalano le classifiche di Google. Che tu sia un ristoratore a <strong>Castel San Giovanni</strong> o un artigiano a <strong>Fiorenzuola d'Arda</strong>, la nostra missione è portarti nuovi contatti ogni giorno. Scegliere <strong>Presenza Digitale</strong> significa affidarsi a specialisti del <strong>web design a Piacenza</strong> che conoscono profondamente le dinamiche commerciali della Val Trebbia, della Val Nure e della Val d'Arda.
+              </p>
+            </div>
           </div>
         </div>
       </section>
