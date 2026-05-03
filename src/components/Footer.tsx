@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex items-center gap-3">
             <img src="/pd-4.png" alt="Presenza Digitale - Logo Footer" width="64" height="64" loading="lazy" className="w-16 h-16 object-contain drop-shadow-[0_0_10px_rgba(191,149,63,0.2)]" />
-            <span className="text-xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
+            <span className="text-xl font-black tracking-tight font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
           </div>
           <span className="hidden md:inline text-zinc-700">|</span>
           <span className="text-sm">Siti web professionali per Piacenza e Provincia.</span>

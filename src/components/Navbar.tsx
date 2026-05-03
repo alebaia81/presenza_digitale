@@ -27,7 +27,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img src="/pd-4.png" alt="Presenza Digitale - Web Agency Piacenza" width="76" height="76" className="w-[76px] h-[76px] object-contain drop-shadow-[0_0_15px_rgba(191,149,63,0.3)]" />
-          <span className="text-2xl font-black tracking-tight font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
+          <span className="text-2xl font-black tracking-tight font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-8">
@@ -56,6 +56,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         </div>
 
         <button 
+          aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
           className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >

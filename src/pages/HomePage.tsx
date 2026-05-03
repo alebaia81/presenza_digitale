@@ -57,7 +57,7 @@ export default function HomePage() {
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]"
             >
               Non ti serve solo un sito. <br />
-              Ti serve <span className="font-serif italic" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
+              Ti serve <span className="font-serif italic pb-1 pr-4 inline-block" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
             </motion.div>
             
             <motion.p 
@@ -115,7 +115,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.15)] group hover:shadow-[0_0_80px_rgba(191,149,63,0.25)] transition-all duration-700" style={{ borderColor: 'rgba(191,149,63,0.4)' }}>
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a150c] via-[#050505] to-[#1a150c] -z-10" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sarti del Digital per le Eccellenze Locali</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide pb-2 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sarti del Digital per le Eccellenze Locali</h2>
           <p className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto leading-relaxed font-light">
             Dall'artigiano di fiducia al ristorante storico, sappiamo come far brillare il tuo business a Piacenza. Progettiamo esperienze digitali <strong className="text-white font-medium">Dark Luxury</strong> e sistemi di vendita su WhatsApp studiati per il mercato locale.
           </p>
@@ -247,7 +247,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch mt-12">
             {/* Starter Card */}
             <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 hover:border-[#d4af37]/40 flex flex-col hover:bg-zinc-900/60 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Starter</h3>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Starter</h3>
               <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Perfetto per una presenza online professionale e dinamica.</p>
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
@@ -319,7 +319,7 @@ export default function HomePage() {
 
             {/* Business Card */}
             <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 flex flex-col hover:bg-zinc-900/60 hover:border-[#d4af37]/40 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Business</h3>
+              <h3 className="text-2xl font-bold text-white mb-2 font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Business</h3>
               <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">La soluzione definitiva per aziende consolidate che puntano all'eccellenza.</p>
               <div className="mb-4">
                 <div className="flex items-baseline gap-1 mb-1">
@@ -367,7 +367,7 @@ export default function HomePage() {
       <section className="py-24 px-6 relative bg-[#050505] border-t border-white/5">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900/20 -z-10" />
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>L'Importanza della Presenza Digitale per le Aziende</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-serif tracking-wide pb-2 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>L'Importanza della Presenza Digitale per le Aziende</h2>
           
           <div className="space-y-6 text-zinc-300/90 font-light leading-relaxed text-lg">
             <p>
