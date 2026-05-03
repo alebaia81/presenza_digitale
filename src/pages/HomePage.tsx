@@ -97,6 +97,8 @@ export default function HomePage() {
             <img 
               src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000" 
               alt="Creazione Siti Web Piacenza - Web Agency Presenza Digitale"
+              fetchPriority="high"
+              loading="eager"
               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end">
