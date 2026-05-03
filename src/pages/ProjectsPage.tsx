@@ -69,6 +69,9 @@ export default function ProjectsPage() {
                 <img 
                   src={project.image} 
                   alt={project.title}
+                  width="800"
+                  height="500"
+                  loading="lazy"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
