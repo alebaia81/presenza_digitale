@@ -361,6 +361,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="py-24 px-6 relative bg-[#050505] border-t border-white/5">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900/20 -z-10" />
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-serif tracking-wide" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>L'Importanza della Presenza Digitale per le Aziende</h2>
+          
+          <div className="space-y-6 text-zinc-300/90 font-light leading-relaxed text-lg">
+            <p>
+              Nel mercato odierno, avere una solida <strong>presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong>web agency</strong> esperta nella <strong>realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
+            </p>
+            <p>
+              La nostra agenzia si specializza nella creazione di <strong>landing page ad alta conversione</strong>. Non ci limitiamo a fornire un design estetico "Dark Luxury": studiamo l'architettura dell'informazione, la user experience (UX) e le strategie di copywriting persuasivo per trasformare i visitatori in contatti concreti. Questo approccio è vitale per artigiani, ristoratori, liberi professionisti e piccole-medie imprese che desiderano un ritorno sull'investimento tangibile e misurabile. Un sito lento, confuso o non adattato per i dispositivi mobili (smartphone) danneggia gravemente la credibilità del tuo marchio aziendale.
+            </p>
+            <p>
+              Inoltre, il <strong>posizionamento SEO locale</strong> (Search Engine Optimization) gioca un ruolo cruciale. Essere visibili sui motori di ricerca quando un utente cerca i tuoi servizi a Piacenza significa intercettare una domanda consapevole e altamente profilata. Attraverso un'attenta ricerca delle parole chiave, l'ottimizzazione avanzata dei contenuti, la strutturazione semantica dei tag HTML e l'implementazione del markup strutturato, garantiamo che il tuo portale web non sia solo una "vetrina nel deserto", ma un potente strumento di lead generation integrato nel tuo ecosistema di vendita.
+            </p>
+            <p>
+              Investire nella tua infrastruttura digitale oggi significa proteggere e scalare il fatturato di domani. Affidati a professionisti del settore digital per curare ogni aspetto tecnico, strategico e visivo: dall'hosting ultraveloce alla stabilità del codice, per far sì che la tua azienda sia sempre un passo avanti ed emerga con un'immagine premium e inconfondibile.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contatti" className="py-24 px-6 relative bg-zinc-950 border-t border-white/5">
         <div className="absolute inset-0 bg-indigo-500/5 mix-blend-color-burn" />
