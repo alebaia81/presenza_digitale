@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-4 justify-center md:justify-end">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <Link to="/termini" className="hover:text-white transition-colors">Termini</Link>
+            <Link to="/termini" className="hover:text-white transition-colors">Termini e Condizioni</Link>
           </div>
           <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Facebook">

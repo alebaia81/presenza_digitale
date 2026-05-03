@@ -33,15 +33,15 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         <nav className="hidden md:flex items-center gap-8">
           {isHome ? (
             <>
-              <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Servizi</button>
-              <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Progetti</Link>
-              <button onClick={() => scrollToSection('prezzi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Prezzi</button>
-              <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contatti</button>
+              <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">I Nostri Servizi</button>
+              <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Portfolio Progetti</Link>
+              <button onClick={() => scrollToSection('prezzi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Piani e Prezzi</button>
+              <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contattaci Ora</button>
             </>
           ) : (
             <>
-              <Link to="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Home</Link>
-              <Link to="/progetti" className="text-sm font-bold text-white transition-colors">Progetti</Link>
+              <Link to="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Torna alla Home</Link>
+              <Link to="/progetti" className="text-sm font-bold text-white transition-colors">Portfolio Progetti</Link>
             </>
           )}
         </nav>
@@ -72,15 +72,15 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         >
           {isHome ? (
             <>
-              <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Servizi</button>
-              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Progetti</Link>
-              <button onClick={() => scrollToSection('prezzi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Prezzi</button>
-              <button onClick={() => scrollToSection('contatti')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Contatti</button>
+              <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">I Nostri Servizi</button>
+              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Portfolio Progetti</Link>
+              <button onClick={() => scrollToSection('prezzi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Piani e Prezzi</button>
+              <button onClick={() => scrollToSection('contatti')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Contattaci Ora</button>
             </>
           ) : (
             <>
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Home</Link>
-              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white">Progetti</Link>
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Torna alla Home</Link>
+              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white">Portfolio Progetti</Link>
             </>
           )}
           <div className="h-px bg-white/10 w-full my-2"></div>
