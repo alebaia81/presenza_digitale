@@ -48,7 +48,7 @@ export default function HomePage() {
               <span>Web Agency a Piacenza e Provincia</span>
             </motion.div>
             
-            <h1 className="sr-only">Creazione Siti Web Piacenza e Realizzazione Siti Internet Professionali</h1>
+            <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
             <motion.div 
               aria-hidden="true"
               initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ export default function HomePage() {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
             <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000" 
+              src="/assets/images/hero-bg.webp" 
               alt="Creazione Siti Web Piacenza - Web Agency Presenza Digitale"
               fetchPriority="high"
               loading="eager"
