@@ -7,6 +7,7 @@ import CookieBanner from './components/CookieBanner';
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import HomePage from './pages/HomePage';
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
@@ -47,6 +48,7 @@ function AnimatedRoutes() {
       <StickyWhatsApp />
       <CookieBanner />
       <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
