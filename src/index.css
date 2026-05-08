@@ -1,5 +1,54 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-serif: "Playfair Display", serif;
+  --color-gold-amber: #FFBF00;
+}
+
+/* Blog Typography Enhancements */
+.prose {
+  --tw-prose-body: #a1a1aa;
+  --tw-prose-headings: #ffffff;
+  --tw-prose-links: #FFBF00;
+  --tw-prose-bold: #FFBF00;
+  --tw-prose-quotes: #ffffff;
+  --tw-prose-hr: #27272a;
+  --tw-prose-counters: #FFBF00;
+  --tw-prose-bullets: #FFBF00;
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.025em;
+  margin-top: 2.5em !important;
+  margin-bottom: 1em !important;
+}
+
+.prose h2 {
+  font-size: 2.25rem !important;
+  border-left: 4px solid #FFBF00;
+  padding-left: 1rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem !important;
+}
+
+.prose p {
+  line-height: 1.8 !important;
+  margin-bottom: 1.5em !important;
+}
+
+.prose strong {
+  color: #FFBF00;
+}
+
+.prose a {
+  color: #FFBF00;
+  text-decoration-color: rgba(255, 191, 0, 0.4);
+}
+
+.prose a:hover {
+  text-decoration-color: #FFBF00;
 }

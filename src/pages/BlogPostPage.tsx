@@ -1,0 +1,141 @@
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'motion/react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark } from 'lucide-react';
+import { getPostBySlug } from '../utils/blog';
+import { BlogPost } from '../types/blog';
+
+const BlogPostPage = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (slug) {
+        try {
+          const data = await getPostBySlug(slug);
+          setPost(data);
+        } catch (error) {
+          console.error('Errore nel caricamento del post:', error);
+        } finally {
+          setIsLoading(false);
+        }
+      }
+    };
+    fetchPost();
+  }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#050505]">
+        <div className="w-12 h-12 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#050505] px-6 text-center">
+        <h1 className="text-4xl font-bold text-white mb-4">Post non trovato</h1>
+        <p className="text-zinc-400 mb-8">L'articolo che stai cercando potrebbe essere stato spostato o rimosso.</p>
+        <Link 
+          to="/blog" 
+          className="px-6 py-3 bg-gold-amber text-black rounded-full font-bold hover:bg-amber-500 transition-colors flex items-center gap-2"
+        >
+          <ArrowLeft className="w-5 h-5" /> Torna al Blog
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen pt-32 pb-20 px-6">
+      <article className="max-w-4xl mx-auto">
+        {/* Navigation & Actions */}
+        <div className="flex items-center justify-between mb-12">
+          <Link 
+            to="/blog" 
+            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+          >
+            <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold-amber transition-all group-hover:text-black">
+              <ArrowLeft className="w-4 h-4" />
+            </div>
+            <span className="text-sm font-medium">Torna agli articoli</span>
+          </Link>
+          
+          <div className="flex items-center gap-3">
+            <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
+              <Share2 className="w-4 h-4" />
+            </button>
+            <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
+              <Bookmark className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Header */}
+        <header className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-xs font-bold text-gold-amber uppercase tracking-widest px-3 py-1 rounded-full bg-gold-amber/10">
+              {post.category}
+            </span>
+            <div className="w-1 h-1 rounded-full bg-zinc-700"></div>
+            <div className="flex items-center gap-2 text-zinc-500 text-xs">
+              <Clock className="w-3 h-3" />
+              <span>{post.readTime} di lettura</span>
+            </div>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
+            {post.title}
+          </h1>
+
+          <div className="flex items-center gap-4 py-8 border-y border-white/5">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-amber to-amber-700 flex items-center justify-center font-bold text-lg text-black">
+              AB
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm font-bold text-white">{post.author}</span>
+              <span className="text-xs text-zinc-500">Creatore di Presenza Digitale • {post.date}</span>
+            </div>
+          </div>
+        </header>
+
+        {/* Featured Image */}
+        <div className="aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 border border-white/5 shadow-2xl">
+          <img 
+            src={post.image} 
+            alt={post.title} 
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="prose prose-invert max-w-none prose-p:text-zinc-400 prose-p:leading-relaxed prose-li:text-zinc-400">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {post.content}
+          </ReactMarkdown>
+        </div>
+
+        {/* Footer CTA */}
+        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/50 to-gold-amber/10 border border-gold-amber/20 text-center">
+          <h3 className="text-2xl font-bold text-white mb-4">Ti piace questo approccio?</h3>
+          <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
+            Sviluppiamo strategie SEO e digitali basate su dati e tecnologia all'avanguardia. Scopri come possiamo scalare il tuo business.
+          </p>
+          <Link 
+            to="/#contatti" 
+            className="px-8 py-4 bg-gold-amber text-black rounded-full font-bold hover:bg-amber-500 transition-all inline-block hover:scale-105 shadow-[0_0_30px_rgba(255,191,0,0.3)]"
+          >
+            Lavoriamo Insieme
+          </Link>
+        </div>
+      </article>
+    </div>
+  );
+};
+
+export default BlogPostPage;

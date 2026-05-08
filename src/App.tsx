@@ -10,6 +10,8 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import HomePage from './pages/HomePage';
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
+const BlogPage = React.lazy(() => import('./pages/BlogPage'));
+const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage'));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage'));
 const TermsPage = React.lazy(() => import('./pages/TermsPage'));
@@ -36,6 +38,8 @@ function AnimatedRoutes() {
             <Routes location={location}>
               <Route path="/" element={<HomePage />} />
               <Route path="/progetti" element={<ProjectsPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
               <Route path="/termini" element={<TermsPage />} />

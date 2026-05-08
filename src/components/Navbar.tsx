@@ -43,13 +43,14 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">I Nostri Servizi</button>
               <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Portfolio Progetti</Link>
-
+              <Link to="/blog" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Blog</Link>
               <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contattaci Ora</button>
             </>
           ) : (
             <>
               <Link to="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Torna alla Home</Link>
-              <Link to="/progetti" className="text-sm font-bold text-white transition-colors">Portfolio Progetti</Link>
+              <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Portfolio Progetti</Link>
+              <Link to="/blog" className="text-sm font-bold text-white transition-colors">Blog</Link>
             </>
           )}
         </nav>
@@ -83,13 +84,14 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">I Nostri Servizi</button>
               <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Portfolio Progetti</Link>
-
+              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Blog</Link>
               <button onClick={() => scrollToSection('contatti')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Contattaci Ora</button>
             </>
           ) : (
             <>
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Torna alla Home</Link>
-              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white">Portfolio Progetti</Link>
+              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Portfolio Progetti</Link>
+              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white">Blog</Link>
             </>
           )}
           <div className="h-px bg-white/10 w-full my-2"></div>
