@@ -8,7 +8,7 @@
 
 /* Blog Typography Enhancements */
 .prose {
-  --tw-prose-body: #a1a1aa;
+  --tw-prose-body: #D1D1D1;
   --tw-prose-headings: #ffffff;
   --tw-prose-links: #FFBF00;
   --tw-prose-bold: #FFBF00;
@@ -21,8 +21,8 @@
 .prose h1, .prose h2, .prose h3 {
   font-family: "Playfair Display", serif;
   letter-spacing: -0.025em;
-  margin-top: 2.5em !important;
-  margin-bottom: 1em !important;
+  margin-top: 3.5em !important; /* Aumentato per maggiore respiro */
+  margin-bottom: 1.2em !important;
 }
 
 .prose h2 {
@@ -33,11 +33,13 @@
 
 .prose h3 {
   font-size: 1.5rem !important;
+  margin-top: 2.5em !important;
 }
 
-.prose p {
-  line-height: 1.8 !important;
-  margin-bottom: 1.5em !important;
+.prose p, .prose li {
+  line-height: 1.75 !important;
+  margin-bottom: 1.6em !important;
+  color: #D1D1D1 !important;
 }
 
 .prose strong {
