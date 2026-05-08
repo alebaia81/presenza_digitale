@@ -28,7 +28,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         <Link to="/" className="flex items-center gap-3">
           <img 
             src="/assets/images/logo-optimized.png" 
-            alt="Presenza Digitale - Web Agency Piacenza" 
+            alt="Presenza Digitale - Consulenza Digitale Piacenza" 
             width="76" 
             height="76" 
             loading="eager"

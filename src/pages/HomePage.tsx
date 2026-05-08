@@ -45,7 +45,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-200 text-sm font-semibold shadow-lg backdrop-blur-md"
             >
               <MapPin className="w-4 h-4 text-indigo-400" />
-              <span>Web Agency a Piacenza e Provincia</span>
+              <span>Consulenza Digitale a Piacenza e Provincia</span>
             </motion.div>
             
             <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
@@ -96,7 +96,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
             <img 
               src="/assets/images/hero-bg.webp" 
-              alt="Creazione Siti Web Piacenza - Web Agency Presenza Digitale"
+              alt="Creazione Siti Web Piacenza - Consulenza Digitale Presenza Digitale"
               fetchPriority="high"
               loading="eager"
               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
@@ -248,7 +248,7 @@ export default function HomePage() {
           
           <div className="space-y-6 text-zinc-300/90 font-light leading-relaxed text-lg">
             <p>
-              Nel mercato odierno, avere una solida <strong>presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong>web agency</strong> esperta nella <strong>realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
+              Nel mercato odierno, avere una solida <strong>presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong>consulenza web professionale</strong> esperta nella <strong>realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
             </p>
             <p>
               La nostra agenzia si specializza nella creazione di <strong>landing page ad alta conversione</strong>. Non ci limitiamo a fornire un design estetico "Dark Luxury": studiamo l'architettura dell'informazione, la user experience (UX) e le strategie di copywriting persuasivo per trasformare i visitatori in contatti concreti. Questo approccio è vitale per artigiani, ristoratori, liberi professionisti e piccole-medie imprese che desiderano un ritorno sull'investimento tangibile e misurabile. Un sito lento, confuso o non adattato per i dispositivi mobili (smartphone) danneggia gravemente la credibilità del tuo marchio aziendale.
@@ -261,9 +261,7 @@ export default function HomePage() {
             </p>
 
             <div className="pt-12 border-t border-white/5">
-              <h3 className="text-xl font-bold text-white mb-6">Agenzia Web a Piacenza, Rivergaro, Pontenure e Provincia</h3>
-              <p className="text-base text-zinc-400 font-light">
-                Cerchi un'<strong>agenzia web a Piacenza</strong> capace di trasformare il tuo business locale? <strong>Presenza Digitale</strong> non è solo una <strong>web agency a Piacenza</strong>, ma il partner strategico per chi cerca la <strong>creazione di siti web professionali a Piacenza e provincia</strong>. Operiamo capillarmente su tutto il territorio emiliano, offrendo soluzioni di <strong>sviluppo siti internet a Rivergaro, Pontenure e Podenzano</strong>, garantendo visibilità massima ai professionisti di <strong>Gossolengo, Vigolzone e Rottofreno</strong>.
+                Cerchi una <strong>consulenza web a Piacenza</strong> capace di trasformare il tuo business locale? <strong>Presenza Digitale</strong> non è un'agenzia, ma il tuo partner strategico per la <strong>creazione di siti web professionali a Piacenza e provincia</strong>. Operiamo capillarmente su tutto il territorio emiliano, offrendo soluzioni di <strong>sviluppo siti internet a Rivergaro, Pontenure e Podenzano</strong>, garantendo visibilità massima ai professionisti di <strong>Gossolengo, Vigolzone e Rottofreno</strong>.
               </p>
               <p className="text-base text-zinc-400 font-light mt-4">
                 Ogni nostro progetto parte da un'analisi accurata del mercato locale. Se hai bisogno di un <strong>preventivo sito web a Piacenza</strong>, siamo pronti a offrirti una consulenza su misura che include studio della concorrenza, design 'Dark Luxury' e ottimizzazione per i motori di ricerca. Non ci limitiamo alla semplice <strong>realizzazione di siti internet</strong>, ma costruiamo ecosistemi digitali che scalano le classifiche di Google. Che tu sia un ristoratore a <strong>Castel San Giovanni</strong> o un artigiano a <strong>Fiorenzuola d'Arda</strong>, la nostra missione è portarti nuovi contatti ogni giorno. Scegliere <strong>Presenza Digitale</strong> significa affidarsi a specialisti del <strong>web design a Piacenza</strong> che conoscono profondamente le dinamiche commerciali della Val Trebbia, della Val Nure e della Val d'Arda.
@@ -311,7 +309,7 @@ export default function HomePage() {
                     className="mt-1 w-4 h-4 rounded border-white/10 bg-zinc-950/50 text-indigo-500 focus:ring-indigo-500 transition-colors cursor-pointer"
                   />
                   <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                    Dichiaro di aver letto la <a href="/privacy" className="text-indigo-400 hover:underline">Privacy Policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla mia richiesta.
+                    Dichiaro di aver letto la <a href="/privacy" className="text-indigo-400 hover:underline">Privacy Policy</a> e acconsento al trattamento dei miei dati. Utilizzerò queste informazioni esclusivamente per analizzare il tuo progetto e fornirti una risposta tecnica personalizzata.
                   </span>
                 </label>
                 <p className="text-[10px] text-zinc-500 leading-tight">
