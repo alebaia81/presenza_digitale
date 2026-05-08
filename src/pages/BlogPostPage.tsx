@@ -85,19 +85,6 @@ const BlogPostPage = () => {
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copyStatus, setCopyStatus] = useState(false);
 
-  const shareLinks = {
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(post.title + ' ' + window.location.href)}`,
-    telegram: `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`,
-    email: `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent('Leggi questo articolo su Presenza Digitale: ' + window.location.href)}`,
-  };
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopyStatus(true);
-    setTimeout(() => setCopyStatus(false), 2000);
-    setShowShareMenu(false);
-  };
-
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#050505]">
@@ -120,6 +107,19 @@ const BlogPostPage = () => {
       </div>
     );
   }
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopyStatus(true);
+    setTimeout(() => setCopyStatus(false), 2000);
+    setShowShareMenu(false);
+  };
+
+  const shareLinks = {
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(post.title + ' ' + window.location.href)}`,
+    telegram: `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`,
+    email: `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent('Leggi questo articolo su Presenza Digitale: ' + window.location.href)}`,
+  };
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6">
