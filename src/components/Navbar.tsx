@@ -49,8 +49,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           ) : (
             <>
               <Link to="/" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Torna alla Home</Link>
-              <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Portfolio Progetti</Link>
-              <Link to="/blog" className="text-sm font-bold text-white transition-colors">Blog</Link>
+              <Link to="/progetti" className={`text-sm font-medium transition-colors ${location.pathname === '/progetti' ? 'text-white font-bold' : 'text-zinc-400 hover:text-white'}`}>Portfolio Progetti</Link>
+              <Link to="/blog" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/blog') ? 'text-white font-bold' : 'text-zinc-400 hover:text-white'}`}>Blog</Link>
             </>
           )}
         </nav>
@@ -90,8 +90,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           ) : (
             <>
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Torna alla Home</Link>
-              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Portfolio Progetti</Link>
-              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-white">Blog</Link>
+              <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-semibold transition-colors ${location.pathname === '/progetti' ? 'text-white' : 'text-zinc-200 hover:text-white'}`}>Portfolio Progetti</Link>
+              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-semibold transition-colors ${location.pathname.startsWith('/blog') ? 'text-white' : 'text-zinc-200 hover:text-white'}`}>Blog</Link>
             </>
           )}
           <div className="h-px bg-white/10 w-full my-2"></div>
