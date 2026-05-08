@@ -14,3 +14,5 @@ coverage/
 
 # agent files
 .agent/
+.vercel
+.env*.local

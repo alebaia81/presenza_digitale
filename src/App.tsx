@@ -13,6 +13,7 @@ const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
 const PrivacyPolicyPage = React.lazy(() => import('./pages/PrivacyPolicyPage'));
 const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage'));
 const TermsPage = React.lazy(() => import('./pages/TermsPage'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -38,6 +39,7 @@ function AnimatedRoutes() {
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
               <Route path="/termini" element={<TermsPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </motion.div>
