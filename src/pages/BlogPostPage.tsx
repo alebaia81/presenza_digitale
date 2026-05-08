@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock, Share2, Bookmark, List } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, List, MessageCircle, Send, Mail } from 'lucide-react';
 import { getPostBySlug } from '../utils/blog';
 import { BlogPost } from '../types/blog';
 
