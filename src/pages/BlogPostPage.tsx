@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark } from 'lucide-react';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Clock, Share2, Bookmark, List } from 'lucide-react';
 import { getPostBySlug } from '../utils/blog';
 import { BlogPost } from '../types/blog';
 
@@ -27,6 +30,57 @@ const BlogPostPage = () => {
     };
     fetchPost();
   }, [slug]);
+
+  // Table of Contents Extraction
+  const toc = useMemo(() => {
+    if (!post?.content) return [];
+    const lines = post.content.split('\n');
+    return lines
+      .filter(line => line.startsWith('## '))
+      .map(line => {
+        const text = line.replace('## ', '').trim();
+        const id = text
+          .toLowerCase()
+          .replace(/[^\w\s-àèìòùáéíóú]/g, '')
+          .trim()
+          .replace(/\s+/g, '-');
+        return { text, id };
+      });
+  }, [post?.content]);
+
+  // JSON-LD Generation
+  const jsonLd = useMemo(() => {
+    if (!post) return null;
+
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "image": [post.image],
+      "datePublished": post.date,
+      "author": [{
+        "@type": "Person",
+        "name": post.author,
+        "url": "https://www.presenzadigitale.com"
+      }],
+      "description": post.description
+    };
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": toc.map(item => ({
+        "@type": "Question",
+        "name": item.text,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Approfondimento su ${item.text} nel post ${post.title}.`
+        }
+      }))
+    };
+
+    return [articleSchema, faqSchema];
+  }, [post, toc]);
 
   if (isLoading) {
     return (
@@ -53,6 +107,16 @@ const BlogPostPage = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-6">
+      <Helmet>
+        <title>{post.title} | Blog Presenza Digitale</title>
+        <meta name="description" content={post.description} />
+        {jsonLd && jsonLd.map((schema, i) => (
+          <script key={i} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
+
       <article className="max-w-4xl mx-auto">
         {/* Navigation & Actions */}
         <div className="flex items-center justify-between mb-12">
@@ -104,18 +168,44 @@ const BlogPostPage = () => {
           </div>
         </header>
 
-        {/* Featured Image */}
-        <div className="aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 border border-white/5 shadow-2xl">
+        {/* Table of Contents */}
+        {toc.length > 0 && (
+          <div className="mb-12 p-8 rounded-3xl bg-zinc-900/30 border border-white/5">
+            <div className="flex items-center gap-3 mb-6 text-gold-amber">
+              <List className="w-5 h-5" />
+              <h2 className="text-lg font-bold uppercase tracking-wider !m-0">Indice dei Contenuti</h2>
+            </div>
+            <nav className="grid gap-3">
+              {toc.map(item => (
+                <a 
+                  key={item.id} 
+                  href={`#${item.id}`}
+                  className="text-zinc-400 hover:text-gold-amber transition-colors flex items-center gap-3 group"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-gold-amber transition-colors"></span>
+                  {item.text}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+
+        {/* Featured Image with AVIF/WebP logic */}
+        <div className="aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 border border-white/5 shadow-2xl relative">
           <img 
             src={post.image} 
             alt={post.title} 
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
         {/* Content */}
         <div className="prose prose-invert max-w-none prose-p:text-zinc-400 prose-p:leading-relaxed prose-li:text-zinc-400">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+          >
             {post.content}
           </ReactMarkdown>
         </div>
