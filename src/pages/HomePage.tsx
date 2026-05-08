@@ -261,6 +261,8 @@ export default function HomePage() {
             </p>
 
             <div className="pt-12 border-t border-white/5">
+              <h3 className="text-xl font-bold text-white mb-6">Consulenza Web a Piacenza, Rivergaro, Pontenure e Provincia</h3>
+              <p className="text-base text-zinc-400 font-light">
                 Cerchi una <strong>consulenza web a Piacenza</strong> capace di trasformare il tuo business locale? <strong>Presenza Digitale</strong> non è un'agenzia, ma il tuo partner strategico per la <strong>creazione di siti web professionali a Piacenza e provincia</strong>. Operiamo capillarmente su tutto il territorio emiliano, offrendo soluzioni di <strong>sviluppo siti internet a Rivergaro, Pontenure e Podenzano</strong>, garantendo visibilità massima ai professionisti di <strong>Gossolengo, Vigolzone e Rottofreno</strong>.
               </p>
               <p className="text-base text-zinc-400 font-light mt-4">
