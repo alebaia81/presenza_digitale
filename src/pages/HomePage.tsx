@@ -240,135 +240,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Prezzi Section */}
-      <section id="prezzi" className="py-24 px-6 relative bg-[#050505]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05)_0,transparent_100%)]"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Le Nostre Soluzioni Premium</h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-12 font-light">Scegli la soluzione perfetta per la tua attività piacentina. Prezzi chiari, nessun costo nascosto.</p>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch mt-12">
-            {/* Starter Card */}
-            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 hover:border-[#d4af37]/40 flex flex-col hover:bg-zinc-900/60 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Starter</h3>
-              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">Perfetto per una presenza online professionale e dinamica.</p>
-              <div className="mb-8">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-extrabold text-white tracking-tighter">€499</span>
-                  <span className="text-[#d4af37]/70 font-medium text-sm">/ una tantum</span>
-                </div>
-              </div>
-              <ul className="space-y-4 flex-1 mb-8">
-                {[
-                  'Sito web multi-pagina (fino a 5 pagine)',
-                  'Design responsive (mobile, tablet, desktop)',
-                  'Sviluppo assistito da AI per consegna rapida',
-                  'Configurazione SEO base (meta tag, sitemap)',
-                  'Integrazione modulo di contatto',
-                  'Fino a 5 sezioni di contenuto'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
-                    <span className="text-zinc-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={waLinkStarter} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">Inizia il Progetto</a>
-            </div>
-
-            {/* Professional Card */}
-            <div className="bg-gradient-to-b from-[#1a150c] to-black rounded-[2.5rem] p-8 border border-[#d4af37] relative flex flex-col transform lg:-translate-y-4 shadow-[0_0_50px_rgba(212,175,55,0.15)] hover:shadow-[0_0_70px_rgba(212,175,55,0.3)] transition-shadow duration-500">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-6 py-1.5 rounded-full text-xs font-bold tracking-widest shadow-xl border border-[#d4af37]/50 whitespace-nowrap">SCELTA CONSIGLIATA</div>
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif">Professional</h3>
-              <p className="text-[#d4af37] text-sm mb-8 h-10 line-clamp-2">La soluzione completa per una crescita costante e professionale.</p>
-              <div className="mb-4">
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€199</span>
-                  <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-6xl font-extrabold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">€49</span>
-                  <span className="text-[#d4af37] font-bold">/ mese</span>
-                </div>
-                <p className="text-xs text-[#d4af37] font-bold mt-2 uppercase tracking-wide">6 mesi + 1 mese OMAGGIO</p>
-              </div>
-              <div className="mb-8 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="text-xs text-zinc-400 mb-1 uppercase tracking-widest font-bold">Versione Una Tantum</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-white">€799</span>
-                  <span className="text-zinc-500 text-[10px] font-medium">(escl. hosting/revisioni)</span>
-                </div>
-              </div>
-              <ul className="space-y-4 flex-1 mb-8">
-                {[
-                  'Sito web multi-pagina (fino a 8 pagine)',
-                  'Hosting + Dominio incluso*',
-                  'Design responsive (mobile, tablet, desktop)',
-                  'Sviluppo assistito da AI per consegna rapida',
-                  'Configurazione SEO avanzata (Schema/OG)',
-                  'Modulo di contatto WhatsApp',
-                  'Fino a 8 sezioni per pagina',
-                  '2 cicli di revisioni al mese*'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
-                    <span className="text-white text-sm font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-[10px] text-zinc-500 italic mt-2 mb-8">*Incluso solo nella versione in abbonamento</p>
-
-              <a href={waLinkProfessional} target="_blank" rel="noopener noreferrer" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-full font-extrabold transition-transform hover:scale-105 text-center flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(191,149,63,0.3)]">Inizia il Progetto <ArrowRight className="w-4 h-4" /></a>
-            </div>
-
-            {/* Business Card */}
-            <div className="bg-zinc-900/30 rounded-[2.5rem] p-8 border border-[#d4af37]/20 flex flex-col hover:bg-zinc-900/60 hover:border-[#d4af37]/40 transition-all duration-300 shadow-xl">
-              <h3 className="text-2xl font-bold text-white mb-2 font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Business</h3>
-              <p className="text-zinc-400 text-sm mb-8 h-10 line-clamp-2">La soluzione definitiva per aziende consolidate che puntano all'eccellenza.</p>
-              <div className="mb-4">
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className="text-xl font-bold text-zinc-400 tracking-tighter">€399</span>
-                  <span className="text-zinc-500 font-medium text-xs">/ setup iniziale</span>
-                </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white tracking-tighter">€79</span>
-                  <span className="text-[#d4af37]/70 font-medium">/ mese</span>
-                </div>
-              </div>
-              <div className="mb-8 p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="text-xs text-zinc-400 mb-1 uppercase tracking-widest font-bold">Versione Una Tantum</p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-bold text-white">€1249</span>
-                  <span className="text-zinc-500 text-[10px] font-medium">(escl. manutenzione)</span>
-                </div>
-              </div>
-              <ul className="space-y-4 flex-1 mb-8">
-                {[
-                  'Sito web multi-pagina (fino a 10 pagine)',
-                  'Sviluppo AI & Design Responsive',
-                  'SEO Completa (Audit & OG)',
-                  'Modulo Contatto & Notifiche Email',
-                  'Sezione Blog/News con categorie',
-                  'Supporto Multi-lingua (EN/IT)',
-                  'Fino a 12 sezioni per pagina',
-                  '3 cicli di revisioni al mese*',
-                  'E-commerce & Prenotazioni'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#d4af37] shrink-0" />
-                    <span className="text-zinc-300 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-[10px] text-zinc-500 italic mt-2 mb-8">*Revisioni incluse nella versione mensile</p>
-
-              <a href={waLinkBusiness} target="_blank" rel="noopener noreferrer" className="w-full bg-white/5 hover:bg-[#d4af37]/10 text-white py-4 rounded-full font-bold transition-colors text-center block border border-white/10 hover:border-[#d4af37]/30">Inizia il Progetto</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SEO Content Section */}
       <section className="py-24 px-6 relative bg-[#050505] border-t border-white/5">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-900/20 -z-10" />
@@ -432,7 +303,22 @@ export default function HomePage() {
                 <label htmlFor="message" className="block text-sm font-medium text-zinc-400 mb-2">Raccontaci il tuo progetto</label>
                 <textarea id="message" name="message" rows={4} required className="w-full bg-zinc-950/50 border border-white/10 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors resize-none" placeholder="Voglio rifare il sito per la mia azienda a Piacenza..."></textarea>
               </div>
-              <button type="submit" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 mt-4 shadow-[0_0_30px_rgba(191,149,63,0.3)] hover:shadow-[0_0_50px_rgba(191,149,63,0.6)]">
+              <div className="flex flex-col gap-4">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input 
+                    type="checkbox" 
+                    required 
+                    className="mt-1 w-4 h-4 rounded border-white/10 bg-zinc-950/50 text-indigo-500 focus:ring-indigo-500 transition-colors cursor-pointer"
+                  />
+                  <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                    Dichiaro di aver letto la <a href="/privacy" className="text-indigo-400 hover:underline">Privacy Policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla mia richiesta.
+                  </span>
+                </label>
+                <p className="text-[10px] text-zinc-500 leading-tight">
+                  I tuoi dati non verranno ceduti a terzi e saranno trattati nel rispetto del GDPR.
+                </p>
+              </div>
+              <button type="submit" className="w-full bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black py-4 rounded-xl font-bold hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 mt-2 shadow-[0_0_30px_rgba(191,149,63,0.3)] hover:shadow-[0_0_50px_rgba(191,149,63,0.6)]">
                 Invia Messaggio <Send className="w-4 h-4" />
               </button>
             </form>

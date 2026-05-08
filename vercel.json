@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/prezzi",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!assets|images|favicon|apple-touch|robots|sitemap).*)",

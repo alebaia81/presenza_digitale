@@ -16,3 +16,4 @@ coverage/
 .agent/
 .vercel
 .env*.local
+/internal_docs/

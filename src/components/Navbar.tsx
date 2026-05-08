@@ -43,7 +43,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">I Nostri Servizi</button>
               <Link to="/progetti" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Portfolio Progetti</Link>
-              <button onClick={() => scrollToSection('prezzi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Piani e Prezzi</button>
+
               <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Contattaci Ora</button>
             </>
           ) : (
@@ -83,7 +83,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">I Nostri Servizi</button>
               <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-zinc-200 hover:text-white">Portfolio Progetti</Link>
-              <button onClick={() => scrollToSection('prezzi')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Piani e Prezzi</button>
+
               <button onClick={() => scrollToSection('contatti')} className="text-2xl font-semibold text-left text-zinc-200 hover:text-white">Contattaci Ora</button>
             </>
           ) : (

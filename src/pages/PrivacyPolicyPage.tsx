@@ -22,14 +22,15 @@ export default function PrivacyPolicyPage() {
       </h1>
       
       <div className="prose prose-invert max-w-none text-zinc-300 space-y-6">
-        <p><strong>Ultimo aggiornamento:</strong> 25 aprile 2025</p>
+        <p><strong>Ultimo aggiornamento:</strong> 08 maggio 2026</p>
         
-        <p>La presente informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito web <strong>presenzadigitale.com</strong>.</p>
+        <p>La presente informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito web <strong>presenzadigitale.com</strong>, gestito da Alessandro Baiamonte in qualità di professionista privato.</p>
 
         <h2 className="text-2xl font-semibold text-white mt-8 mb-4">1. Titolare del Trattamento</h2>
         <p>Il Titolare del trattamento dei dati personali è:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Denominazione:</strong> Presenza Digitale — progetto personale</li>
+          <li><strong>Nominativo:</strong> Alessandro Baiamonte</li>
+          <li><strong>Status:</strong> Attività professionale privata (Collaborazione Occasionale)</li>
           <li><strong>Sede:</strong> Piacenza (PC), Italia</li>
           <li><strong>Email:</strong> <a href="mailto:presenzadigitalepc@gmail.com" className="text-indigo-400 hover:text-indigo-300 transition-colors">presenzadigitalepc@gmail.com</a></li>
         </ul>

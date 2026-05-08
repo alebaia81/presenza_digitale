@@ -28,9 +28,10 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
           </div>
-          <span className="text-zinc-600 text-[10px] md:text-xs text-center md:text-right">
-            &copy; {new Date().getFullYear()} Presenza Digitale — Tutti i diritti riservati. <br className="md:hidden" />
-            Marchio, logo e contenuti sono proprietà intellettuale protetta.
+          <span className="text-zinc-600 text-[10px] md:text-xs text-center md:text-right leading-relaxed">
+            &copy; {new Date().getFullYear()} <strong>Alessandro Baiamonte Piacenza</strong> — Tutti i diritti riservati. <br />
+            Sito a scopo illustrativo delle competenze professionali e portfolio di Alessandro Baiamonte. <br />
+            Attività prestata in conformità alle norme vigenti per le collaborazioni occasionali.
           </span>
         </div>
       </div>

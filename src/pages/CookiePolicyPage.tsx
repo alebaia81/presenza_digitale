@@ -22,7 +22,7 @@ export default function CookiePolicyPage() {
       </h1>
       
       <div className="prose prose-invert max-w-none text-zinc-300 space-y-6">
-        <p><strong>Ultimo aggiornamento:</strong> 25 aprile 2025</p>
+        <p><strong>Ultimo aggiornamento:</strong> 08 maggio 2026</p>
         
         <p>La presente Cookie Policy è resa ai sensi dell'art. 122 del D.Lgs. 196/2003, delle <strong>Linee Guida del Garante per la Protezione dei Dati Personali del 10 giugno 2021</strong>, e del Regolamento (UE) 2016/679 (GDPR).</p>
 
