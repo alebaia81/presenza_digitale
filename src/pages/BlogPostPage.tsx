@@ -82,6 +82,22 @@ const BlogPostPage = () => {
     return [articleSchema, faqSchema];
   }, [post, toc]);
 
+  const [showShareMenu, setShowShareMenu] = useState(false);
+  const [copyStatus, setCopyStatus] = useState(false);
+
+  const shareLinks = {
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(post.title + ' ' + window.location.href)}`,
+    telegram: `https://t.me/share/url?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(post.title)}`,
+    email: `mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent('Leggi questo articolo su Presenza Digitale: ' + window.location.href)}`,
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopyStatus(true);
+    setTimeout(() => setCopyStatus(false), 2000);
+    setShowShareMenu(false);
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#050505]">
@@ -130,13 +146,78 @@ const BlogPostPage = () => {
             <span className="text-sm font-medium">Torna agli articoli</span>
           </Link>
           
-          <div className="flex items-center gap-3">
-            <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
-              <Share2 className="w-4 h-4" />
-            </button>
-            <button className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
-              <Bookmark className="w-4 h-4" />
-            </button>
+          <div className="flex items-center gap-3 relative">
+            <div className="relative">
+              <button 
+                onClick={() => setShowShareMenu(!showShareMenu)}
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-gold-amber hover:bg-white/10 transition-all"
+                title="Condividi"
+              >
+                <Share2 className="w-4 h-4" />
+              </button>
+
+              <AnimatePresence>
+                {showShareMenu && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-40" 
+                      onClick={() => setShowShareMenu(false)}
+                    />
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                      className="absolute right-0 mt-2 w-48 bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                    >
+                      <div className="p-2 space-y-1">
+                        <a 
+                          href={shareLinks.whatsapp} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                        >
+                          <MessageCircle className="w-4 h-4 text-[#25D366]" /> WhatsApp
+                        </a>
+                        <a 
+                          href={shareLinks.telegram} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                        >
+                          <Send className="w-4 h-4 text-[#0088cc]" /> Telegram
+                        </a>
+                        <a 
+                          href={shareLinks.email}
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                        >
+                          <Mail className="w-4 h-4 text-amber-400" /> Email
+                        </a>
+                        <button 
+                          onClick={handleCopyLink}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                        >
+                          <div className="w-4 h-4 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                          </div>
+                          Copia Link
+                        </button>
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {copyStatus && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gold-amber text-black text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg z-50"
+              >
+                Link Copiato!
+              </motion.div>
+            )}
           </div>
         </div>
 
