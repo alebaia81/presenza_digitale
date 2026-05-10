@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex items-center gap-3">
-            <img src="/assets/images/logo-optimized.png" alt="Presenza Digitale - Logo Footer" width="64" height="64" loading="lazy" className="w-16 h-16 object-contain drop-shadow-[0_0_10px_rgba(191,149,63,0.2)]" />
+            <img src="/assets/images/logo-optimized.png" alt="Presenza Digitale - Logo" width="64" height="64" loading="lazy" className="w-16 h-16 object-contain drop-shadow-[0_0_10px_rgba(191,149,63,0.2)]" />
             <span className="text-xl font-black tracking-tight font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
           </div>
           <span className="hidden md:inline text-zinc-700">|</span>
@@ -21,11 +21,11 @@ export default function Footer() {
             <Link to="/termini" className="underline hover:text-white transition-colors">Termini e Condizioni</Link>
           </div>
           <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
-            <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
-              <Facebook className="w-5 h-5" />
+            <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Seguici su Facebook">
+              <Facebook className="w-5 h-5" aria-hidden="true" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
-              <Instagram className="w-5 h-5" />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Seguici su Instagram">
+              <Instagram className="w-5 h-5" aria-hidden="true" />
             </a>
           </div>
           <span className="text-zinc-400 text-[10px] md:text-xs text-center md:text-right leading-relaxed">

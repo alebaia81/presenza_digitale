@@ -32,7 +32,7 @@ const BlogPage = () => {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-6">
+    <div className="min-h-screen pt-40 md:pt-48 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <m.div

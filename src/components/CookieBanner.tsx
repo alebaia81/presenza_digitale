@@ -54,7 +54,7 @@ export default function CookieBanner() {
                   Questo sito utilizza esclusivamente <strong className="text-white">cookie tecnici</strong> necessari al corretto funzionamento. Non utilizziamo cookie di profilazione né strumenti di tracciamento.{' '}
                   <Link 
                     to="/cookie-policy" 
-                    className="text-indigo-400 hover:text-indigo-300 transition-colors underline underline-offset-2"
+                    className="text-gold-amber hover:text-white transition-colors underline underline-offset-2"
                   >
                     Scopri di più
                   </Link>
@@ -70,10 +70,10 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={handleAccept}
-                className="p-2 text-zinc-500 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="p-2 text-zinc-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
                 aria-label="Chiudi banner cookie"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         <Link to="/" className="flex items-center gap-3">
           <img 
             src="/assets/images/logo-optimized.png" 
-            alt="Presenza Digitale - Consulenza Digitale Piacenza" 
+            alt="Presenza Digitale - Logo" 
             width="76" 
             height="76" 
             loading="eager"
@@ -38,7 +38,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           <span className="text-2xl font-black tracking-tight font-serif pb-1 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Presenza Digitale</span>
         </Link>
         
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Menu principale">
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">I Nostri Servizi</button>
@@ -57,10 +57,10 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         
         <div className="hidden md:flex items-center gap-4">
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-zinc-300 hover:text-[#25D366] transition-colors flex items-center gap-2">
-            <MessageCircle className="w-4 h-4" /> WhatsApp
+            <MessageCircle className="w-4 h-4" aria-hidden="true" /> WhatsApp
           </a>
           <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-            Inizia Ora <ArrowRight className="w-4 h-4" />
+            Inizia Ora <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
 
@@ -96,7 +96,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           )}
           <div className="h-px bg-white/10 w-full my-2"></div>
           <a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 px-6 py-4 rounded-full text-center font-bold hover:bg-[#25D366]/20 transition-colors flex justify-center items-center gap-2 text-lg">
-            <MessageCircle className="w-5 h-5" /> Scrivici su WhatsApp
+            <MessageCircle className="w-5 h-5" aria-hidden="true" /> Scrivici su WhatsApp
           </a>
           <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-white text-black px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-transform text-lg shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             Inizia Ora

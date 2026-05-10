@@ -29,7 +29,7 @@ export default function TrustSection() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {reviews.map((review, i) => (
           <div key={i} className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 hover:bg-zinc-900/60 hover:border-white/10 transition-all duration-300">
-            <div className="flex gap-1 mb-6 text-[#d4af37]">
+            <div className="flex gap-1 mb-6 text-[#d4af37]" aria-hidden="true">
               {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
             </div>
             <p className="text-zinc-300 text-[1.1rem] leading-relaxed mb-8 font-light italic">"{review.text}"</p>
