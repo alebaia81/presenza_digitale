@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-zinc-500 py-12 border-t border-white/5">
+    <footer className="bg-black text-zinc-400 py-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex items-center gap-3">
@@ -21,14 +21,14 @@ export default function Footer() {
             <Link to="/termini" className="hover:text-white transition-colors">Termini e Condizioni</Link>
           </div>
           <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
-            <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#bf953f] transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Instagram">
               <Instagram className="w-5 h-5" />
             </a>
           </div>
-          <span className="text-zinc-600 text-[10px] md:text-xs text-center md:text-right leading-relaxed">
+          <span className="text-zinc-500 text-[10px] md:text-xs text-center md:text-right leading-relaxed">
             &copy; {new Date().getFullYear()} <strong>Alessandro Baiamonte Piacenza</strong> — Tutti i diritti riservati. <br />
             Sito a scopo illustrativo delle competenze professionali e portfolio di Alessandro Baiamonte. <br />
             Attività prestata in conformità alle norme vigenti per le collaborazioni occasionali.

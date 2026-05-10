@@ -1,0 +1,21 @@
+{
+  "name": "Presenza Digitale",
+  "short_name": "Presenza",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#FFBF00",
+  "description": "Consulenza Digitale e Creazione Siti Web a Piacenza.",
+  "icons": [
+    {
+      "src": "/assets/images/logo-optimized.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-optimized.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

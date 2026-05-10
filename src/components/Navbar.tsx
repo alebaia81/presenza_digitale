@@ -98,7 +98,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           <a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 px-6 py-4 rounded-full text-center font-bold hover:bg-[#25D366]/20 transition-colors flex justify-center items-center gap-2 text-lg">
             <MessageCircle className="w-5 h-5" /> Scrivici su WhatsApp
           </a>
-          <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-6 py-4 rounded-full text-center font-bold hover:opacity-90 transition-opacity text-lg shadow-[0_0_30px_rgba(99,102,241,0.3)]">
+          <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-white text-black px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-transform text-lg shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             Inizia Ora
           </button>
         </motion.div>

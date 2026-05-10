@@ -22,19 +22,20 @@ function AnimatedRoutes() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-gold-amber/30">
       <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
       <ScrollToTop />
       
       <AnimatePresence mode="wait">
-        <motion.div 
+        <motion.main 
           key={location.pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          className="flex-grow"
         >
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin"></div></div>}>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
             <Routes location={location}>
               <Route path="/" element={<HomePage />} />
               <Route path="/progetti" element={<ProjectsPage />} />
@@ -46,7 +47,7 @@ function AnimatedRoutes() {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
-        </motion.div>
+        </motion.main>
       </AnimatePresence>
 
       <Footer />

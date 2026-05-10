@@ -10,6 +10,8 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://presenzadigitale.com/" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#050505">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
@@ -42,10 +44,15 @@
     <link rel="icon" type="image/png" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
     <!-- Preload Local Fonts -->
     <link rel="preload" href="/assets/fonts/PlayfairDisplay-Variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/PlayfairDisplay-Italic-Variable.ttf" as="font" type="font/ttf" crossorigin />
     
-    <!-- Critical CSS & Font-Face -->
+    <!-- Critical CSS: Renders Hero & Layout instantly -->
     <style>
       @font-face {
         font-family: 'Playfair Display';
@@ -54,16 +61,20 @@
         font-style: normal;
         font-display: swap;
       }
-      @font-face {
-        font-family: 'Playfair Display';
-        src: url('/assets/fonts/PlayfairDisplay-Italic-Variable.ttf') format('truetype-variations');
-        font-weight: 400 900;
-        font-style: italic;
-        font-display: swap;
+      :root { 
+        --bg-color: #050505; 
+        --accent-color: #FFBF00;
       }
-      :root { --bg-color: #050505; }
-      body { background-color: var(--bg-color); color: white; margin: 0; font-family: 'Playfair Display', serif; }
-      #root { min-height: 100vh; display: flex; flex-direction: column; }
+      body { 
+        background-color: var(--bg-color); 
+        color: white; 
+        margin: 0; 
+        font-family: 'Playfair Display', serif; 
+        overflow-x: hidden;
+      }
+      #root { min-height: 100vh; }
+      .hero-section { min-height: 80vh; background: var(--bg-color); }
+      header { position: absolute; top: 0; width: 100%; z-index: 50; }
     </style>
 
     <!-- LCP Image Preload -->
