@@ -1,9 +1,9 @@
 import React, { useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence, m, LazyMotion, domAnimation } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CookieBanner from './components/CookieBanner';
+const CookieBanner = React.lazy(() => import('./components/CookieBanner'));
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -22,19 +22,20 @@ function AnimatedRoutes() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-gold-amber/30">
-      <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-      <ScrollToTop />
-      
-      <AnimatePresence mode="wait">
-        <motion.main 
-          key={location.pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex-grow"
-        >
+    <LazyMotion features={domAnimation}>
+      <div className="min-h-screen bg-[#050505] text-white selection:bg-gold-amber/30">
+        <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+        <ScrollToTop />
+        
+        <AnimatePresence mode="wait">
+          <m.main 
+            key={location.pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="flex-grow"
+          >
           <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
             <Routes location={location}>
               <Route path="/" element={<HomePage />} />
@@ -47,14 +48,17 @@ function AnimatedRoutes() {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
-        </motion.main>
-      </AnimatePresence>
+          </m.main>
+        </AnimatePresence>
 
-      <Footer />
-      <StickyWhatsApp />
-      <CookieBanner />
-      <SpeedInsights />
-    </div>
+        <Footer />
+        <StickyWhatsApp />
+        <Suspense fallback={null}>
+          <CookieBanner />
+        </Suspense>
+        <SpeedInsights />
+      </div>
+    </LazyMotion>
   );
 }
 

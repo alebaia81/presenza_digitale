@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { 
   ArrowRight, MessageCircle, PlayCircle, MapPin
 } from 'lucide-react';
@@ -52,7 +52,7 @@ export default function HomePage() {
   };
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -65,7 +65,7 @@ export default function HomePage() {
         
         <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-left space-y-8 hero-content">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -73,10 +73,10 @@ export default function HomePage() {
             >
               <MapPin className="w-4 h-4 text-gold-amber" />
               <span>Consulenza Digitale a Piacenza e Provincia</span>
-            </motion.div>
+            </m.div>
             
             <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
-            <motion.div 
+            <m.div 
               aria-hidden="true"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,18 +85,18 @@ export default function HomePage() {
             >
               Non ti serve solo un sito. <br />
               Ti serve <span className="font-serif italic pb-1 pr-4 inline-block" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
-            </motion.div>
+            </m.div>
             
-            <motion.p 
+            <m.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-light max-w-xl"
             >
               Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
-            </motion.p>
+            </m.p>
             
-            <motion.div 
+            <m.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -108,10 +108,10 @@ export default function HomePage() {
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-[#25D366]/20 transition-colors flex items-center justify-center gap-3">
                 <MessageCircle className="w-6 h-6" /> WhatsApp
               </a>
-            </motion.div>
+            </m.div>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -128,7 +128,7 @@ export default function HomePage() {
               loading="eager"
               className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
             />
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -198,6 +198,6 @@ export default function HomePage() {
           <ContactSection inviaWhatsApp={inviaWhatsApp} />
         </Suspense>
       </LazySection>
-    </motion.div>
+    </m.div>
   );
 }
