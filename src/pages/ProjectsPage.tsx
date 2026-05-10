@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const projects = [
@@ -43,7 +43,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project, index) => (
-            <motion.div 
+            <m.div 
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -109,6 +109,6 @@ export default function ProjectsPage() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Calendar, User, Clock, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getAllPosts } from '../utils/blog';
@@ -35,37 +35,37 @@ const BlogPage = () => {
     <div className="min-h-screen pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-amber/10 border border-gold-amber/20 text-gold-amber text-sm font-medium mb-6"
           >
             <BookOpen className="w-4 h-4" />
             <span>Journal & Strategia</span>
-          </motion.div>
+          </m.div>
           
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
           >
             Blog <span className="text-gold-amber">Presenza Digitale</span>
-          </motion.h1>
+          </m.h1>
           
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-xl text-zinc-400 max-w-2xl mx-auto font-light"
           >
             Approfondimenti tecnici, analisi SEO e strategie digitali per dominare la tua nicchia nel 2026.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <motion.article
+            <m.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const BlogPage = () => {
                   </Link>
                 </div>
               </div>
-            </motion.article>
+            </m.article>
           ))}
         </div>
       </div>

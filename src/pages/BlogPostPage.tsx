@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
@@ -166,8 +166,7 @@ const BlogPostPage = () => {
                     <div 
                       className="fixed inset-0 z-40" 
                       onClick={() => setShowShareMenu(false)}
-                    />
-                    <motion.div 
+                                 <m.div 
                       initial={{ opacity: 0, scale: 0.95, y: 10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95, y: 10 }}
@@ -206,22 +205,22 @@ const BlogPostPage = () => {
                           Copia Link
                         </button>
                       </div>
-                    </motion.div>
+                    </m.div>
                   </>
                 )}
               </AnimatePresence>
             </div>
-
+ 
             {copyStatus && (
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gold-amber text-black text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg z-50"
               >
                 Link Copiato!
-              </motion.div>
-            )}
+              </m.div>
+            )}        )}
           </div>
         </div>
 
