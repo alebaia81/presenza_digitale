@@ -43,11 +43,11 @@ export default function ContactSection({ inviaWhatsApp }: ContactSectionProps) {
                   required 
                   className="mt-1 w-4 h-4 rounded border-white/10 bg-zinc-950/50 text-gold-amber focus:ring-gold-amber transition-colors cursor-pointer"
                 />
-                <span className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                  Dichiaro di aver letto la <a href="/privacy" className="text-gold-amber hover:underline">Privacy Policy</a> e acconsento al trattamento dei miei dati. Utilizzerò queste informazioni esclusivamente per analizzare il tuo progetto e fornirti una risposta tecnica personalizzata.
+                <span className="text-sm text-zinc-300 group-hover:text-white transition-colors">
+                  Dichiaro di aver letto la <a href="/privacy" className="text-gold-amber underline font-medium">Privacy Policy</a> e acconsento al trattamento dei miei dati. Utilizzerò queste informazioni esclusivamente per analizzare il tuo progetto e fornirti una risposta tecnica personalizzata.
                 </span>
               </label>
-              <p className="text-[10px] text-zinc-400 leading-tight">
+              <p className="text-[10px] text-zinc-300 leading-tight">
                 I tuoi dati non verranno ceduti a terzi e saranno trattati nel rispetto del GDPR.
               </p>
             </div>

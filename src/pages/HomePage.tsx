@@ -91,7 +91,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl text-zinc-400 leading-relaxed font-light max-w-xl"
+              className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-light max-w-xl"
             >
               Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
             </m.p>
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a150c] via-[#050505] to-[#1a150c] -z-10" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 font-serif tracking-wide pb-2 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Sarti del Digital per le Eccellenze Locali</h2>
-          <p className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-zinc-200 max-w-4xl mx-auto leading-relaxed font-light">
             Dall'artigiano di fiducia al ristorante storico, sappiamo come far brillare il tuo business a Piacenza. Progettiamo esperienze digitali <strong className="text-white font-medium">Dark Luxury</strong> e sistemi di vendita su WhatsApp studiati per il mercato locale.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 font-serif tracking-wide pb-2 pr-2" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>L'Importanza della Presenza Digitale per le Aziende</h2>
           
-          <div className="space-y-6 text-zinc-300/90 font-light leading-relaxed text-lg">
+          <div className="space-y-6 text-zinc-200 font-light leading-relaxed text-lg">
             <p>
               Nel mercato odierno, avere una solida <strong>presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong>consulenza web professionale</strong> esperta nella <strong>realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
             </p>

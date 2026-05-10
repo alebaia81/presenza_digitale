@@ -86,7 +86,7 @@ const BlogPage = () => {
                   <span className="text-xs font-bold text-gold-amber uppercase tracking-widest px-3 py-1 rounded-full bg-gold-amber/10">
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-2 text-zinc-500 text-xs">
+                  <div className="flex items-center gap-2 text-zinc-400 text-xs font-medium">
                     <Clock className="w-3 h-3" />
                     <span>{post.readTime}</span>
                   </div>
@@ -98,7 +98,7 @@ const BlogPage = () => {
                   </h2>
                 </Link>
 
-                <p className="text-zinc-400 text-sm mb-6 line-clamp-3 font-light leading-relaxed">
+                <p className="text-zinc-300 text-sm mb-6 line-clamp-3 font-light leading-relaxed">
                   {post.description}
                 </p>
 
@@ -109,7 +109,7 @@ const BlogPage = () => {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-semibold text-white">{post.author}</span>
-                      <span className="text-[10px] text-zinc-400">{post.date}</span>
+                      <span className="text-[10px] text-zinc-300">{post.date}</span>
                     </div>
                   </div>
                   

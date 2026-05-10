@@ -231,7 +231,7 @@ const BlogPostPage = () => {
               {post.category}
             </span>
             <div className="w-1 h-1 rounded-full bg-zinc-700"></div>
-            <div className="flex items-center gap-2 text-zinc-500 text-xs">
+            <div className="flex items-center gap-2 text-zinc-400 text-xs font-medium">
               <Clock className="w-3 h-3" />
               <span>{post.readTime} di lettura</span>
             </div>
@@ -247,7 +247,7 @@ const BlogPostPage = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-white">{post.author}</span>
-              <span className="text-xs text-zinc-500">Creatore di Presenza Digitale • {post.date}</span>
+              <span className="text-xs text-zinc-400 font-medium">Creatore di Presenza Digitale • {post.date}</span>
             </div>
           </div>
         </header>

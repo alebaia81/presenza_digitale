@@ -16,9 +16,9 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center md:items-end gap-4 text-sm">
           <div className="flex flex-wrap gap-4 justify-center md:justify-end">
-            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <Link to="/termini" className="hover:text-white transition-colors">Termini e Condizioni</Link>
+            <Link to="/privacy" className="underline hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/cookie-policy" className="underline hover:text-white transition-colors">Cookie Policy</Link>
+            <Link to="/termini" className="underline hover:text-white transition-colors">Termini e Condizioni</Link>
           </div>
           <div className="flex gap-4 mb-2 md:mb-0 justify-center md:justify-end text-zinc-400">
             <a href="https://www.facebook.com/share/19zzXVXjks/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" aria-label="Facebook">
@@ -28,7 +28,7 @@ export default function Footer() {
               <Instagram className="w-5 h-5" />
             </a>
           </div>
-          <span className="text-zinc-500 text-[10px] md:text-xs text-center md:text-right leading-relaxed">
+          <span className="text-zinc-400 text-[10px] md:text-xs text-center md:text-right leading-relaxed">
             &copy; {new Date().getFullYear()} <strong>Alessandro Baiamonte Piacenza</strong> — Tutti i diritti riservati. <br />
             Sito a scopo illustrativo delle competenze professionali e portfolio di Alessandro Baiamonte. <br />
             Attività prestata in conformità alle norme vigenti per le collaborazioni occasionali.
