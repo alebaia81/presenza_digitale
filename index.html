@@ -44,13 +44,11 @@
     <link rel="icon" type="image/png" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     
-    <!-- Resource Hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Resource Hints: Removed Google Fonts (using local) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     
-    <!-- Preload Local Fonts -->
+    <!-- Preload Local Fonts (Prioritize Regular over Italic for LCP) -->
     <link rel="preload" href="/assets/fonts/PlayfairDisplay-Variable.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/assets/fonts/PlayfairDisplay-Italic-Variable.ttf" as="font" type="font/ttf" crossorigin />
     
     <!-- Critical CSS: Renders Hero & Layout instantly -->
     <style>
@@ -71,11 +69,28 @@
         margin: 0; 
         font-family: 'Playfair Display', serif; 
         overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
       #root { min-height: 100vh; }
       .hero-section { min-height: 80vh; background: var(--bg-color); }
-      header { position: absolute; top: 0; width: 100%; z-index: 50; }
+      header { position: absolute; top: 0; width: 100%; z-index: 50; height: 80px; }
+      /* Prevent CLS for Hero content */
+      .hero-content { opacity: 0; animation: fadeIn 0.5s ease-out forwards; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
+
+    <!-- Defer non-critical CSS to eliminate render-blocking -->
+    <script>
+      /* This script converts blocking CSS links to async loading */
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+          if (!link.hasAttribute('data-critical')) {
+            link.media = 'print';
+            link.onload = function() { this.media = 'all'; };
+          }
+        });
+      });
+    </script>
 
     <!-- LCP Image Preload -->
     <link rel="preload" as="image" href="/assets/images/hero-bg.webp" fetchpriority="high" />
