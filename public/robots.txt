@@ -30,4 +30,4 @@ User-agent: meta-externalagent
 Disallow: /
 
 # Sitemap
-Sitemap: https://presenzadigitale.com/sitemap.xml
+Sitemap: https://www.presenzadigitale.com/sitemap.xml
