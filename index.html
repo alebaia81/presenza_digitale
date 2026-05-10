@@ -27,9 +27,9 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Presenza Digitale",
-      "url": "https://presenzadigitale.com",
+      "url": "https://www.presenzadigitale.com",
       "telephone": "+393398156719",
-      "email": "presenzadigitalepc@gmail.com",
+      "email": "info@presenzadigitale.com",
       "description": "Realizziamo siti web professionali, landing page ad alta conversione e SEO locale per attività locali a Piacenza e provincia.",
       "areaServed": ["Piacenza", "Monticelli d'Ongina", "Castel San Giovanni"],
       "address": {
@@ -50,7 +50,7 @@
     <!-- Preload Local Fonts (Prioritize Regular over Italic for LCP) -->
     <link rel="preload" href="/assets/fonts/PlayfairDisplay-Variable.ttf" as="font" type="font/ttf" crossorigin />
     
-    <!-- Critical CSS: Renders Hero & Layout instantly -->
+    <!-- Critical CSS: Basic resets and LCP background -->
     <style>
       @font-face {
         font-family: 'Playfair Display';
@@ -72,25 +72,7 @@
         -webkit-font-smoothing: antialiased;
       }
       #root { min-height: 100vh; }
-      .hero-section { min-height: 80vh; background: var(--bg-color); }
-      header { position: absolute; top: 0; width: 100%; z-index: 50; height: 80px; }
-      /* Prevent CLS for Hero content */
-      .hero-content { opacity: 0; animation: fadeIn 0.5s ease-out forwards; }
-      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
-
-    <!-- Defer non-critical CSS to eliminate render-blocking -->
-    <script>
-      /* This script converts blocking CSS links to async loading */
-      window.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-          if (!link.hasAttribute('data-critical')) {
-            link.media = 'print';
-            link.onload = function() { this.media = 'all'; };
-          }
-        });
-      });
-    </script>
 
     <!-- LCP Image Preload -->
     <link rel="preload" as="image" href="/assets/images/hero-bg.webp" fetchpriority="high" />
