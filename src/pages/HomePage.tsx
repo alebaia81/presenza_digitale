@@ -1,14 +1,37 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { 
   ArrowRight, MessageCircle, PlayCircle, MapPin
 } from 'lucide-react';
 import { waLink } from '../constants';
 
-// Lazy loaded components for bundle optimization
+// Lazy loaded components
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
 const TrustSection = React.lazy(() => import('../components/home/TrustSection'));
 const ContactSection = React.lazy(() => import('../components/home/ContactSection'));
+
+// Helper for true lazy loading on scroll
+const LazySection = ({ children, height = "400px" }: { children: React.ReactNode, height?: string }) => {
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // Start loading 200px before it enters the viewport
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref} style={{ minHeight: inView ? "auto" : height }}>{inView ? children : null}</div>;
+};
 
 export default function HomePage() {
   const inviaWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
@@ -41,7 +64,7 @@ export default function HomePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-amber/5 rounded-full blur-[150px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="text-left space-y-8">
+          <div className="text-left space-y-8 hero-content">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -121,17 +144,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Servizi Section - Lazy Loaded */}
-      <Suspense fallback={<div className="h-96 bg-zinc-950 animate-pulse rounded-[3rem] m-6" />}>
-        <ServicesSection />
-      </Suspense>
+      {/* Servizi Section - True Lazy Load */}
+      <LazySection height="600px">
+        <Suspense fallback={<div className="h-96 bg-zinc-950 animate-pulse rounded-[3rem] m-6" />}>
+          <ServicesSection />
+        </Suspense>
+      </LazySection>
 
-      {/* Trust Section - Lazy Loaded */}
+      {/* Trust Section - True Lazy Load */}
       <section className="py-24 px-6 relative border-t border-white/5 bg-zinc-950">
         <div className="max-w-7xl mx-auto">
-          <Suspense fallback={<div className="h-96 bg-zinc-900/20 animate-pulse rounded-3xl" />}>
-            <TrustSection />
-          </Suspense>
+          <LazySection height="400px">
+            <Suspense fallback={<div className="h-96 bg-zinc-900/20 animate-pulse rounded-3xl" />}>
+              <TrustSection />
+            </Suspense>
+          </LazySection>
         </div>
       </section>
 
@@ -165,10 +192,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - Lazy Loaded */}
-      <Suspense fallback={<div className="h-96 bg-zinc-950 animate-pulse" />}>
-        <ContactSection inviaWhatsApp={inviaWhatsApp} />
-      </Suspense>
+      {/* Contact Section - True Lazy Load */}
+      <LazySection height="800px">
+        <Suspense fallback={<div className="h-96 bg-zinc-950 animate-pulse" />}>
+          <ContactSection inviaWhatsApp={inviaWhatsApp} />
+        </Suspense>
+      </LazySection>
     </motion.div>
   );
 }
