@@ -53,7 +53,7 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">I nostri Progetti.</h1>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light">Una selezione di eccellenze che hanno scelto di evolversi digitalmente con noi.</p>
+          <p className="text-xl text-zinc-300 max-w-2xl mx-auto font-light">Una selezione di eccellenze che hanno scelto di evolversi digitalmente con noi.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -81,9 +81,9 @@ export default function ProjectsPage() {
                 <h3 className="text-3xl font-bold text-white mb-3 flex items-center gap-3">
                   {project.title}
                 </h3>
-                <p className="text-zinc-400 leading-relaxed max-w-md font-light">{project.description}</p>
+                <p className="text-zinc-300 leading-relaxed max-w-md font-light">{project.description}</p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
               Il tuo prossimo grande <br /> <span className="text-gold-amber">capitolo inizia qui.</span>
             </h2>
-            <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-zinc-300 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
               Non accettiamo ogni progetto. Cerchiamo partner pronti a <br className="hidden md:block" /> 
               distinguersi e a dominare il proprio mercato locale.
             </p>

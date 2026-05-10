@@ -139,10 +139,10 @@ const BlogPostPage = () => {
 
       <article className="max-w-4xl mx-auto">
         {/* Navigation & Actions */}
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 relative z-20">
           <Link 
             to="/blog" 
-            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors w-fit"
           >
             <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold-amber transition-all group-hover:text-black">
               <ArrowLeft className="w-4 h-4" />
@@ -150,7 +150,7 @@ const BlogPostPage = () => {
             <span className="text-sm font-medium">Torna agli articoli</span>
           </Link>
           
-          <div className="flex items-center gap-3 relative">
+          <div className="flex items-center gap-3">
             <div className="relative">
               <button 
                 onClick={() => setShowShareMenu(!showShareMenu)}
@@ -166,7 +166,8 @@ const BlogPostPage = () => {
                     <div 
                       className="fixed inset-0 z-40" 
                       onClick={() => setShowShareMenu(false)}
-                                 <m.div 
+                    />
+                    <m.div 
                       initial={{ opacity: 0, scale: 0.95, y: 10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95, y: 10 }}
@@ -197,7 +198,7 @@ const BlogPostPage = () => {
                         </a>
                         <button 
                           onClick={handleCopyLink}
-                          className="w-full flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                          className="w-full flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors text-left"
                         >
                           <div className="w-4 h-4 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -210,22 +211,24 @@ const BlogPostPage = () => {
                 )}
               </AnimatePresence>
             </div>
- 
-            {copyStatus && (
-              <m.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gold-amber text-black text-[10px] px-3 py-1 rounded-full font-bold whitespace-nowrap shadow-lg z-50"
-              >
-                Link Copiato!
-              </m.div>
-            )}        )}
+
+            <AnimatePresence>
+              {copyStatus && (
+                <m.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed bottom-10 left-1/2 -translate-x-1/2 bg-gold-amber text-black text-xs px-4 py-2 rounded-full font-bold shadow-2xl z-[100]"
+                >
+                  Link Copiato negli appunti!
+                </m.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-12 relative z-10">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-bold text-gold-amber uppercase tracking-widest px-3 py-1 rounded-full bg-gold-amber/10">
               {post.category}
@@ -237,7 +240,7 @@ const BlogPostPage = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-10 tracking-tight leading-tight">
             {post.title}
           </h1>
 
@@ -254,20 +257,20 @@ const BlogPostPage = () => {
 
         {/* Table of Contents */}
         {toc.length > 0 && (
-          <div className="mb-12 p-8 rounded-3xl bg-zinc-900/30 border border-white/5">
-            <div className="flex items-center gap-3 mb-6 text-gold-amber">
+          <div className="mb-16 p-8 rounded-3xl bg-zinc-900/30 border border-white/5 relative z-10">
+            <div className="flex items-center gap-3 mb-8 text-gold-amber">
               <List className="w-5 h-5" />
               <h2 className="text-lg font-bold uppercase tracking-wider !m-0">Indice dei Contenuti</h2>
             </div>
-            <nav className="grid gap-3">
+            <nav className="grid gap-4">
               {toc.map(item => (
                 <a 
                   key={item.id} 
                   href={`#${item.id}`}
-                  className="text-zinc-400 hover:text-gold-amber transition-colors flex items-center gap-3 group"
+                  className="text-zinc-400 hover:text-gold-amber transition-colors flex items-center gap-4 group"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-gold-amber transition-colors"></span>
-                  {item.text}
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-gold-amber transition-colors shrink-0"></span>
+                  <span className="text-base leading-snug">{item.text}</span>
                 </a>
               ))}
             </nav>
