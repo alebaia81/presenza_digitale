@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
               </div>
               <div className="px-2">
-                <p className="text-indigo-400 text-sm font-bold uppercase tracking-wider mb-2">{project.subtitle}</p>
+                <p className="text-gold-amber text-sm font-bold uppercase tracking-wider mb-2">{project.subtitle}</p>
                 <h3 className="text-3xl font-bold text-white mb-3 flex items-center gap-3">
                   {project.title}
                 </h3>
@@ -87,12 +87,26 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        <div className="mt-20 p-12 rounded-[3rem] bg-gradient-to-r from-zinc-900 to-black border border-white/5 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Vuoi essere il nostro prossimo successo?</h2>
-          <p className="text-zinc-400 text-lg mb-8 max-w-2xl mx-auto">Siamo sempre alla ricerca di nuove sfide e di eccellenze da valorizzare.</p>
-          <a href="/#contatti" className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-bold hover:scale-105 transition-transform">
-            Inizia il tuo Progetto <ArrowRight className="w-5 h-5" />
-          </a>
+        <div className="mt-32 p-16 rounded-[4rem] bg-zinc-950 border border-white/5 text-center relative overflow-hidden group">
+          {/* Subtle Radial Glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold-amber/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+              Il tuo prossimo grande <br /> <span className="text-gold-amber">capitolo inizia qui.</span>
+            </h2>
+            <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Non accettiamo ogni progetto. Cerchiamo partner pronti a <br className="hidden md:block" /> 
+              distinguersi e a dominare il proprio mercato locale.
+            </p>
+            <a 
+              href="/#contatti" 
+              className="inline-flex items-center gap-4 bg-gold-amber text-black px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(212,175,55,0.2)] hover:shadow-[0_0_60px_rgba(212,175,55,0.4)] group/btn"
+            >
+              Inizia il tuo Progetto 
+              <ArrowRight className="w-6 h-6 transform group-hover/btn:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>

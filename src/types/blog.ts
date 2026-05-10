@@ -9,6 +9,7 @@ export interface BlogPost {
   readTime: string;
   featured: boolean;
   content: string;
+  schemaType?: string;
 }
 
 export interface BlogMetadata {
@@ -20,4 +21,5 @@ export interface BlogMetadata {
   image: string;
   readTime: string;
   featured: boolean;
+  schemaType?: string;
 }
