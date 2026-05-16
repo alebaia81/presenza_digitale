@@ -117,13 +117,20 @@ export default function HomePage() {
               <PlayCircle className="w-16 h-16 text-gold-amber/50 animate-pulse" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
-            <img 
-              src="/assets/images/hero-bg.webp" 
-              alt="Creazione Siti Web Piacenza - Consulenza Digitale Presenza Digitale"
-              fetchPriority="high"
-              loading="eager"
-              className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
-            />
+            <picture>
+              <source srcSet="/assets/images/hero-bg.avif" type="image/avif" />
+              <source srcSet="/assets/images/hero-bg.webp" type="image/webp" />
+              <img
+                src="/assets/images/hero-bg.webp"
+                alt="Creazione Siti Web Piacenza - Consulenza Digitale Presenza Digitale"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                width="1200"
+                height="800"
+                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+              />
+            </picture>
           </m.div>
         </div>
       </section>
