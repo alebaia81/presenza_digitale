@@ -16,13 +16,21 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
 
   const navigate = useNavigate();
 
-  // After navigation to home, scroll to the target section
+  // After cross-page navigation, poll until the lazy-loaded section mounts then scroll
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace('#', '');
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    let attempts = 0;
+    const interval = setInterval(() => {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        clearInterval(interval);
+      } else if (++attempts > 20) {
+        clearInterval(interval); // give up after 2s
+      }
+    }, 100);
+    return () => clearInterval(interval);
   }, [location]);
 
   const scrollToSection = (id: string) => {
