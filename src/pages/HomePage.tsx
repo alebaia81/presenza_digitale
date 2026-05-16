@@ -7,10 +7,10 @@ import {
 import { waLink } from '../constants';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
-// Lazy loaded components
+// Lazy loaded components (ContactSection is sync — it's the conversion goal, must always be in DOM)
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
 const TrustSection = React.lazy(() => import('../components/home/TrustSection'));
-const ContactSection = React.lazy(() => import('../components/home/ContactSection'));
+import ContactSection from '../components/home/ContactSection';
 
 // Helper for true lazy loading on scroll
 const LazySection = ({ children, height = "400px" }: { children: React.ReactNode, height?: string }) => {
@@ -39,12 +39,8 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   const scrollToContact = () => {
-    const el = document.getElementById('contatti');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate('/#contatti');
-    }
+    // ContactSection is always in the DOM (not lazy) — direct scroll
+    document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const inviaWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
@@ -208,12 +204,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - True Lazy Load */}
-      <LazySection height="800px">
-        <Suspense fallback={<div className="h-96 bg-zinc-950 animate-pulse" />}>
-          <ContactSection inviaWhatsApp={inviaWhatsApp} />
-        </Suspense>
-      </LazySection>
+      {/* Contact Section — sync import, always in DOM for reliable scroll-to */}
+      <ContactSection inviaWhatsApp={inviaWhatsApp} />
     </m.div>
   );
 }
