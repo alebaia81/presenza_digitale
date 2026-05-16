@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { MonitorSmartphone, MessageCircle, ArrowRight, X, Menu } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { MonitorSmartphone, ArrowRight, X, Menu } from 'lucide-react';
 import { motion } from 'motion/react';
 import { waLink } from '../constants';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface NavbarProps {
   isMobileMenuOpen: boolean;
@@ -13,12 +14,24 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
   const location = useLocation();
   const isHome = location.pathname === '/';
 
+  const navigate = useNavigate();
+
+  // After navigation to home, scroll to the target section
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
+
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);
-    if (!isHome) return; // Link will handle navigation if not on home
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHome) {
+      const element = document.getElementById(id);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate(`/#${id}`);
     }
   };
 
@@ -57,9 +70,9 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         
         <div className="hidden md:flex items-center gap-4">
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-zinc-300 hover:text-[#25D366] transition-colors flex items-center gap-2">
-            <MessageCircle className="w-4 h-4" aria-hidden="true" /> WhatsApp
+            <WhatsAppIcon className="w-4 h-4" /> WhatsApp
           </a>
-          <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+          <button onClick={() => scrollToSection('contatti')} className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
             Inizia Ora <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </button>
         </div>
@@ -96,9 +109,9 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           )}
           <div className="h-px bg-white/10 w-full my-2"></div>
           <a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 px-6 py-4 rounded-full text-center font-bold hover:bg-[#25D366]/20 transition-colors flex justify-center items-center gap-2 text-lg">
-            <MessageCircle className="w-5 h-5" aria-hidden="true" /> Scrivici su WhatsApp
+            <WhatsAppIcon className="w-5 h-5" /> Scrivici su WhatsApp
           </a>
-          <button onClick={() => isHome ? scrollToSection('contatti') : window.location.href='/#contatti'} className="bg-white text-black px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-transform text-lg shadow-[0_0_30px_rgba(255,255,255,0.15)]">
+          <button onClick={() => scrollToSection('contatti')} className="bg-white text-black px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-transform text-lg shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             Inizia Ora
           </button>
         </motion.div>

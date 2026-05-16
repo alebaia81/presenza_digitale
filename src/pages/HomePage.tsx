@@ -1,9 +1,11 @@
 import React, { Suspense, useState, useEffect, useRef } from 'react';
 import { m } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 import { 
-  ArrowRight, MessageCircle, PlayCircle, MapPin
+  ArrowRight, PlayCircle, MapPin
 } from 'lucide-react';
 import { waLink } from '../constants';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 // Lazy loaded components
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
@@ -34,6 +36,17 @@ const LazySection = ({ children, height = "400px" }: { children: React.ReactNode
 };
 
 export default function HomePage() {
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    const el = document.getElementById('contatti');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#contatti');
+    }
+  };
+
   const inviaWhatsApp = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const mioNumero = "393398156719"; 
@@ -102,11 +115,14 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-5 pt-4"
             >
-              <a href="#contatti" className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+              <button
+                onClick={scrollToContact}
+                className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+              >
                 Richiedi un Preventivo <ArrowRight className="w-5 h-5" />
-              </a>
+              </button>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-[#25D366]/20 transition-colors flex items-center justify-center gap-3">
-                <MessageCircle className="w-6 h-6" /> WhatsApp
+                <WhatsAppIcon className="w-6 h-6" /> WhatsApp
               </a>
             </m.div>
           </div>

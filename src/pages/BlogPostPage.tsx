@@ -6,9 +6,11 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock, Share2, List, MessageCircle, Send, Mail } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, List, Send, Mail } from 'lucide-react';
 import { getPostBySlug } from '../utils/blog';
 import { BlogPost } from '../types/blog';
+import { waLinkBlog } from '../constants';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -180,7 +182,7 @@ const BlogPostPage = () => {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
                         >
-                          <MessageCircle className="w-4 h-4 text-[#25D366]" /> WhatsApp
+                          <WhatsAppIcon className="w-4 h-4 text-[#25D366]" /> WhatsApp
                         </a>
                         <a 
                           href={shareLinks.telegram} 
@@ -305,18 +307,27 @@ const BlogPostPage = () => {
           </ReactMarkdown>
         </div>
 
-        {/* Footer CTA */}
-        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/50 to-gold-amber/10 border border-gold-amber/20 text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">Ti piace questo approccio?</h3>
+        {/* Footer CTA — WhatsApp diretto */}
+        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/50 to-[#25D366]/5 border border-[#25D366]/20 text-center">
+          <div className="flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center">
+              <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
+            </div>
+          </div>
+          <h3 className="text-2xl font-bold text-white mb-3">Hai trovato utile questo articolo?</h3>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-            Sviluppiamo strategie SEO e digitali basate su dati e tecnologia all'avanguardia. Scopri come possiamo scalare il tuo business.
+            Scrivici su WhatsApp per una consulenza gratuita. Analizziamo la tua situazione e ti diciamo cosa puoi fare subito per migliorare la tua presenza digitale.
           </p>
-          <Link 
-            to="/#contatti" 
-            className="px-8 py-4 bg-gold-amber text-black rounded-full font-bold hover:bg-amber-500 transition-all inline-block hover:scale-105 shadow-[0_0_30px_rgba(255,191,0,0.3)]"
+          <a
+            href={waLinkBlog}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20BA5A] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] text-lg"
           >
-            Lavoriamo Insieme
-          </Link>
+            <WhatsAppIcon className="w-6 h-6" />
+            Scrivici Ora — È Gratuito
+          </a>
+          <p className="text-xs text-zinc-600 mt-4">Risposta garantita entro 24 ore · Nessun impegno</p>
         </div>
       </article>
     </div>
