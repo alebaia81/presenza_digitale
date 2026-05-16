@@ -61,12 +61,7 @@ export default function HomePage() {
   };
 
   return (
-    <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div>
       {/* Hero Section - CRITICAL (Sync Load) */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0 bg-black/40 opacity-20 mix-blend-overlay pointer-events-none"></div>
@@ -74,42 +69,31 @@ export default function HomePage() {
         
         <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <div className="text-left space-y-8 hero-content">
-            <m.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-200 text-sm font-semibold shadow-lg backdrop-blur-md"
+            <div
+              className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-zinc-200 text-sm font-semibold shadow-lg backdrop-blur-md hero-badge"
             >
               <MapPin className="w-4 h-4 text-gold-amber" />
               <span>Consulenza Digitale a Piacenza e Provincia</span>
-            </m.div>
+            </div>
             
             <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
-            <m.div 
+            {/* LCP ELEMENT — immediately visible, no opacity:0 */}
+            <div
               aria-hidden="true"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1]"
+              className="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] hero-title"
             >
               Non ti serve solo un sito. <br />
               Ti serve <span className="font-serif italic pb-1 pr-4 inline-block" style={{ backgroundImage: 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presenza.</span>
-            </m.div>
+            </div>
             
-            <m.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-light max-w-xl"
+            <p
+              className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-light max-w-xl hero-subtitle"
             >
               Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
-            </m.p>
+            </p>
             
-            <m.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-5 pt-4"
+            <div
+              className="flex flex-col sm:flex-row gap-5 pt-4 hero-cta"
             >
               <button
                 onClick={scrollToContact}
@@ -120,7 +104,7 @@ export default function HomePage() {
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-[#25D366]/20 transition-colors flex items-center justify-center gap-3">
                 <WhatsAppIcon className="w-6 h-6" /> WhatsApp
               </a>
-            </m.div>
+            </div>
           </div>
 
           <m.div
@@ -206,6 +190,6 @@ export default function HomePage() {
 
       {/* Contact Section — sync import, always in DOM for reliable scroll-to */}
       <ContactSection inviaWhatsApp={inviaWhatsApp} />
-    </m.div>
+    </div>
   );
 }

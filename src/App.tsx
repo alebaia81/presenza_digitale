@@ -1,6 +1,6 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence, m, LazyMotion, domAnimation } from 'motion/react';
+import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 const CookieBanner = React.lazy(() => import('./components/CookieBanner'));
@@ -20,42 +20,51 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 function AnimatedRoutes() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Defer CookieBanner 2s after mount — removes it from the critical rendering path
+  const [showCookie, setShowCookie] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShowCookie(true), 2000);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <LazyMotion features={domAnimation}>
       <div className="min-h-screen bg-[#050505] text-white selection:bg-gold-amber/30">
         <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
         <ScrollToTop />
-        
-        <AnimatePresence mode="wait">
-          <m.main 
+
+        {/*
+          AnimatePresence with initial={false}: skips the initial mount animation
+          so the first page load is NEVER hidden behind opacity:0.
+          Exit animations still work on page transitions (navigate away).
+        */}
+        <AnimatePresence mode="wait" initial={false}>
+          <main
             key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex-grow"
+            className="flex-grow page-enter"
           >
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
-            <Routes location={location}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/progetti" element={<ProjectsPage />} />
-              <Route path="/blog" element={<BlogPage />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-              <Route path="/privacy" element={<PrivacyPolicyPage />} />
-              <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-              <Route path="/termini" element={<TermsPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-          </m.main>
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
+              <Routes location={location}>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/progetti" element={<ProjectsPage />} />
+                <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+                <Route path="/termini" element={<TermsPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </main>
         </AnimatePresence>
 
         <Footer />
         <StickyWhatsApp />
-        <Suspense fallback={null}>
-          <CookieBanner />
-        </Suspense>
+        {showCookie && (
+          <Suspense fallback={null}>
+            <CookieBanner />
+          </Suspense>
+        )}
         <SpeedInsights />
       </div>
     </LazyMotion>

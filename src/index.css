@@ -6,6 +6,45 @@
   --color-gold-amber: #FFBF00;
 }
 
+/* =============================================
+   HERO ANIMATIONS — CSS-driven, no JS blocking
+   LCP title is immediately visible (no opacity:0)
+   Other elements animate in with stagger
+   ============================================= */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes page-enter-anim {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Page transition — CSS only, no JS opacity:0 */
+.page-enter {
+  animation: page-enter-anim 0.3s ease forwards;
+}
+
+/* LCP title — slides up but starts immediately VISIBLE (opacity:1 at t=0) */
+.hero-title {
+  animation: hero-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+
+/* Non-LCP elements — staggered fade-up */
+.hero-badge {
+  animation: hero-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0s both;
+}
+.hero-subtitle {
+  animation: hero-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.hero-cta {
+  animation: hero-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
 /* Blog Typography Enhancements */
 .prose {
   --tw-prose-body: #D1D1D1;
