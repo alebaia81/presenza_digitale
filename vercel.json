@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "https://www.presenzadigitale.com/(.*)",
+      "destination": "https://presenzadigitale.com/$1",
+      "permanent": true
+    },
+    {
       "source": "/prezzi",
       "destination": "/",
       "permanent": true
