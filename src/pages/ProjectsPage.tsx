@@ -54,6 +54,15 @@ export default function ProjectsPage() {
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 font-serif">I nostri Progetti.</h1>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto font-light">Demo e concept realizzati per mostrare il nostro approccio al design e alle soluzioni digitali per le attività locali.</p>
+          <a
+            href="https://alebaia81.github.io/alessandrobaiamonte/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-5 text-sm text-text-secondary hover:text-text-primary transition-colors group"
+          >
+            <span className="underline underline-offset-4 decoration-border-primary group-hover:decoration-gold-amber transition-colors">Chi c'è dietro Presenza Digitale</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
