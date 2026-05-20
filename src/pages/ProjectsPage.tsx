@@ -58,10 +58,10 @@ export default function ProjectsPage() {
             href="https://alebaia81.github.io/alessandrobaiamonte/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-5 text-sm text-text-secondary hover:text-text-primary transition-colors group"
+            className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full border border-gold-amber/40 text-sm text-text-secondary hover:text-text-primary hover:border-gold-amber hover:bg-gold-amber/5 transition-all duration-300 group"
           >
-            <span className="underline underline-offset-4 decoration-border-primary group-hover:decoration-gold-amber transition-colors">Chi c'è dietro Presenza Digitale</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            <span>Chi c'è dietro Presenza Digitale</span>
+            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </a>
         </div>
 
