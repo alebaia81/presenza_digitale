@@ -25,14 +25,14 @@ const BlogPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#050505]">
+      <div className="min-h-screen flex items-center justify-center bg-bg-primary transition-colors duration-300">
         <div className="w-12 h-12 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen pt-40 md:pt-48 pb-20 px-6">
+    <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300 pt-40 md:pt-48 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <m.div
@@ -48,7 +48,7 @@ const BlogPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            className="text-4xl md:text-6xl font-bold text-text-primary mb-6 tracking-tight font-serif"
           >
             Blog <span className="text-gold-amber">Presenza Digitale</span>
           </m.h1>
@@ -57,7 +57,7 @@ const BlogPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-zinc-400 max-w-2xl mx-auto font-light"
+            className="text-xl text-text-secondary max-w-2xl mx-auto font-light font-sans"
           >
             Approfondimenti tecnici, analisi SEO e strategie digitali per dominare la tua nicchia nel 2026.
           </m.p>
@@ -70,7 +70,7 @@ const BlogPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-zinc-900/30 rounded-3xl border border-white/5 overflow-hidden hover:border-gold-amber/30 transition-all duration-500 flex flex-col"
+              className="group bg-bg-card rounded-3xl border border-border-primary overflow-hidden hover:border-gold-amber/30 transition-all duration-500 flex flex-col shadow-sm hover:shadow-lg"
             >
               <Link to={`/blog/${post.slug}`} className="block aspect-[16/9] overflow-hidden">
                 <img 
@@ -86,36 +86,36 @@ const BlogPage = () => {
                   <span className="text-xs font-bold text-gold-amber uppercase tracking-widest px-3 py-1 rounded-full bg-gold-amber/10">
                     {post.category}
                   </span>
-                  <div className="flex items-center gap-2 text-zinc-400 text-xs font-medium">
+                  <div className="flex items-center gap-2 text-text-secondary text-xs font-medium font-sans">
                     <Clock className="w-3 h-3" />
                     <span>{post.readTime}</span>
                   </div>
                 </div>
 
                 <Link to={`/blog/${post.slug}`}>
-                  <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-gold-amber transition-colors">
+                  <h2 className="text-2xl font-bold text-text-primary mb-4 group-hover:text-gold-amber transition-colors font-serif">
                     {post.title}
                   </h2>
                 </Link>
 
-                <p className="text-zinc-300 text-sm mb-6 line-clamp-3 font-light leading-relaxed">
+                <p className="text-text-secondary text-sm mb-6 line-clamp-3 font-light leading-relaxed font-sans">
                   {post.description}
                 </p>
 
-                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                <div className="mt-auto pt-6 border-t border-border-primary flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gold-amber to-amber-700 flex items-center justify-center text-[10px] font-bold text-black">
                       AB
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-xs font-semibold text-white">{post.author}</span>
-                      <span className="text-[10px] text-zinc-300">{post.date}</span>
+                      <span className="text-xs font-semibold text-text-primary">{post.author}</span>
+                      <span className="text-[10px] text-text-secondary">{post.date}</span>
                     </div>
                   </div>
                   
                   <Link 
                     to={`/blog/${post.slug}`}
-                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-gold-amber hover:text-black transition-all"
+                    className="w-10 h-10 rounded-full bg-bg-secondary flex items-center justify-center text-text-primary hover:bg-gold-amber hover:text-black transition-all cursor-pointer"
                   >
                     <ArrowRight className="w-5 h-5" />
                   </Link>

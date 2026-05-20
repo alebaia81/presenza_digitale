@@ -49,6 +49,17 @@
     <!-- Preload Local Fonts (Prioritize Regular over Italic for LCP) -->
     <link rel="preload" href="/assets/fonts/PlayfairDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin />
     
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
     <!-- Critical CSS: Basic resets and LCP background -->
     <style>
       @font-face {
@@ -60,12 +71,18 @@
         font-display: optional;
       }
       :root { 
+        --bg-color: #FAF8F5; 
+        --text-color: #1C1917;
+        --accent-color: #B45309;
+      }
+      :root.dark {
         --bg-color: #050505; 
+        --text-color: #ffffff;
         --accent-color: #FFBF00;
       }
       body { 
         background-color: var(--bg-color); 
-        color: white; 
+        color: var(--text-color); 
         margin: 0; 
         font-family: 'Playfair Display', serif; 
         overflow-x: hidden;

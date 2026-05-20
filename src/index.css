@@ -1,9 +1,39 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+:root {
+  /* Tema Chiaro Sleek - Caldo e Riposante (Pietra/Lino Premium) */
+  --bg-primary: #E5E1DA;
+  --bg-secondary: #D8D2C4;
+  --bg-card: rgba(216, 210, 196, 0.6);
+  --border-primary: rgba(180, 83, 9, 0.12);
+  --text-primary: #1C1917;
+  --text-secondary: #4A4641;
+  --gold-amber: #A14400; /* Tonalità cotto/oro antico per massimo contrasto */
+  --selection-bg: rgba(161, 68, 0, 0.15);
+}
+
+.dark {
+  /* Tema Scuro Dark Gourmet */
+  --bg-primary: #050505;
+  --bg-secondary: #0A0A0C;
+  --bg-card: rgba(30, 30, 35, 0.3);
+  --border-primary: rgba(255, 255, 255, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --gold-amber: #FFBF00; /* Oro luminoso originale */
+  --selection-bg: rgba(255, 191, 0, 0.3);
+}
+
 @theme {
   --font-serif: "Playfair Display", serif;
-  --color-gold-amber: #FFBF00;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-border-primary: var(--border-primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-gold-amber: var(--gold-amber);
 }
 
 /* =============================================
@@ -45,33 +75,62 @@
   animation: hero-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
 }
 
+/* Premium Gold Gradients - Light Mode (rich dark gold) & Dark Mode (bright luxury gold) */
+.text-gold-gradient {
+  background-image: linear-gradient(to right, #7a5c1e, #a17e30, #6b5015);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+h1.text-gold-gradient,
+h2.text-gold-gradient {
+  display: block;
+}
+
+.dark .text-gold-gradient {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+}
+
+.bg-gold-gradient {
+  background-image: linear-gradient(to right, #7a5c1e, #a17e30, #6b5015);
+}
+
+.dark .bg-gold-gradient {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+}
+
 /* Blog Typography Enhancements */
 .prose {
-  --tw-prose-body: #D1D1D1;
-  --tw-prose-headings: #ffffff;
-  --tw-prose-links: #FFBF00;
-  --tw-prose-bold: #FFBF00;
-  --tw-prose-quotes: #ffffff;
-  --tw-prose-hr: #27272a;
-  --tw-prose-counters: #FFBF00;
-  --tw-prose-bullets: #FFBF00;
+  --tw-prose-body: var(--text-secondary);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-links: var(--gold-amber);
+  --tw-prose-bold: var(--gold-amber);
+  --tw-prose-quotes: var(--text-primary);
+  --tw-prose-hr: var(--border-primary);
+  --tw-prose-counters: var(--gold-amber);
+  --tw-prose-bullets: var(--gold-amber);
 }
 
 .prose h1, .prose h2, .prose h3 {
   font-family: "Playfair Display", serif;
   letter-spacing: -0.025em;
+  color: var(--text-primary);
 }
 
 .prose p, .prose li {
   line-height: 1.75;
-  color: #D1D1D1;
+  color: var(--text-secondary);
 }
 
 .prose a {
-  color: #FFBF00;
-  text-decoration-color: rgba(255, 191, 0, 0.4);
+  color: var(--gold-amber);
+  text-decoration-color: var(--selection-bg);
 }
 
 .prose a:hover {
-  text-decoration-color: #FFBF00;
+  text-decoration-color: var(--gold-amber);
 }
+

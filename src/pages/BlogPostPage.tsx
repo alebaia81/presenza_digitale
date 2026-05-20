@@ -93,7 +93,7 @@ const BlogPostPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#050505]">
+      <div className="min-h-screen flex items-center justify-center bg-bg-primary transition-colors duration-300">
         <div className="w-12 h-12 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div>
       </div>
     );
@@ -101,12 +101,12 @@ const BlogPostPage = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#050505] px-6 text-center">
-        <h1 className="text-4xl font-bold text-white mb-4">Post non trovato</h1>
-        <p className="text-zinc-400 mb-8">L'articolo che stai cercando potrebbe essere stato spostato o rimosso.</p>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-bg-primary px-6 text-center transition-colors duration-300">
+        <h1 className="text-4xl font-bold text-text-primary mb-4 font-serif">Post non trovato</h1>
+        <p className="text-text-secondary mb-8">L'articolo che stai cercando potrebbe essere stato spostato o rimosso.</p>
         <Link 
           to="/blog" 
-          className="px-6 py-3 bg-gold-amber text-black rounded-full font-bold hover:bg-amber-500 transition-colors flex items-center gap-2"
+          className="px-6 py-3 bg-gold-amber text-black rounded-full font-bold hover:bg-amber-500 transition-colors flex items-center gap-2 cursor-pointer"
         >
           <ArrowLeft className="w-5 h-5" /> Torna al Blog
         </Link>
@@ -128,7 +128,7 @@ const BlogPostPage = () => {
   };
 
   return (
-    <div className="min-h-screen pt-40 md:pt-48 pb-20 px-6">
+    <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300 pt-40 md:pt-48 pb-20 px-6">
       <Helmet>
         <title>{post.title} | Blog Presenza Digitale</title>
         <meta name="description" content={post.description} />
@@ -144,9 +144,9 @@ const BlogPostPage = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 relative z-20">
           <Link 
             to="/blog" 
-            className="group flex items-center gap-2 text-zinc-400 hover:text-white transition-colors w-fit"
+            className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors w-fit cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold-amber transition-all group-hover:text-black">
+            <div className="w-8 h-8 rounded-full bg-bg-secondary flex items-center justify-center group-hover:bg-gold-amber transition-all group-hover:text-black">
               <ArrowLeft className="w-4 h-4" />
             </div>
             <span className="text-sm font-medium">Torna agli articoli</span>
@@ -156,7 +156,7 @@ const BlogPostPage = () => {
             <div className="relative">
               <button 
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:text-gold-amber hover:bg-white/10 transition-all"
+                className="w-10 h-10 rounded-full bg-bg-secondary flex items-center justify-center text-text-secondary hover:text-gold-amber hover:bg-bg-card transition-all cursor-pointer"
                 title="Condividi"
               >
                 <Share2 className="w-4 h-4" />
@@ -173,14 +173,14 @@ const BlogPostPage = () => {
                       initial={{ opacity: 0, scale: 0.95, y: 10 }}
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                      className="absolute right-0 mt-2 w-48 bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl z-50 overflow-hidden"
+                      className="absolute right-0 mt-2 w-48 bg-bg-card border border-border-primary rounded-2xl shadow-2xl z-50 overflow-hidden"
                     >
                       <div className="p-2 space-y-1">
                         <a 
                           href={shareLinks.whatsapp} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-primary rounded-xl transition-colors cursor-pointer"
                         >
                           <WhatsAppIcon className="w-4 h-4 text-[#25D366]" /> WhatsApp
                         </a>
@@ -188,19 +188,19 @@ const BlogPostPage = () => {
                           href={shareLinks.telegram} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-primary rounded-xl transition-colors cursor-pointer"
                         >
                           <Send className="w-4 h-4 text-[#0088cc]" /> Telegram
                         </a>
                         <a 
                           href={shareLinks.email}
-                          className="flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors"
+                          className="flex items-center gap-3 px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-primary rounded-xl transition-colors cursor-pointer"
                         >
                           <Mail className="w-4 h-4 text-amber-400" /> Email
                         </a>
                         <button 
                           onClick={handleCopyLink}
-                          className="w-full flex items-center gap-3 px-4 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white rounded-xl transition-colors text-left"
+                          className="w-full flex items-center gap-3 px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-primary rounded-xl transition-colors text-left cursor-pointer"
                         >
                           <div className="w-4 h-4 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
@@ -228,51 +228,50 @@ const BlogPostPage = () => {
             </AnimatePresence>
           </div>
         </div>
-
         {/* Header */}
         <header className="mb-12 relative z-10">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-xs font-bold text-gold-amber uppercase tracking-widest px-3 py-1 rounded-full bg-gold-amber/10">
               {post.category}
             </span>
-            <div className="w-1 h-1 rounded-full bg-zinc-700"></div>
-            <div className="flex items-center gap-2 text-zinc-400 text-xs font-medium">
+            <div className="w-1.5 h-1.5 rounded-full bg-border-primary"></div>
+            <div className="flex items-center gap-2 text-text-secondary text-xs font-medium">
               <Clock className="w-3 h-3" />
               <span>{post.readTime} di lettura</span>
             </div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-10 tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-10 tracking-tight leading-tight font-serif">
             {post.title}
           </h1>
 
-          <div className="flex items-center gap-4 py-8 border-y border-white/5">
+          <div className="flex items-center gap-4 py-8 border-y border-border-primary">
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold-amber to-amber-700 flex items-center justify-center font-bold text-lg text-black">
               AB
             </div>
             <div className="flex flex-col">
-              <span className="text-sm font-bold text-white">{post.author}</span>
-              <span className="text-xs text-zinc-400 font-medium">Creatore di Presenza Digitale • {post.date}</span>
+              <span className="text-sm font-bold text-text-primary">{post.author}</span>
+              <span className="text-xs text-text-secondary font-medium">Creatore di Presenza Digitale • {post.date}</span>
             </div>
           </div>
         </header>
 
         {/* Table of Contents */}
         {toc.length > 0 && (
-          <div className="mb-16 p-8 rounded-3xl bg-zinc-900/30 border border-white/5 relative z-10">
+          <div className="mb-16 p-8 rounded-3xl bg-bg-card border border-border-primary relative z-10">
             <div className="flex items-center gap-3 mb-8 text-gold-amber">
               <List className="w-5 h-5" />
-              <h2 className="text-lg font-bold uppercase tracking-wider !m-0">Indice dei Contenuti</h2>
+              <h2 className="text-lg font-bold uppercase tracking-wider !m-0 font-serif">Indice dei Contenuti</h2>
             </div>
             <nav className="grid gap-4">
               {toc.map(item => (
                 <a 
                   key={item.id} 
                   href={`#${item.id}`}
-                  className="text-zinc-400 hover:text-gold-amber transition-colors flex items-center gap-4 group"
+                  className="text-text-secondary hover:text-gold-amber transition-colors flex items-center gap-4 group cursor-pointer"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-gold-amber transition-colors shrink-0"></span>
-                  <span className="text-base leading-snug">{item.text}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-border-primary group-hover:bg-gold-amber transition-colors shrink-0"></span>
+                  <span className="text-base leading-snug font-sans">{item.text}</span>
                 </a>
               ))}
             </nav>
@@ -280,7 +279,7 @@ const BlogPostPage = () => {
         )}
 
         {/* Featured Image with AVIF/WebP logic */}
-        <div className="aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 border border-white/5 shadow-2xl relative">
+        <div className="aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 border border-border-primary shadow-2xl relative">
           <img 
             src={post.image} 
             alt={post.title} 
@@ -290,12 +289,12 @@ const BlogPostPage = () => {
         </div>
 
         {/* Content */}
-        <div className="prose prose-invert max-w-none 
-          prose-headings:text-white prose-headings:font-bold
+        <div className="prose dark:prose-invert max-w-none 
+          prose-headings:text-text-primary prose-headings:font-bold prose-headings:font-serif
           prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-l-4 prose-h2:border-gold-amber prose-h2:pl-6
           prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-[#D1D1D1] prose-p:leading-[1.75] prose-p:text-lg prose-p:mb-6
-          prose-li:text-zinc-300 prose-li:mb-2
+          prose-p:text-text-secondary prose-p:leading-[1.75] prose-p:text-lg prose-p:mb-6 prose-p:font-sans prose-p:font-light
+          prose-li:text-text-secondary prose-li:mb-2 prose-li:font-sans prose-li:font-light
           prose-strong:text-gold-amber prose-strong:font-semibold
           prose-a:text-gold-amber prose-a:no-underline hover:prose-a:underline
         ">
@@ -308,26 +307,26 @@ const BlogPostPage = () => {
         </div>
 
         {/* Footer CTA — WhatsApp diretto */}
-        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-zinc-900/50 to-[#25D366]/5 border border-[#25D366]/20 text-center">
+        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-bg-card to-[#25D366]/5 border border-[#25D366]/20 text-center">
           <div className="flex items-center justify-center mb-6">
             <div className="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center">
               <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
             </div>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-3">Hai trovato utile questo articolo?</h3>
-          <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
+          <h3 className="text-2xl font-bold text-text-primary mb-3 font-serif">Hai trovato utile questo articolo?</h3>
+          <p className="text-text-secondary mb-8 max-w-xl mx-auto font-sans font-light">
             Scrivici su WhatsApp per una consulenza gratuita. Analizziamo la tua situazione e ti diciamo cosa puoi fare subito per migliorare la tua presenza digitale.
           </p>
           <a
             href={waLinkBlog}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20BA5A] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] text-lg"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20BA5A] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] text-lg cursor-pointer"
           >
             <WhatsAppIcon className="w-6 h-6" />
             Scrivici Ora — È Gratuito
           </a>
-          <p className="text-xs text-zinc-600 mt-4">Risposta garantita entro 24 ore · Nessun impegno</p>
+          <p className="text-xs text-text-secondary/60 mt-4">Risposta garantita entro 24 ore · Nessun impegno</p>
         </div>
       </article>
     </div>

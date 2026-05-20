@@ -29,7 +29,7 @@ function AnimatedRoutes() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen bg-[#050505] text-white selection:bg-gold-amber/30">
+      <div className="min-h-screen bg-bg-primary text-text-primary selection:bg-selection-bg transition-colors duration-300 flex flex-col">
         <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
         <ScrollToTop />
 
@@ -43,7 +43,7 @@ function AnimatedRoutes() {
             key={location.pathname}
             className="flex-grow page-enter"
           >
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#050505]"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
+            <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-bg-primary transition-colors duration-300"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
               <Routes location={location}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/progetti" element={<ProjectsPage />} />
