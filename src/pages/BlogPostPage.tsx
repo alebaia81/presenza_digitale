@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { Helmet } from 'react-helmet-async';
-import { ArrowLeft, Clock, Share2, List, Send, Mail } from 'lucide-react';
+import { ArrowLeft, Clock, Share2, List, Send, Mail, Download } from 'lucide-react';
 import { getPostBySlug } from '../utils/blog';
 import { BlogPost } from '../types/blog';
 import { waLinkBlog } from '../constants';
@@ -312,6 +312,32 @@ const BlogPostPage = () => {
           >
             {post.content}
           </ReactMarkdown>
+        </div>
+
+        {/* Download Strategic Blueprint CTA */}
+        <div className="bg-[#141414] border-l-4 border-gold-amber p-8 my-12 rounded-3xl relative overflow-hidden group">
+          {/* Subtle background decoration */}
+          <div className="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 w-48 h-48 bg-gold-amber/5 rounded-full blur-3xl group-hover:bg-gold-amber/10 transition-colors duration-500"></div>
+          
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-left">
+            <div className="max-w-xl">
+              <h3 className="text-[#F5F5F5] font-serif font-bold text-2xl mb-2">
+                Vuoi approfondire l'architettura del 2026?
+              </h3>
+              <p className="text-[#D1D1D1] text-base font-light">
+                Scarica il nostro **Strategic Blueprint** completo in formato PDF ad alta definizione.
+              </p>
+            </div>
+            
+            <a 
+              href="/downloads/SEO_React_2026_Strategic_Blueprint.pdf" 
+              download
+              className="inline-flex items-center gap-2 bg-gold-amber hover:bg-amber-600 dark:hover:bg-amber-400 text-black dark:text-black font-bold px-6 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-[0_4px_20px_rgba(255,191,0,0.15)] shrink-0 w-fit cursor-pointer"
+            >
+              <Download className="w-5 h-5" />
+              Scarica il Report PDF
+            </a>
+          </div>
         </div>
 
         {/* Footer CTA — WhatsApp diretto */}
