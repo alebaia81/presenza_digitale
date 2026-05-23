@@ -54,22 +54,30 @@ const BlogPostPage = () => {
   const jsonLd = useMemo(() => {
     if (!post) return null;
 
+    const authorName = post.author.includes(' - ') 
+      ? post.author.split(' - ')[0] 
+      : post.author;
+
+    const absoluteImage = post.image.startsWith('http')
+      ? post.image
+      : `https://presenzadigitale.com${post.image}`;
+
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": post.schemaType || "BlogPosting",
       "headline": post.title,
-      "image": [post.image],
-      "datePublished": post.date,
-      "author": [{
+      "description": post.description,
+      "author": {
         "@type": "Person",
-        "name": post.author,
-        "url": "https://www.presenzadigitale.com"
-      }],
+        "name": authorName,
+        "url": "https://presenzadigitale.com"
+      },
+      "image": absoluteImage,
       "publisher": {
         "@type": "Organization",
         "name": "Presenza Digitale"
       },
-      "description": post.description
+      "datePublished": post.date
     };
 
     const faqSchema = {
