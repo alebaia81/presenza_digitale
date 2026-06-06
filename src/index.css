@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Logo filter logic to work around Safari multiple filter bugs and Tailwind v4 compilation override */
+.logo-filter {
+  filter: brightness(0.4) contrast(1.2);
+}
+
+.dark .logo-filter {
+  filter: brightness(1) contrast(1);
+}
+
 :root {
   /* Tema Chiaro Sleek - Caldo e Riposante (Pietra/Lino Premium) */
   --bg-primary: #E5E1DA;

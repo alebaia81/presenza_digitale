@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="flex items-center gap-3">
-            <img src="/assets/images/logo-optimized.png" alt="Presenza Digitale - Logo" width="64" height="64" loading="lazy" className="w-16 h-16 object-contain brightness-[0.4] dark:brightness-100 contrast-[1.2] dark:contrast-100" />
+            <img src="/assets/images/logo-optimized.png" alt="Presenza Digitale - Logo" width="64" height="64" loading="lazy" className="w-16 h-16 object-contain logo-filter" />
             <span className="text-xl font-black tracking-tight font-serif pb-1 pr-2 text-gold-gradient">Presenza Digitale</span>
           </div>
           <span className="hidden md:inline text-border-primary">|</span>

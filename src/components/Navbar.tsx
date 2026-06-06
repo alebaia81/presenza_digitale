@@ -48,19 +48,21 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
     <header className="fixed top-0 inset-x-0 z-50 border-b border-border-primary bg-bg-primary/80 backdrop-blur-xl transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img 
-            src="/assets/images/logo-optimized.png" 
-            alt="Presenza Digitale - Logo" 
-            width="76" 
-            height="76" 
-            loading="eager"
-            fetchPriority="high"
-            className="w-[76px] h-[76px] object-contain drop-shadow-[0_0_8px_rgba(161,68,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(191,149,63,0.3)] brightness-[0.4] dark:brightness-100 contrast-[1.2] dark:contrast-100" 
-          />
+          <div className="w-[76px] h-[76px] flex items-center justify-center drop-shadow-[0_0_8px_rgba(161,68,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(191,149,63,0.3)] shrink-0">
+            <img 
+              src="/assets/images/logo-optimized.png" 
+              alt="Presenza Digitale - Logo" 
+              width="76" 
+              height="76" 
+              loading="eager"
+              fetchPriority="high"
+              className="w-full h-full object-contain logo-filter" 
+            />
+          </div>
           <span className="text-2xl font-black tracking-tight font-serif pb-1 pr-2 text-gold-gradient">Presenza Digitale</span>
         </Link>
         
-        <nav className="hidden md:flex items-center gap-8" aria-label="Menu principale">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Menu principale">
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">I Nostri Servizi</button>
@@ -77,7 +79,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           )}
         </nav>
         
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
           <ThemeToggle />
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-text-secondary hover:text-[#25D366] transition-colors flex items-center gap-2">
             <WhatsAppIcon className="w-4 h-4" /> WhatsApp
@@ -89,7 +91,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
 
         <button 
           aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
-          className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors z-50 cursor-pointer"
+          className="lg:hidden p-2 text-text-secondary hover:text-text-primary transition-colors z-50 cursor-pointer"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -101,7 +103,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-20 left-0 w-full bg-bg-primary/95 backdrop-blur-2xl border-b border-border-primary py-8 px-6 flex flex-col gap-6 shadow-2xl transition-colors duration-300"
+          className="lg:hidden absolute top-20 left-0 w-full bg-bg-primary/95 backdrop-blur-2xl border-b border-border-primary py-8 px-6 flex flex-col gap-6 shadow-2xl transition-colors duration-300"
         >
           {isHome ? (
             <>
