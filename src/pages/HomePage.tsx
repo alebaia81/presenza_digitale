@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect, useRef } from 'react';
-import { m } from 'motion/react';
+import { m, useScroll, useTransform } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, PlayCircle, MapPin
@@ -38,6 +38,12 @@ const LazySection = ({ children, height = "400px" }: { children: React.ReactNode
 export default function HomePage() {
   const navigate = useNavigate();
 
+  // Scroll tracking for interactive scroll-driven hero animations
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 180], [0, 1]);
+  const y = useTransform(scrollY, [0, 180], [80, 0]);
+  const indicatorOpacity = useTransform(scrollY, [0, 60], [1, 0]);
+
   const scrollToContact = () => {
     // ContactSection is always in the DOM (not lazy) — direct scroll
     document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
@@ -62,13 +68,13 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Hero Section - CRITICAL (Sync Load) */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden min-h-screen flex items-center bg-bg-primary transition-colors duration-300">
+      {/* Hero Section - CRITICAL (Sync, first visible block) */}
+      <section className="relative pt-28 pb-12 lg:pt-36 lg:pb-16 px-6 overflow-hidden min-h-[90vh] flex items-center bg-bg-primary transition-colors duration-300">
         <div className="absolute inset-0 bg-bg-primary/40 opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-amber/5 rounded-full blur-[150px] pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-          <div className="text-left space-y-8 hero-content">
+        <div className="max-w-7xl mx-auto w-full relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-5 text-left space-y-8 hero-content">
             <div
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-bg-card border border-border-primary text-text-primary text-sm font-semibold shadow-lg backdrop-blur-md hero-badge transition-all"
             >
@@ -111,26 +117,21 @@ export default function HomePage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative lg:h-[600px] w-full rounded-[2.5rem] overflow-hidden border border-border-primary shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] group transition-colors duration-300"
+            className="lg:col-span-7 relative lg:h-[620px] w-full rounded-[2.5rem] overflow-hidden border border-border-primary shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] group transition-colors duration-300"
           >
             <div className="absolute inset-0 bg-bg-secondary/50 backdrop-blur-xl flex items-center justify-center -z-10">
               <PlayCircle className="w-16 h-16 text-gold-amber/50 animate-pulse" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
-            <picture>
-              <source srcSet="/assets/images/hero-bg.avif" type="image/avif" />
-              <source srcSet="/assets/images/hero-bg.webp" type="image/webp" />
-              <img
-                src="/assets/images/hero-bg.webp"
-                alt="Creazione Siti Web Piacenza - Consulenza Digitale Presenza Digitale"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                width="1200"
-                height="800"
-                className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-in-out"
-              />
-            </picture>
+            <video
+              src="/assets/video/hero1.mp4"
+              poster="/assets/images/hero-bg.webp"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+            />
           </m.div>
         </div>
       </section>
