@@ -33,7 +33,7 @@ const BlogPostPage = () => {
     fetchPost();
   }, [slug]);
 
-  // Table of Contents Extraction
+  // Table of Contents + body text extraction per H2 section
   const toc = useMemo(() => {
     if (!post?.content) return [];
     const lines = post.content.split('\n');
@@ -50,12 +50,63 @@ const BlogPostPage = () => {
       });
   }, [post?.content]);
 
+  /**
+   * Extracts a map of H2 heading text → adjacent body text.
+   * For each ## section, collects non-heading, non-empty lines until
+   * the next heading (## or #) appears, then joins them as the answer.
+   * Falls back to a generic sentence when no body text is found.
+   */
+  const h2BodyMap = useMemo((): Record<string, string> => {
+    if (!post?.content) return {};
+    const lines = post.content.split('\n');
+    const result: Record<string, string> = {};
+    let currentHeading: string | null = null;
+    let bodyLines: string[] = [];
+
+    const flush = () => {
+      if (currentHeading !== null) {
+        const body = bodyLines
+          // strip inline Markdown: bold, italic, inline code, links
+          .map(l =>
+            l
+              .replace(/\*\*(.+?)\*\*/g, '$1')
+              .replace(/\*(.+?)\*/g, '$1')
+              .replace(/`(.+?)`/g, '$1')
+              .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+              .replace(/^[-*>]\s+/, '')
+              .trim()
+          )
+          .filter(Boolean)
+          .slice(0, 4) // limit to first 4 non-empty lines for conciseness
+          .join(' ');
+        result[currentHeading] = body || `Approfondimento su "${currentHeading}" nell'articolo.`;
+        bodyLines = [];
+      }
+    };
+
+    for (const line of lines) {
+      if (line.startsWith('## ')) {
+        flush();
+        currentHeading = line.replace('## ', '').trim();
+      } else if (line.startsWith('#')) {
+        // H1 or H3+ → close current section but don't start a new H2
+        flush();
+        currentHeading = null;
+      } else if (currentHeading !== null) {
+        bodyLines.push(line);
+      }
+    }
+    flush(); // flush the last section
+
+    return result;
+  }, [post?.content]);
+
   // JSON-LD Generation
   const jsonLd = useMemo(() => {
     if (!post) return null;
 
-    const authorName = post.author.includes(' - ') 
-      ? post.author.split(' - ')[0] 
+    const authorName = post.author.includes(' - ')
+      ? post.author.split(' - ')[0]
       : post.author;
 
     const absoluteImage = post.image.startsWith('http')
@@ -80,6 +131,9 @@ const BlogPostPage = () => {
       "datePublished": post.date
     };
 
+    // Only include FAQPage when there are actual H2 sections
+    if (toc.length === 0) return [articleSchema];
+
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -88,13 +142,14 @@ const BlogPostPage = () => {
         "name": item.text,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": `Approfondimento su ${item.text} nel post ${post.title}.`
+          // Use the real paragraph text extracted from the Markdown
+          "text": h2BodyMap[item.text] ?? `Approfondimento su "${item.text}" nell'articolo.`
         }
       }))
     };
 
     return [articleSchema, faqSchema];
-  }, [post, toc]);
+  }, [post, toc, h2BodyMap]);
 
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [copyStatus, setCopyStatus] = useState(false);
