@@ -2,7 +2,13 @@ import React from 'react';
 import { m } from 'motion/react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
-const projects = [
+const projects: Array<{
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  objectPosition?: string;
+}> = [
   {
     title: "Pizzeria Artigianale",
     subtitle: "Pizza & Cucina Italiana",
@@ -38,6 +44,19 @@ const projects = [
     subtitle: "Estetica & Relax",
     description: "Un'identità digitale raffinata e rilassante, studiata per attrarre nuova clientela. Design pulito e percorsi di navigazione ottimizzati per incentivare i contatti.",
     image: "/images/mockup-soave.webp"
+  },
+  {
+    title: "E-commerce Abbigliamento",
+    subtitle: "Moda & Stile Online",
+    description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",
+    image: "/images/mockup-segreta.webp",
+    objectPosition: "top"
+  },
+  {
+    title: "Artigiano Tinteggiatore",
+    subtitle: "Pittura & Rifinitura Interni",
+    description: "Landing page ad alta conversione per un artigiano locale. Design essenziale e diretto, ottimizzato per la ricerca locale su Google e progettato per generare contatti qualificati.",
+    image: "/images/mockup-tinteggiatore.webp"
   }
 ];
 
@@ -82,6 +101,7 @@ export default function ProjectsPage() {
                   height="500"
                   loading="lazy"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
+                  style={{ objectPosition: project.objectPosition ?? 'center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
               </div>
