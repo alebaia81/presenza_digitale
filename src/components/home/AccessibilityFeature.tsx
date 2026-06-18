@@ -158,7 +158,7 @@ export default function AccessibilityFeature() {
           <div className="absolute inset-0 bg-gradient-to-tr from-gold-amber/5 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10" />
           
           <img
-            src="/images/accessibilità.avif"
+            src="/images/accessibilita.avif"
             alt="Mockup dell'interfaccia di Presenza Digitale con sovrapposti indicatori tecnici di focus e punteggio Lighthouse 100% in accessibilità"
             className="w-full h-auto object-cover rounded-2xl shadow-inner transform group-hover:scale-[1.01] transition-transform duration-700 ease-out"
             loading="lazy"
