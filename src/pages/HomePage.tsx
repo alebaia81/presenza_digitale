@@ -9,6 +9,7 @@ import WhatsAppIcon from '../components/WhatsAppIcon';
 
 // Lazy loaded components (ContactSection is sync — it's the conversion goal, must always be in DOM)
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
+const AccessibilityFeature = React.lazy(() => import('../components/home/AccessibilityFeature'));
 const TrustSection = React.lazy(() => import('../components/home/TrustSection'));
 import ContactSection from '../components/home/ContactSection';
 
@@ -152,6 +153,13 @@ export default function HomePage() {
       <LazySection height="600px">
         <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
           <ServicesSection />
+        </Suspense>
+      </LazySection>
+
+      {/* Accessibility Feature Section - True Lazy Load */}
+      <LazySection height="600px">
+        <Suspense fallback={<div className="h-96 bg-bg-primary animate-pulse rounded-[3rem] m-6" />}>
+          <AccessibilityFeature />
         </Suspense>
       </LazySection>
 
