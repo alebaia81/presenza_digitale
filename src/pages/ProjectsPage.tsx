@@ -10,6 +10,19 @@ const projects: Array<{
   objectPosition?: string;
 }> = [
   {
+    title: "E-commerce Abbigliamento",
+    subtitle: "Moda & Stile Online",
+    description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",
+    image: "/images/mockup-segreta.webp",
+    objectPosition: "top"
+  },
+  {
+    title: "Artigiano Tinteggiatore",
+    subtitle: "Pittura & Rifinitura Interni",
+    description: "Landing page ad alta conversione per un artigiano locale. Design essenziale e diretto, ottimizzato per la ricerca locale su Google e progettato per generare contatti qualificati.",
+    image: "/images/mockup-tinteggiatore.webp"
+  },
+  {
     title: "Pizzeria Artigianale",
     subtitle: "Pizza & Cucina Italiana",
     description: "Design moderno per una delle location più esclusive del territorio. Focus sull'eleganza visiva e sulla facilità di prenotazione.",
@@ -44,19 +57,6 @@ const projects: Array<{
     subtitle: "Estetica & Relax",
     description: "Un'identità digitale raffinata e rilassante, studiata per attrarre nuova clientela. Design pulito e percorsi di navigazione ottimizzati per incentivare i contatti.",
     image: "/images/mockup-soave.webp"
-  },
-  {
-    title: "E-commerce Abbigliamento",
-    subtitle: "Moda & Stile Online",
-    description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",
-    image: "/images/mockup-segreta.webp",
-    objectPosition: "top"
-  },
-  {
-    title: "Artigiano Tinteggiatore",
-    subtitle: "Pittura & Rifinitura Interni",
-    description: "Landing page ad alta conversione per un artigiano locale. Design essenziale e diretto, ottimizzato per la ricerca locale su Google e progettato per generare contatti qualificati.",
-    image: "/images/mockup-tinteggiatore.webp"
   }
 ];
 
