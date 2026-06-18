@@ -99,6 +99,23 @@ export default function AccessibilityFeature() {
             Sviluppiamo Soluzioni Conformi WCAG 2.2
           </m.h2>
 
+          {/* Immagine di Supporto Mobile (visibile solo su mobile) */}
+          <m.div
+            variants={imageVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="block lg:hidden relative rounded-3xl overflow-hidden border border-border-primary/20 dark:border-border-primary bg-bg-card p-3 shadow-2xl transition-shadow duration-500 group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-gold-amber/5 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10" />
+            <img
+              src="/images/accessibilita.avif"
+              alt="Mockup dell'interfaccia di Presenza Digitale con sovrapposti indicatori tecnici di focus e punteggio Lighthouse 100% in accessibilità"
+              className="w-full h-auto object-cover rounded-2xl shadow-inner transform group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+              loading="lazy"
+            />
+          </m.div>
+
           {/* Descrizione Principale */}
           <m.p 
             variants={itemVariants}
@@ -146,13 +163,13 @@ export default function AccessibilityFeature() {
           </m.div>
         </m.div>
 
-        {/* Colonna Destra: Immagine di Supporto Accessibile */}
+        {/* Colonna Destra: Immagine di Supporto Accessibile (visibile solo su desktop) */}
         <m.div
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="relative rounded-3xl overflow-hidden border border-border-primary/20 dark:border-border-primary bg-bg-card p-3 shadow-2xl hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_24px_50px_rgba(255,255,255,0.02)] transition-shadow duration-500 group"
+          className="hidden lg:block relative rounded-3xl overflow-hidden border border-border-primary/20 dark:border-border-primary bg-bg-card p-3 shadow-2xl hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_24px_50px_rgba(255,255,255,0.02)] transition-shadow duration-500 group"
         >
           {/* Overlay di rifrazione luce vetrosa al passaggio del mouse */}
           <div className="absolute inset-0 bg-gradient-to-tr from-gold-amber/5 via-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10" />
