@@ -122,6 +122,17 @@ const BlogPostPage = () => {
     );
   }
 
+  // 1. Definizione delle costanti di produzione e fallback
+  const SITE_URL = "https://presenzadigitale.com"; // O process.env.VITE_SITE_URL
+  const DEFAULT_DESC = "Presenza Digitale: Sviluppo web engineering in React 19 e strategie SEO semantiche per professionisti.";
+  const DEFAULT_IMAGE = `${SITE_URL}/assets/images/og-fallback-presenza-digitale.avif`;
+
+  // 2. Risoluzione dinamica dei valori con fallback e URL assoluti
+  const ogDescription = post.description || DEFAULT_DESC;
+  const ogImageAbsolute = post.image 
+    ? (post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`)
+    : DEFAULT_IMAGE;
+
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
     setCopyStatus(true);
@@ -139,7 +150,23 @@ const BlogPostPage = () => {
     <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300 pt-40 md:pt-48 pb-20 px-6">
       <Helmet>
         <title>{post.title} | Blog Presenza Digitale</title>
-        <meta name="description" content={post.description} />
+        <meta name="description" content={ogDescription} />
+        <meta name="keywords" content={`${post.category || 'Web'}, Presenza Digitale, sviluppo web, SEO`} />
+        
+        {/* Open Graph ottimizzato per Crawler Social */}
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImageAbsolute} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`${SITE_URL}/blog/${post.slug}`} />
+        <meta property="og:site_name" content="Presenza Digitale" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={ogDescription} />
+        <meta name="twitter:image" content={ogImageAbsolute} />
+        
         {jsonLd && jsonLd.map((schema, i) => (
           <script key={i} type="application/ld+json">
             {JSON.stringify(schema)}
