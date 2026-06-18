@@ -21,9 +21,9 @@
   --text-primary: #1C1917;
   /* Corretto da #4A4641 → #3D3935 per WCAG 1.4.3 (ratio ≥ 4.5:1 su --bg-primary) */
   --text-secondary: #3D3935;
-  --gold-amber: #A14400; /* Tonalità cotto/oro antico per massimo contrasto */
+  --gold-amber: #803400; /* Tonalità cotto/oro antico per massimo contrasto */
   --selection-bg: rgba(161, 68, 0, 0.15);
-  --focus-ring: #A14400; /* WCAG 2.4.7 — accent focus ring light mode */
+  --focus-ring: #803400; /* WCAG 2.4.7 — accent focus ring light mode */
 }
 
 .dark {

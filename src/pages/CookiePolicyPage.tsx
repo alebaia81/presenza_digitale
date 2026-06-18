@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +13,11 @@ export default function CookiePolicyPage() {
       transition={{ duration: 0.5 }}
       className="max-w-4xl mx-auto px-6 pt-28 pb-32"
     >
+      <Helmet>
+        <title>Cookie Policy | Presenza Digitale</title>
+        <meta name="description" content="Leggi l'informativa sui cookie di Presenza Digitale relativa all'utilizzo dei cookie tecnici e di terze parti." />
+        <link rel="canonical" href="https://www.presenzadigitale.com/cookie-policy" />
+      </Helmet>
       <Link to="/" className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors mb-10 block">
         <ArrowLeft className="w-4 h-4" />
         Torna alla Home

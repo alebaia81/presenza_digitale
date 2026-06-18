@@ -33,7 +33,7 @@ export default function StickyWhatsApp() {
             </span>
             <div className="flex flex-col">
               <span className="text-[10px] text-gold-amber font-bold uppercase tracking-widest leading-none mb-1">Alessandro</span>
-              <p className="text-xs text-stone-600 dark:text-text-secondary font-light leading-snug">Hai una domanda? Scrivimi ora su WhatsApp!</p>
+              <p className="text-xs text-stone-800 dark:text-text-secondary font-normal leading-snug">Hai una domanda? Scrivimi ora su WhatsApp!</p>
             </div>
             {/* Close button for tooltip */}
             <button 

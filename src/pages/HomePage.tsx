@@ -88,7 +88,7 @@ export default function HomePage() {
       <Helmet>
         <title>Presenza Digitale | Realizzazione Siti Web Piacenza</title>
         <meta name="description" content="Sviluppiamo siti web e landing page professionali, veloci e accessibili conformi WCAG 2.2 AA a Piacenza e provincia per massimizzare le tue conversioni." />
-        <link rel="canonical" href="https://presenzadigitale.com" />
+        <link rel="canonical" href="https://www.presenzadigitale.com/" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -132,7 +132,7 @@ export default function HomePage() {
               >
                 Richiedi un Preventivo <ArrowRight className="w-5 h-5" />
               </button>
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-[#1da851] transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+              <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#075E54] hover:bg-[#0c4f47] text-white px-8 py-4 rounded-full text-lg font-bold transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(7,94,84,0.3)]">
                 <WhatsAppIcon className="w-6 h-6" /> WhatsApp
               </a>
             </div>

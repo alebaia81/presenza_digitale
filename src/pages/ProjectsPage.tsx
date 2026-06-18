@@ -1,5 +1,6 @@
 import React from 'react';
 import { m } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 
 const projects: Array<{
@@ -78,6 +79,11 @@ export default function ProjectsPage() {
       transition={{ duration: 0.5 }}
       className="pt-32 pb-24 px-6 bg-bg-primary min-h-screen transition-colors duration-300"
     >
+      <Helmet>
+        <title>Portfolio Progetti | Landing Page e Web Design Piacenza | Presenza Digitale</title>
+        <meta name="description" content="Scopri i progetti, i siti web e le landing page ad alte prestazioni sviluppate da Presenza Digitale per aziende locali e artigiani a Piacenza." />
+        <link rel="canonical" href="https://www.presenzadigitale.com/progetti" />
+      </Helmet>
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-text-primary mb-6 font-serif">I nostri Progetti.</h1>

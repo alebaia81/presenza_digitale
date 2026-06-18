@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { m } from 'motion/react';
 import { Calendar, User, Clock, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { getAllPosts } from '../utils/blog';
 import { BlogPost } from '../types/blog';
 
@@ -33,6 +34,11 @@ const BlogPage = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300 pt-40 md:pt-48 pb-20 px-6">
+      <Helmet>
+        <title>Blog | Strategie Web e SEO a Piacenza | Presenza Digitale</title>
+        <meta name="description" content="Leggi gli articoli e le guide pratiche di Presenza Digitale su sviluppo web, accessibilità WCAG e ottimizzazione SEO locale a Piacenza e provincia." />
+        <link rel="canonical" href="https://www.presenzadigitale.com/blog" />
+      </Helmet>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <m.div

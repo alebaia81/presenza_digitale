@@ -178,7 +178,7 @@ const BlogPostPage = () => {
   }
 
   // 1. Definizione delle costanti di produzione e fallback
-  const SITE_URL = "https://presenzadigitale.com"; // O process.env.VITE_SITE_URL
+  const SITE_URL = "https://www.presenzadigitale.com"; // O process.env.VITE_SITE_URL
   const DEFAULT_DESC = "Presenza Digitale: Sviluppo web engineering in React 19 e strategie SEO semantiche per professionisti.";
   const DEFAULT_IMAGE = `${SITE_URL}/assets/images/og-fallback-presenza-digitale.avif`;
 
@@ -207,6 +207,7 @@ const BlogPostPage = () => {
         <title>{post.title} | Blog Presenza Digitale</title>
         <meta name="description" content={ogDescription} />
         <meta name="keywords" content={`${post.category || 'Web'}, Presenza Digitale, sviluppo web, SEO`} />
+        <link rel="canonical" href={`${SITE_URL}/blog/${post.slug}`} />
         
         {/* Open Graph ottimizzato per Crawler Social */}
         <meta property="og:title" content={post.title} />
@@ -272,7 +273,7 @@ const BlogPostPage = () => {
                           rel="noopener noreferrer"
                           className="flex items-center gap-3 px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-primary rounded-xl transition-colors cursor-pointer"
                         >
-                          <WhatsAppIcon className="w-4 h-4 text-[#25D366]" /> WhatsApp
+                          <WhatsAppIcon className="w-4 h-4 text-[#075E54] dark:text-[#25D366]" /> WhatsApp
                         </a>
                         <a 
                           href={shareLinks.telegram} 
@@ -423,10 +424,10 @@ const BlogPostPage = () => {
         </div>
 
         {/* Footer CTA — WhatsApp diretto */}
-        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-bg-card to-[#25D366]/5 border border-[#25D366]/20 text-center">
+        <div className="mt-20 p-10 rounded-[2.5rem] bg-gradient-to-br from-bg-card to-[#075E54]/5 border border-[#075E54]/20 text-center">
           <div className="flex items-center justify-center mb-6">
-            <div className="w-16 h-16 rounded-full bg-[#25D366]/10 flex items-center justify-center">
-              <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
+            <div className="w-16 h-16 rounded-full bg-[#075E54]/10 flex items-center justify-center">
+              <WhatsAppIcon className="w-8 h-8 text-[#075E54] dark:text-[#25D366]" />
             </div>
           </div>
           <h3 className="text-2xl font-bold text-text-primary mb-3 font-serif">Hai trovato utile questo articolo?</h3>
@@ -437,7 +438,7 @@ const BlogPostPage = () => {
             href={waLinkBlog}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20BA5A] transition-all hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.3)] text-lg cursor-pointer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#075E54] hover:bg-[#0c4f47] text-white rounded-full font-bold transition-all hover:scale-105 shadow-[0_0_30px_rgba(7,94,84,0.3)] text-lg cursor-pointer"
           >
             <WhatsAppIcon className="w-6 h-6" />
             Scrivici Ora — È Gratuito

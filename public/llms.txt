@@ -1,0 +1,33 @@
+# Presenza Digitale
+
+> Realizzazione di siti web professionali, landing page ad alta conversione e SEO locale a Piacenza e provincia.
+
+Questo file fornisce informazioni strutturate in formato Markdown per facilitare la navigazione del sito da parte di agenti AI, web crawler e modelli linguistici di grandi dimensioni (LLM).
+
+## Sezioni Principali del Sito
+
+Tutte le pagine principali e le risorse del nostro sito:
+
+- [Home Page](https://www.presenzadigitale.com/) - Presentazione dei nostri servizi di sviluppo e consulenza web, modulo di contatto e FAQ per attività locali.
+- [Portfolio Progetti](https://www.presenzadigitale.com/progetti) - I nostri lavori realizzati, i concept e le demo interattive per artigiani e PMI.
+- [Blog / Journal](https://www.presenzadigitale.com/blog) - Articoli di approfondimento su ottimizzazione SEO locale, conformità di accessibilità WCAG e tecnologie web moderne (React 19, siti statici, ecc.).
+
+## Risorse Utili ed Articoli in Evidenza
+
+I post più rilevanti del nostro blog:
+
+- [La verità sulla SEO locale nel 2026](https://www.presenzadigitale.com/blog/verita-seo-2026)
+- [Perché WordPress rallenta il tuo business](https://www.presenzadigitale.com/blog/perche-wordpress-rallenta-il-tuo-business)
+- [Siti web sicuri e ultra-veloci senza database](https://www.presenzadigitale.com/blog/siti-web-sicuri-senza-database)
+- [Guida alla SEO locale per liberi professionisti](https://www.presenzadigitale.com/blog/seo-locale-liberi-professionisti)
+
+## Informazioni Legali e di Tracciamento
+
+- [Privacy Policy](https://www.presenzadigitale.com/privacy) - Informative sul trattamento dei dati personali ai sensi del GDPR.
+- [Cookie Policy](https://www.presenzadigitale.com/cookie-policy) - Dettagli sui cookie tecnici necessari utilizzati.
+- [Termini e Condizioni](https://www.presenzadigitale.com/termini) - Condizioni d'uso e proprietà intellettuale.
+
+## Contatti
+
+- Email: [info@presenzadigitale.com](mailto:info@presenzadigitale.com) o [presenzadigitalepc@gmail.com](mailto:presenzadigitalepc@gmail.com)
+- Telefono: +39 339 815 6719

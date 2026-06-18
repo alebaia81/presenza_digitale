@@ -83,8 +83,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
         
         <div className="hidden lg:flex items-center gap-3 xl:gap-4">
           <ThemeToggle />
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-text-secondary hover:text-[#25D366] transition-colors flex items-center gap-2">
-            <WhatsAppIcon className="w-4 h-4" /> WhatsApp
+          <a href={waLink} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-text-secondary hover:text-[#075E54] dark:hover:text-[#25D366] transition-colors flex items-center gap-2">
+            <WhatsAppIcon className="w-4 h-4 text-[#075E54] dark:text-[#25D366]" /> WhatsApp
           </a>
           <button onClick={() => scrollToSection('contatti')} className="bg-text-primary text-bg-primary px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(0,0,0,0.08)] dark:shadow-[0_0_20px_rgba(255,255,255,0.15)] cursor-pointer">
             Inizia Ora <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -136,8 +136,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           </div>
           
           <div className="h-px bg-border-primary w-full"></div>
-          <a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 px-6 py-4 rounded-full text-center font-bold hover:bg-[#25D366]/20 transition-colors flex justify-center items-center gap-2 text-lg">
-            <WhatsAppIcon className="w-5 h-5" /> Scrivici su WhatsApp
+          <a href={waLink} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#075E54]/10 text-[#075E54] border border-[#075E54]/30 dark:bg-[#25D366]/10 dark:text-[#25D366] dark:border-[#25D366]/30 px-6 py-4 rounded-full text-center font-bold hover:bg-[#075E54]/20 dark:hover:bg-[#25D366]/20 transition-colors flex justify-center items-center gap-2 text-lg">
+            <WhatsAppIcon className="w-5 h-5 text-[#075E54] dark:text-[#25D366]" /> Scrivici su WhatsApp
           </a>
           <button onClick={() => scrollToSection('contatti')} className="bg-text-primary text-bg-primary px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-all text-lg shadow-[0_0_30px_rgba(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer">
             Inizia Ora
