@@ -118,7 +118,7 @@ export default function ProjectsPage() {
                 {project.badge && (
                   <div className="absolute top-4 left-4 z-10">
                     {project.badge.variant === 'coming-soon' ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold-amber text-black text-xs font-bold uppercase tracking-wider shadow-lg">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-yellow-400 text-black text-xs font-bold uppercase tracking-wider shadow-lg">
                         <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
                         {project.badge.label}
                       </span>
