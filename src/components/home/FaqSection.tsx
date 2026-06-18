@@ -18,6 +18,7 @@ export default function FaqSection() {
 
   return (
     <section 
+      id="faq"
       aria-labelledby="faq-section-heading" 
       className="py-24 px-6 relative border-t border-border-primary bg-bg-secondary transition-colors duration-300"
     >
