@@ -72,9 +72,9 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
             </>
           ) : (
             <>
-              <Link to="/" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Torna alla Home</Link>
-              <Link to="/progetti" className={`text-sm font-medium transition-colors ${location.pathname === '/progetti' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`}>Portfolio Progetti</Link>
-              <Link to="/blog" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/blog') ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`}>Blog</Link>
+              <Link to="/" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors" aria-current={location.pathname === '/' ? 'page' : undefined}>Torna alla Home</Link>
+              <Link to="/progetti" className={`text-sm font-medium transition-colors ${location.pathname === '/progetti' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`} aria-current={location.pathname === '/progetti' ? 'page' : undefined}>Portfolio Progetti</Link>
+              <Link to="/blog" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/blog') ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`} aria-current={location.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</Link>
             </>
           )}
         </nav>
@@ -91,6 +91,8 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
 
         <button 
           aria-label={isMobileMenuOpen ? "Chiudi menu" : "Apri menu"}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
           className="lg:hidden p-2 text-text-secondary hover:text-text-primary transition-colors z-50 cursor-pointer"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -101,6 +103,10 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div 
+          id="mobile-menu"
+          role="dialog"
+          aria-label="Menu di navigazione mobile"
+          aria-modal="true"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="lg:hidden absolute top-20 left-0 w-full bg-bg-primary/95 backdrop-blur-2xl border-b border-border-primary py-8 px-6 flex flex-col gap-6 shadow-2xl transition-colors duration-300"

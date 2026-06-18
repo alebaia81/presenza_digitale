@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SkipLink from './components/SkipLink';
 const CookieBanner = React.lazy(() => import('./components/CookieBanner'));
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
@@ -30,19 +31,24 @@ function AnimatedRoutes() {
   return (
     <LazyMotion features={domAnimation}>
       <div className="min-h-screen bg-bg-primary text-text-primary selection:bg-selection-bg transition-colors duration-300 flex flex-col">
+        {/* WCAG 2.4.1 — Skip Link: primo elemento assoluto del DOM */}
+        <SkipLink />
         <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
         <ScrollToTop />
 
-        {/*
-          AnimatePresence with initial={false}: skips the initial mount animation
-          so the first page load is NEVER hidden behind opacity:0.
-          Exit animations still work on page transitions (navigate away).
-        */}
-        <AnimatePresence mode="wait" initial={false}>
-          <main
-            key={location.pathname}
-            className="flex-grow page-enter"
-          >
+          {/*
+            AnimatePresence with initial={false}: skips the initial mount animation
+            so the first page load is NEVER hidden behind opacity:0.
+            Exit animations still work on page transitions (navigate away).
+          */}
+          <AnimatePresence mode="wait" initial={false}>
+            {/* WCAG 2.4.1 — id="main-content" è il target del SkipLink */}
+            <main
+              id="main-content"
+              key={location.pathname}
+              className="flex-grow page-enter"
+              tabIndex={-1}
+            >
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-bg-primary transition-colors duration-300"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
               <Routes location={location}>
                 <Route path="/" element={<HomePage />} />

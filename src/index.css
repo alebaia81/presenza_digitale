@@ -19,9 +19,11 @@
   --bg-card: rgba(216, 210, 196, 0.6);
   --border-primary: rgba(180, 83, 9, 0.12);
   --text-primary: #1C1917;
-  --text-secondary: #4A4641;
+  /* Corretto da #4A4641 → #3D3935 per WCAG 1.4.3 (ratio ≥ 4.5:1 su --bg-primary) */
+  --text-secondary: #3D3935;
   --gold-amber: #A14400; /* Tonalità cotto/oro antico per massimo contrasto */
   --selection-bg: rgba(161, 68, 0, 0.15);
+  --focus-ring: #A14400; /* WCAG 2.4.7 — accent focus ring light mode */
 }
 
 .dark {
@@ -34,6 +36,7 @@
   --text-secondary: #a1a1aa;
   --gold-amber: #FFBF00; /* Oro luminoso originale */
   --selection-bg: rgba(255, 191, 0, 0.3);
+  --focus-ring: #FFBF00; /* WCAG 2.4.7 — accent focus ring dark mode */
 }
 
 @theme {
@@ -45,6 +48,48 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-gold-amber: var(--gold-amber);
+}
+
+/* =============================================================================
+   ACCESSIBILITY — WCAG 2.2 AA (Criteri 2.4.7 + 2.4.1)
+   ============================================================================= */
+
+/**
+ * Focus Ring Globale (Criterio 2.4.7 — Focus Visible)
+ * Il reset di Tailwind rimuove l'outline nativo. Lo ripristiniamo
+ * usando :focus-visible (mai :focus) per non disturbare i click con mouse.
+ */
+*:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 3px; /* evita anelli quadrati su pill-button arrotondati */
+}
+
+/**
+ * Skip Link (Criterio 2.4.1 — Bypass Blocks)
+ * Rimane fuori schermo finché non riceve focus da tastiera.
+ * Al focus scende a top: 1rem e diventa pienamente visibile.
+ */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background-color: #111827;
+  color: #FFFFFF;
+  border: 2px solid var(--focus-ring);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: top 0.2s ease-in-out;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: none; /* l'outline sarebbe ridondante con il border già definito */
 }
 
 /* =============================================
