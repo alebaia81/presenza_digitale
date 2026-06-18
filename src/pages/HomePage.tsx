@@ -150,7 +150,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
             <video
               src="/assets/video/hero1.mp4"
-              poster="/assets/images/hero-bg.webp"
+              poster="/assets/images/hero-bg.avif"
               autoPlay
               loop
               muted
