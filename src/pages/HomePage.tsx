@@ -6,11 +6,14 @@ import {
 } from 'lucide-react';
 import { waLink } from '../constants';
 import WhatsAppIcon from '../components/WhatsAppIcon';
+import { Helmet } from 'react-helmet-async';
+import { faqItems } from '../data/faqs';
 
 // Lazy loaded components (ContactSection is sync — it's the conversion goal, must always be in DOM)
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
 const AccessibilityFeature = React.lazy(() => import('../components/home/AccessibilityFeature'));
 const TrustSection = React.lazy(() => import('../components/home/TrustSection'));
+const FaqSection = React.lazy(() => import('../components/home/FaqSection'));
 import ContactSection from '../components/home/ContactSection';
 
 // Helper for true lazy loading on scroll
@@ -67,8 +70,29 @@ export default function HomePage() {
     (document.getElementById('contact-form') as HTMLFormElement).reset();
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>Presenza Digitale | Realizzazione Siti Web Piacenza</title>
+        <meta name="description" content="Sviluppiamo siti web e landing page professionali, veloci e accessibili conformi WCAG 2.2 AA a Piacenza e provincia per massimizzare le tue conversioni." />
+        <link rel="canonical" href="https://presenzadigitale.com" />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       {/* Hero Section - CRITICAL (Sync, first visible block) */}
       <section className="relative pt-28 pb-12 lg:pt-36 lg:pb-16 px-6 overflow-hidden min-h-[90vh] flex items-center bg-bg-primary transition-colors duration-300">
         <div className="absolute inset-0 bg-bg-primary/40 opacity-20 mix-blend-overlay pointer-events-none"></div>
@@ -203,6 +227,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section - True Lazy Load */}
+      <LazySection height="500px">
+        <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
+          <FaqSection />
+        </Suspense>
+      </LazySection>
 
       {/* Contact Section — sync import, always in DOM for reliable scroll-to */}
       <ContactSection inviaWhatsApp={inviaWhatsApp} />
