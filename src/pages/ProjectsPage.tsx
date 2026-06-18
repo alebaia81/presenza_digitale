@@ -8,55 +8,64 @@ const projects: Array<{
   description: string;
   image: string;
   objectPosition?: string;
+  badge?: { label: string; variant: 'demo' | 'coming-soon' };
 }> = [
   {
     title: "E-commerce Abbigliamento",
     subtitle: "Moda & Stile Online",
     description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",
     image: "/images/mockup-segreta.webp",
-    objectPosition: "top"
+    objectPosition: "top",
+    badge: { label: "Prossimamente Online", variant: "coming-soon" }
   },
   {
     title: "Artigiano Tinteggiatore",
     subtitle: "Pittura & Rifinitura Interni",
     description: "Landing page ad alta conversione per un artigiano locale. Design essenziale e diretto, ottimizzato per la ricerca locale su Google e progettato per generare contatti qualificati.",
-    image: "/images/mockup-tinteggiatore.webp"
+    image: "/images/mockup-tinteggiatore.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Pizzeria Artigianale",
     subtitle: "Pizza & Cucina Italiana",
     description: "Design moderno per una delle location più esclusive del territorio. Focus sull'eleganza visiva e sulla facilità di prenotazione.",
-    image: "/images/mockup-cascinetto.webp"
+    image: "/images/mockup-cascinetto.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Specialità di Mare",
     subtitle: "Sapori di Mare & Tradizione",
     description: "Un'identità digitale dedicata alla freschezza e alla qualità del pescato. Design elegante per una navigazione fluida e invitante.",
-    image: "/images/mockup-delfino.webp"
+    image: "/images/mockup-delfino.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Artigiano Specializzato",
     subtitle: "Eccellenza nelle Lavorazioni",
     description: "Solidità e professionalità comunicate attraverso un design pulito ed essenziale. Strategia SEO mirata alla visibilità locale.",
-    image: "/images/mockup-fabbro.webp"
+    image: "/images/mockup-fabbro.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Luxury Wedding",
     subtitle: "Pianificazione Eventi",
     description: "Un'estetica raffinata per catturare l'attenzione dei clienti più esigenti. Ottimizzazione delle conversioni tramite canali diretti.",
-    image: "/images/mockup-matrimonio.webp"
+    image: "/images/mockup-matrimonio.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Gastronomia d'Eccellenza",
     subtitle: "Tradizione & Sapori",
     description: "Un'identità digitale calda e accogliente che valorizza la tradizione e la storia. Ottimizzazione delle prenotazioni rapide.",
-    image: "/images/mockup-ennio.webp"
+    image: "/images/mockup-ennio.webp",
+    badge: { label: "Demo", variant: "demo" }
   },
   {
     title: "Centro Benessere",
     subtitle: "Estetica & Relax",
     description: "Un'identità digitale raffinata e rilassante, studiata per attrarre nuova clientela. Design pulito e percorsi di navigazione ottimizzati per incentivare i contatti.",
-    image: "/images/mockup-soave.webp"
+    image: "/images/mockup-soave.webp",
+    badge: { label: "Demo", variant: "demo" }
   }
 ];
 
@@ -104,6 +113,22 @@ export default function ProjectsPage() {
                   style={{ objectPosition: project.objectPosition ?? 'center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+
+                {/* Project badge */}
+                {project.badge && (
+                  <div className="absolute top-4 left-4 z-10">
+                    {project.badge.variant === 'coming-soon' ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold-amber text-black text-xs font-bold uppercase tracking-wider shadow-lg">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                        {project.badge.label}
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white/80 text-xs font-semibold uppercase tracking-wider">
+                        {project.badge.label}
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
               <div className="px-2">
                 <p className="text-gold-amber text-sm font-bold uppercase tracking-wider mb-2">{project.subtitle}</p>
