@@ -4,7 +4,7 @@ import { AnimatePresence, LazyMotion, domAnimation } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SkipLink from './components/SkipLink';
-const CookieBanner = React.lazy(() => import('./components/CookieBanner'));
+import CookieBanner from './components/CookieBanner';
 import ScrollToTop from './components/ScrollToTop';
 import StickyWhatsApp from './components/StickyWhatsApp';
 import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -21,12 +21,6 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 function AnimatedRoutes() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // Defer CookieBanner 2s after mount — removes it from the critical rendering path
-  const [showCookie, setShowCookie] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setShowCookie(true), 2000);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <LazyMotion features={domAnimation}>
@@ -66,11 +60,7 @@ function AnimatedRoutes() {
 
         <Footer />
         <StickyWhatsApp />
-        {showCookie && (
-          <Suspense fallback={null}>
-            <CookieBanner />
-          </Suspense>
-        )}
+        <CookieBanner />
         <SpeedInsights />
       </div>
     </LazyMotion>
