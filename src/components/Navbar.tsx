@@ -66,9 +66,9 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">I Nostri Servizi</button>
-              <button onClick={() => scrollToSection('faq')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">FAQ</button>
               <Link to="/progetti" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Portfolio Progetti</Link>
               <Link to="/blog" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Blog</Link>
+              <button onClick={() => scrollToSection('faq')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">FAQ</button>
               <button onClick={() => scrollToSection('contatti')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">Contattaci Ora</button>
             </>
           ) : (
@@ -116,9 +116,9 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">I Nostri Servizi</button>
-              <button onClick={() => scrollToSection('faq')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">FAQ</button>
               <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Portfolio Progetti</Link>
               <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Blog</Link>
+              <button onClick={() => scrollToSection('faq')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">FAQ</button>
               <button onClick={() => scrollToSection('contatti')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">Contattaci Ora</button>
             </>
           ) : (
