@@ -8,7 +8,7 @@ export async function getAllPosts(): Promise<BlogPost[]> {
   for (const path in modules) {
     const rawContent = await modules[path]() as string;
     const { data, content } = matter(rawContent);
-    const slug = path.split('/').pop()?.replace('.md', '') || '';
+    const slug = path.split('/').pop()?.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace('.md', '') || '';
 
     posts.push({
       slug,
