@@ -17,7 +17,7 @@ const FaqSection = React.lazy(() => import('../components/home/FaqSection'));
 import ContactSection from '../components/home/ContactSection';
 
 // Helper for true lazy loading on scroll
-const LazySection = ({ children, height = "400px" }: { children: React.ReactNode, height?: string }) => {
+const LazySection = ({ children, id, height = "400px" }: { children: React.ReactNode, id?: string, height?: string }) => {
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -36,7 +36,7 @@ const LazySection = ({ children, height = "400px" }: { children: React.ReactNode
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={ref} style={{ minHeight: inView ? "auto" : height }}>{inView ? children : null}</div>;
+  return <div id={id} ref={ref} style={{ minHeight: inView ? "auto" : height }}>{inView ? children : null}</div>;
 };
 
 export default function HomePage() {
@@ -174,7 +174,7 @@ export default function HomePage() {
       </section>
 
       {/* Servizi Section - True Lazy Load */}
-      <LazySection height="600px">
+      <LazySection id="servizi" height="600px">
         <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
           <ServicesSection />
         </Suspense>
@@ -229,7 +229,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section - True Lazy Load */}
-      <LazySection height="500px">
+      <LazySection id="faq" height="500px">
         <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
           <FaqSection />
         </Suspense>
