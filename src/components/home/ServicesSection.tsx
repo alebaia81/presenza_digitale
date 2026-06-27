@@ -1,5 +1,6 @@
 import { m } from 'motion/react';
 import { Layout, Zap, Globe, TrendingUp, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function ServicesSection() {
   return (
@@ -18,9 +19,12 @@ export default function ServicesSection() {
               </div>
               <div>
                 <h3 className="text-3xl font-bold text-text-primary mb-4 font-serif">Design su Misura & UX</h3>
-                <p className="text-text-secondary text-lg leading-relaxed max-w-lg font-light">
+                <p className="text-text-secondary text-lg leading-relaxed max-w-lg font-light mb-6">
                   Dimentica i template copiati e incollati. Progettiamo layout unici, belli da vedere e facilissimi da usare, per massimizzare il tempo di permanenza dei tuoi clienti sul sito.
                 </p>
+                <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-2 text-gold-amber font-bold hover:gap-3 transition-all" aria-label="Scopri il servizio di realizzazione siti web">
+                  Scopri di più <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </m.div>
@@ -33,7 +37,10 @@ export default function ServicesSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-text-primary mb-2 font-serif">Velocità Estrema</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans">L'80% degli utenti abbandona i siti lenti. Noi usiamo le tecnologie più veloci (React/Vite).</p>
+                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans mb-3">L'80% degli utenti abbandona i siti lenti. Noi usiamo le tecnologie più veloci (React/Vite).</p>
+                  <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
+                    Scopri di più <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </m.div>
@@ -45,7 +52,10 @@ export default function ServicesSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-text-primary mb-2 font-serif">SEO Locale</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans">Ti facciamo trovare prima su Google per le ricerche legate a Piacenza e provincia.</p>
+                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans mb-3">Ti facciamo trovare prima su Google per le ricerche legate a Piacenza e provincia.</p>
+                  <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
+                    Scopri di più <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </m.div>
