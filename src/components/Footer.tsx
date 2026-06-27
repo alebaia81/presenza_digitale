@@ -37,6 +37,16 @@ export default function Footer() {
         </div>
 
         {/* Right column: links + social + compliance */}
+        <div className="flex flex-col items-center md:items-start gap-4 text-sm">
+          <p className="font-semibold text-text-primary text-xs uppercase tracking-widest">Servizi</p>
+          <nav aria-label="Link servizi" className="flex flex-col gap-2">
+            <Link to="/servizi/siti-web-piacenza" className="hover:text-text-primary transition-colors">Realizzazione Siti Web Piacenza</Link>
+            <Link to="/progetti" className="hover:text-text-primary transition-colors">Portfolio Progetti</Link>
+            <Link to="/blog" className="hover:text-text-primary transition-colors">Blog</Link>
+          </nav>
+        </div>
+
+        {/* Right column: legal links + social + compliance */}
         <div className="flex flex-col items-center md:items-end gap-4 text-sm">
 
           {/* Legal nav links */}

@@ -66,6 +66,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">I Nostri Servizi</button>
+              <Link to="/servizi/siti-web-piacenza" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Siti Web Piacenza</Link>
               <Link to="/progetti" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Portfolio Progetti</Link>
               <Link to="/blog" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">Blog</Link>
               <button onClick={() => scrollToSection('faq')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">FAQ</button>
@@ -74,6 +75,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           ) : (
             <>
               <Link to="/" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors" aria-current={location.pathname === '/' ? 'page' : undefined}>Torna alla Home</Link>
+              <Link to="/servizi/siti-web-piacenza" className={`text-sm font-medium transition-colors ${location.pathname === '/servizi/siti-web-piacenza' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`} aria-current={location.pathname === '/servizi/siti-web-piacenza' ? 'page' : undefined}>Siti Web Piacenza</Link>
               <Link to="/progetti" className={`text-sm font-medium transition-colors ${location.pathname === '/progetti' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`} aria-current={location.pathname === '/progetti' ? 'page' : undefined}>Portfolio Progetti</Link>
               <Link to="/blog" className={`text-sm font-medium transition-colors ${location.pathname.startsWith('/blog') ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`} aria-current={location.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</Link>
               <button onClick={() => scrollToSection('faq')} className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer">FAQ</button>
@@ -116,6 +118,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           {isHome ? (
             <>
               <button onClick={() => scrollToSection('servizi')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">I Nostri Servizi</button>
+              <Link to="/servizi/siti-web-piacenza" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Siti Web Piacenza</Link>
               <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Portfolio Progetti</Link>
               <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Blog</Link>
               <button onClick={() => scrollToSection('faq')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">FAQ</button>
@@ -124,6 +127,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           ) : (
             <>
               <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-semibold text-text-secondary hover:text-text-primary">Torna alla Home</Link>
+              <Link to="/servizi/siti-web-piacenza" onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-semibold transition-colors ${location.pathname === '/servizi/siti-web-piacenza' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`}>Siti Web Piacenza</Link>
               <Link to="/progetti" onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-semibold transition-colors ${location.pathname === '/progetti' ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`}>Portfolio Progetti</Link>
               <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className={`text-2xl font-semibold transition-colors ${location.pathname.startsWith('/blog') ? 'text-text-primary font-bold' : 'text-text-secondary hover:text-text-primary'}`}>Blog</Link>
               <button onClick={() => scrollToSection('faq')} className="text-2xl font-semibold text-left text-text-secondary hover:text-text-primary cursor-pointer">FAQ</button>

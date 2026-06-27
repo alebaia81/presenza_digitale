@@ -1,17 +1,32 @@
 User-agent: *
 Allow: /
 
-# Block AI Crawlers
-User-agent: GPTBot
-Disallow: /
+# ── AI Crawlers Strategy ──────────────────────────────────────────
+# ALLOWED: Strategic AI search engines (GEO - Generative Engine Optimization)
+# These power AI Overviews on Google, ChatGPT Search and Bing Copilot.
+# Blocking them removes the site from AI-generated answers entirely.
 
+# Google AI Overviews (SGE) — allowed
+User-agent: Google-Extended
+Allow: /
+
+# ChatGPT Search & Plugins — allowed
+User-agent: GPTBot
+Allow: /
+
+# Bing Copilot / Microsoft AI — allowed
+User-agent: Bingbot
+Allow: /
+
+# Perplexity AI — allowed
+User-agent: PerplexityBot
+Allow: /
+
+# ── Blocked: Pure scrapers with no search-citation value ─────────
 User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Google-Extended
 Disallow: /
 
 User-agent: CCBot
