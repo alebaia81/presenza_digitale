@@ -115,7 +115,7 @@ const BlogPage = () => {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs font-semibold text-text-primary">{post.author}</span>
-                      <span className="text-[10px] text-text-secondary">{post.date}</span>
+                      <time itemProp="datePublished" className="text-[10px] text-text-secondary mt-0.5">Pubblicato il {post.date}</time>
                     </div>
                   </div>
                   

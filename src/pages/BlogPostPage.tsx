@@ -342,7 +342,7 @@ const BlogPostPage = () => {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-text-primary">{post.author}</span>
-              <span className="text-xs text-text-secondary font-medium">Creatore di Presenza Digitale • {post.date}</span>
+              <span className="text-xs text-text-secondary font-medium mt-0.5">Creatore di Presenza Digitale • Pubblicato il <time itemProp="datePublished">{post.date}</time></span>
             </div>
           </div>
         </header>
