@@ -1,14 +1,33 @@
 <!doctype html>
 <html lang="it">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPJVEH8NC9"></script>
+    <!-- Google tag (gtag.js) - Delayed Load for Performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          window.removeEventListener('scroll', loadGTM);
+          window.removeEventListener('mousemove', loadGTM);
+          window.removeEventListener('touchstart', loadGTM);
+          
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZPJVEH8NC9";
+          document.head.appendChild(script);
 
-      gtag('config', 'G-ZPJVEH8NC9');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-ZPJVEH8NC9');
+        }
+        window.addEventListener('scroll', loadGTM, { passive: true });
+        window.addEventListener('mousemove', loadGTM, { passive: true });
+        window.addEventListener('touchstart', loadGTM, { passive: true });
+        setTimeout(loadGTM, 4000);
+      })();
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

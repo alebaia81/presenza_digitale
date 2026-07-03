@@ -42,6 +42,16 @@ const LazySection = ({ children, id, height = "400px" }: { children: React.React
 export default function HomePage() {
   const navigate = useNavigate();
 
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
   // Scroll tracking for interactive scroll-driven hero animations
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 180], [0, 1]);
@@ -148,15 +158,23 @@ export default function HomePage() {
               <PlayCircle className="w-16 h-16 text-gold-amber/50 animate-pulse" />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 z-10 pointer-events-none" />
-            <video
-              src="/assets/video/hero1.mp4"
-              poster="/assets/images/hero-bg.avif"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
-            />
+            {isDesktop ? (
+              <video
+                src="/assets/video/hero1.mp4"
+                poster="/assets/images/hero-bg.avif"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+              />
+            ) : (
+              <img
+                src="/assets/images/hero-bg.avif"
+                alt="Presenza Digitale Hero Background"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+              />
+            )}
           </m.div>
         </div>
       </section>
