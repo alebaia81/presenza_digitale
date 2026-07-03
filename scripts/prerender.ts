@@ -124,9 +124,10 @@ async function prerenderRoute(
   // Get the full rendered HTML
   const html = await page.content();
 
-  // Determine output path
+  // Determine output path in the new seo-html directory
+  const SEO_DIR = path.resolve(__dirname, '..', 'seo-html');
   const routePath = route === '/' ? '/index.html' : `${route}/index.html`;
-  const outFile = path.join(DIST_DIR, routePath);
+  const outFile = path.join(SEO_DIR, routePath);
   const outDir = path.dirname(outFile);
 
   // Create directory if needed
@@ -135,7 +136,7 @@ async function prerenderRoute(
   }
 
   fs.writeFileSync(outFile, html, 'utf-8');
-  console.log(`  ✅ ${route} → ${path.relative(DIST_DIR, outFile)}`);
+  console.log(`  ✅ ${route} → seo-html${routePath}`);
 
   await page.close();
 }
