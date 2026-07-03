@@ -22,10 +22,11 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# ── Blocked: Pure scrapers with no search-citation value ─────────
+# ── Allowed: User-initiated fetch (lets ChatGPT read your site when asked) ──
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
+# ── Blocked: Pure scrapers with no search-citation value ─────────
 User-agent: ClaudeBot
 Disallow: /
 
