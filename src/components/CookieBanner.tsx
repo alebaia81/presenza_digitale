@@ -54,7 +54,7 @@ export default function CookieBanner() {
                   Questo sito utilizza esclusivamente <strong className="text-white">cookie tecnici</strong> necessari al corretto funzionamento. Non utilizziamo cookie di profilazione né strumenti di tracciamento.{' '}
                   <Link 
                     to="/cookie-policy" 
-                    className="text-gold-amber hover:text-white transition-colors underline underline-offset-2"
+                    className="text-[#FFBF00] hover:text-white transition-colors underline underline-offset-2"
                   >
                     Scopri di più
                   </Link>
