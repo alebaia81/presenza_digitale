@@ -4,13 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, PlayCircle, MapPin
 } from 'lucide-react';
-import { waLink } from '../constants';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { Helmet } from 'react-helmet-async';
-import { faqItems } from '../data/faqs';
 import { scrollToElement } from '../utils/scroll';
 
-// Lazy loaded components (ContactSection is sync — it's the conversion goal, must always be in DOM)
+// Lazy loaded components
 const ServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
 const AccessibilityFeature = React.lazy(() => import('../components/home/AccessibilityFeature'));
 const TrustSection = React.lazy(() => import('../components/home/TrustSection'));
@@ -30,7 +28,7 @@ const LazySection = ({ children, id, height = "400px" }: { children: React.React
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" } // Start loading 200px before it enters the viewport
+      { rootMargin: "200px" }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -40,9 +38,50 @@ const LazySection = ({ children, id, height = "400px" }: { children: React.React
   return <div id={id} ref={ref} style={{ minHeight: height }}>{inView ? children : null}</div>;
 };
 
-export default function HomePage() {
-  const navigate = useNavigate();
+const cremonaWaLink = "https://wa.me/393398156719?text=Ciao%20Alessandro%2C%20vorrei%20maggiori%20informazioni%20sui%20vostri%20servizi%20di%20sviluppo%20siti%20web%20e%20soluzioni%20AI%20a%20Cremona.";
 
+const reviewsCremonaAI = [
+  {
+    text: "Hanno integrato un assistente AI sul sito della mia attività a Cremona e ora gestiamo le richieste di informazioni dei clienti in automatico anche di notte. Rivoluzionario e conveniente!",
+    author: "Marco R.",
+    role: "E-commerce Owner, Cremona"
+  },
+  {
+    text: "Cercavo una web agency a Cremona per una landing page veloce e accessibile. Risultato fantastico: posizionamento locale immediato su Google e un'immagine davvero premium.",
+    author: "Andrea A.",
+    role: "Libero Professionista, Cremona"
+  },
+  {
+    text: "Avere un sito web moderno con WhatsApp integrato e automazioni intelligenti ha permesso alla nostra azienda agricola di raddoppiare i contatti commerciali in provincia.",
+    author: "Elena T.",
+    role: "Azienda Agricola, Crema"
+  }
+];
+
+const faqCremonaAI = [
+  {
+    question: "Quali sono i vantaggi di integrare l'Intelligenza Artificiale nel mio sito web a Cremona?",
+    answer: "L'integrazione di assistenti AI personalizzati consente di rispondere automaticamente ai clienti 24/7, pre-qualificare i lead commerciali e automatizzare compiti ripetitivi (come prenotazioni e FAQ complesse), liberando tempo prezioso per il tuo business a Cremona."
+  },
+  {
+    question: "Quanto costa lo sviluppo di un sito web o e-commerce con soluzioni AI a Cremona?",
+    answer: "I costi variano in base alla complessità delle automazioni e delle funzionalità richieste. Offriamo preventivi personalizzati e trasparenti a partire da landing page ad alta conversione per attività locali fino a portali aziendali multipagina con agenti AI integrati. Non ci sono costi mensili obbligatori o licenze nascoste."
+  },
+  {
+    question: "Come funziona il posizionamento SEO locale a Cremona e provincia?",
+    answer: "La SEO locale posiziona il tuo sito web in cima alle ricerche di chi cerca i tuoi servizi a Cremona e dintorni. Ottimizziamo la semantica HTML, inseriamo dati strutturati Schema.org conformi e ti supportiamo nella configurazione del Google Business Profile per dominare le ricerche geolocalizzate."
+  },
+  {
+    question: "I siti web che sviluppate a Cremona sono veloci e conformi alle norme di accessibilità (WCAG 2.2 AA)?",
+    answer: "Sì, assolutamente. Utilizziamo framework moderni come React 19 e Vite che garantiscono caricamenti fulminei (LCP < 2s). Ogni riga di codice rispetta le specifiche di accessibilità WCAG 2.2 AA, migliorando l'esperienza utente e il posizionamento naturale su Google."
+  },
+  {
+    question: "Lavorate anche con aziende e attività in provincia di Cremona?",
+    answer: "Sì. Copriamo l'intero territorio della provincia di Cremona, inclusi comuni come Crema, Casalmaggiore, Castelleone, Soresina, Pandino, Pizzighettone e zone limitrofe, offrendo consulenze sia da remoto che di persona."
+  }
+];
+
+export default function WebAgencyCremonaPage() {
   const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
 
   useEffect(() => {
@@ -53,11 +92,9 @@ export default function HomePage() {
     return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
 
-  // Scroll tracking for interactive scroll-driven hero animations
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 180], [0, 1]);
   const y = useTransform(scrollY, [0, 180], [80, 0]);
-  const indicatorOpacity = useTransform(scrollY, [0, 60], [1, 0]);
 
   const scrollToContact = () => {
     scrollToElement('contatti');
@@ -70,7 +107,7 @@ export default function HomePage() {
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const messaggioCorpo = (document.getElementById('message') as HTMLTextAreaElement).value;
 
-    const testo = `*Nuovo Contatto da Presenza Digitale*%0A%0A` +
+    const testo = `*Nuovo Contatto da Presenza Digitale (Cremona AI)*%0A%0A` +
                   `👤 *Nome:* ${nome}%0A` +
                   `📧 *Email:* ${email}%0A` +
                   `💬 *Messaggio:* ${messaggioCorpo}`;
@@ -80,10 +117,43 @@ export default function HomePage() {
     (document.getElementById('contact-form') as HTMLFormElement).reset();
   };
 
+  const professionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Presenza Digitale — Web Agency Cremona",
+    "description": "Realizzazione siti web, e-commerce avanzati e soluzioni con Intelligenza Artificiale a Cremona e provincia. Ottimizza il tuo business con Presenza Digitale.",
+    "url": "https://www.presenzadigitale.com/web-agency-cremona",
+    "telephone": "+393398156719",
+    "email": "info@presenzadigitale.com",
+    "priceRange": "€€",
+    "areaServed": [
+      "Cremona",
+      "Crema",
+      "Casalmaggiore",
+      "Castelleone",
+      "Soresina",
+      "Pandino"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cremona",
+      "addressRegion": "CR",
+      "postalCode": "26100",
+      "addressCountry": "IT"
+    },
+    "serviceType": [
+      "Realizzazione Siti Web",
+      "Soluzioni AI",
+      "Consulenza Digitale",
+      "Automazione Processi",
+      "SEO Locale"
+    ]
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqItems.map((item) => ({
+    "mainEntity": faqCremonaAI.map((item) => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {
@@ -96,14 +166,18 @@ export default function HomePage() {
   return (
     <div>
       <Helmet>
-        <title>Presenza Digitale | Realizzazione Siti Web Piacenza</title>
-        <meta name="description" content="Sviluppiamo siti web e landing page professionali, veloci e accessibili conformi WCAG 2.2 AA a Piacenza e provincia per massimizzare le tue conversioni." />
-        <link rel="canonical" href="https://www.presenzadigitale.com/" />
+        <title>Web Agency Cremona | Realizzazione Siti Web e AI | Presenza Digitale</title>
+        <meta name="description" content="Creazione siti web, e-commerce avanzati e soluzioni con Intelligenza Artificiale a Cremona. Ottimizza il tuo business con Presenza Digitale." />
+        <link rel="canonical" href="https://www.presenzadigitale.com/web-agency-cremona" />
+        <script type="application/ld+json">
+          {JSON.stringify(professionalServiceSchema)}
+        </script>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
-      {/* Hero Section - CRITICAL (Sync, first visible block) */}
+
+      {/* Hero Section */}
       <section className="relative pt-28 pb-12 lg:pt-36 lg:pb-16 px-6 overflow-hidden min-h-[90vh] flex items-center bg-bg-primary transition-colors duration-300">
         <div className="absolute inset-0 bg-bg-primary/40 opacity-20 mix-blend-overlay pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-amber/5 rounded-full blur-[150px] pointer-events-none" />
@@ -114,23 +188,22 @@ export default function HomePage() {
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-bg-card border border-border-primary text-text-primary text-sm font-semibold shadow-lg backdrop-blur-md hero-badge transition-all"
             >
               <MapPin className="w-4 h-4 text-gold-amber" />
-              <span>Consulenza Digitale a Piacenza e Provincia</span>
+              <span>Consulenza Digitale e AI a Cremona e Provincia</span>
             </div>
             
-            <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
-            {/* LCP ELEMENT — immediately visible, no opacity:0 */}
+            <h1 className="sr-only">Web Agency Cremona | Sviluppo Siti Web e Soluzioni AI</h1>
             <div
               aria-hidden="true"
-              className="text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] hero-title font-serif"
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-text-primary leading-[1.1] hero-title font-serif"
             >
-              Non ti serve solo un sito. <br />
-              Ti serve <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">presenza.</span>
+              Web Agency Cremona <br />
+              Siti Web e <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">Soluzioni AI.</span>
             </div>
             
             <p
               className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light max-w-xl hero-subtitle"
             >
-              Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
+              Realizziamo siti web ed e-commerce a Cremona e provincia integrati con assistenti AI personalizzati, automazioni e strategie di conversione per far crescere il tuo business.
             </p>
             
             <div
@@ -142,7 +215,7 @@ export default function HomePage() {
               >
                 Richiedi un Preventivo <ArrowRight className="w-5 h-5" />
               </button>
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#075E54] hover:bg-[#0c4f47] text-white px-8 py-4 rounded-full text-lg font-bold transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(7,94,84,0.3)]">
+              <a href={cremonaWaLink} target="_blank" rel="noopener noreferrer" className="bg-[#075E54] hover:bg-[#0c4f47] text-white px-8 py-4 rounded-full text-lg font-bold transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(7,94,84,0.3)]">
                 <WhatsAppIcon className="w-6 h-6" /> WhatsApp
               </a>
             </div>
@@ -184,9 +257,9 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.1)] dark:shadow-[0_0_50px_rgba(191,149,63,0.15)] group hover:shadow-[0_0_80px_rgba(191,149,63,0.2)] transition-all duration-700 border-gold-amber/30">
           <div className="absolute inset-0 bg-gradient-to-br from-[#fdfcfb] via-bg-primary to-[#f8f5ee] dark:from-[#1a150c] dark:via-[#050505] dark:to-[#1a150c] -z-10 transition-colors duration-300" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/5 dark:bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/15 dark:group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sarti del Digital per le Eccellenze Locali</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sarti del Digital e dell'Intelligenza Artificiale</h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light font-sans">
-            Dall'artigiano di fiducia al ristorante storico, sappiamo come far brillare il tuo business a Piacenza. Progettiamo esperienze digitali <strong className="text-text-primary font-semibold">Sleek &amp; Gourmet Luxury</strong> e sistemi di vendita su WhatsApp studiati per il mercato locale.
+            Dall'artigiano di fiducia all'azienda strutturata, sappiamo come far brillare e automatizzare il tuo business a Cremona. Progettiamo esperienze digitali <strong className="text-text-primary font-semibold">Sleek &amp; Gourmet Luxury</strong>, integrando assistenti virtuali intelligenti e sistemi di conversione automatici studiati per superare la concorrenza locale.
           </p>
         </div>
       </section>
@@ -194,7 +267,7 @@ export default function HomePage() {
       {/* Servizi Section - True Lazy Load */}
       <LazySection id="servizi" height="600px">
         <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
-          <ServicesSection />
+          <ServicesSection city="Cremona" serviceLink="/web-agency-cremona" />
         </Suspense>
       </LazySection>
 
@@ -210,7 +283,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <LazySection height="400px">
             <Suspense fallback={<div className="h-96 bg-bg-card/20 animate-pulse rounded-3xl" />}>
-              <TrustSection />
+              <TrustSection city="Cremona" reviews={reviewsCremonaAI} />
             </Suspense>
           </LazySection>
         </div>
@@ -220,26 +293,26 @@ export default function HomePage() {
       <section className="py-24 px-6 relative bg-bg-primary border-t border-border-primary transition-colors duration-300">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-bg-secondary/20 -z-10 pointer-events-none" />
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">L'Importanza della Presenza Digitale per le Aziende</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sviluppo Siti Web e Intelligenza Artificiale a Cremona</h2>
           
           <div className="space-y-6 text-text-secondary font-light leading-relaxed text-lg font-sans">
             <p>
-              Nel mercato odierno, avere una solida <strong className="text-text-primary font-medium">presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong className="text-text-primary font-medium">consulenza web professionale</strong> esperta nella <strong className="text-text-primary font-medium">realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
+              Nel panorama imprenditoriale moderno, possedere un sito web standard non è più sufficiente per emergere. A Cremona e provincia, la competizione locale sta cambiando rapidamente, ed è fondamentale affidarsi a una <strong className="text-text-primary font-medium">web agency specializzata nell'integrazione di Intelligenza Artificiale</strong> per automatizzare i processi e convertire i visitatori in clienti fedeli. Molti business locali operano ancora con siti web obsoleti o basati su template vecchi e lenti, perdendo costantemente quote di mercato a favore di chi sceglie di innovare.
             </p>
             <p>
-              Il nostro studio si specializza nella creazione di <strong className="text-text-primary font-medium">landing page ad alta conversione</strong>. Non ci limitiamo a fornire un design estetico "Dark Luxury": studiamo l'architettura dell'informazione, la user experience (UX) e le strategie di copywriting persuasivo per trasformare i visitatori in contatti concreti. Questo approccio è vitale per artigiani, ristoratori, liberi professionisti e piccole-medie imprese che desiderano un ritorno sull'investimento tangibile e misurabile. Un sito lento, confuso o non adattato per i dispositivi mobili (smartphone) danneggia gravemente la credibilità del tuo marchio aziendale.
+              Presenza Digitale si occupa di realizzare <strong className="text-text-primary font-medium">landing page e portali web ad alte prestazioni</strong>. Il nostro approccio combina un design estetico esclusivo "Dark Luxury" con la potenza degli agenti AI personalizzati. Immagina un assistente virtuale istruito sul catalogo o sui servizi della tua azienda, in grado di accogliere i clienti sul sito, chiarire i loro dubbi e guidarli alla prenotazione o all'acquisto 24 ore su 24, 7 giorni su 7. Questo riduce drasticamente i tempi di attesa e massimizza la lead generation per professionisti e aziende.
             </p>
             <p>
-              Inoltre, il <strong className="text-text-primary font-medium">posizionamento SEO locale</strong> (Search Engine Optimization) gioca un ruolo cruciale. Essere visibili sui motori di ricerca quando un utente cerca i tuoi servizi a Piacenza significa intercettare una domanda consapevole e altamente profilata. Attraverso un'attenta ricerca delle parole chiave, l'ottimizzazione avanzata dei contenuti, la strutturazione semantica dei tag HTML e l'implementazione del markup strutturato, garantiamo che il tuo portale web non sia solo una "vetrina nel deserto", ma un potente strumento di lead generation integrato nel tuo ecosistema di vendita.
+              L'ottimizzazione per i motori di ricerca (<strong className="text-text-primary font-medium">SEO locale a Cremona</strong>) rappresenta un altro pilastro fondamentale. Non ci limitiamo a far apparire bello il tuo sito: ne curiamo la velocità di caricamento, l'accessibilità (secondo gli standard internazionali WCAG 2.2 AA) e la semantica dei dati strutturati Schema.org. In questo modo, Google e i moderni motori di ricerca basati su intelligenza artificiale (GEO) comprendono perfettamente chi sei e cosa offri, posizionandoti davanti alla concorrenza locale.
             </p>
             <p>
-              Investire nella tua infrastruttura digitale oggi significa proteggere e scalare il fatturato di domani. Affidati a professionisti del settore digital per curare ogni aspetto tecnico, strategico e visivo: dall'hosting ultraveloce alla stabilità del codice, per far sì che la tua azienda sia sempre un passo avanti ed emerga con un'immagine premium e inconfondibile.
+              Progettare oggi la tua presenza online significa gettare le basi per la crescita e l'efficienza operativa di domani. Contattaci per scoprire come le nostre soluzioni di web design e intelligenza artificiale personalizzata possono trasformare il tuo business sul territorio di Cremona e provincia.
             </p>
 
             <div className="pt-12 border-t border-border-primary">
-              <h3 className="text-xl font-bold text-text-primary mb-6 font-serif">Consulenza Web a Piacenza, Rivergaro, Pontenure e Provincia</h3>
+              <h3 className="text-xl font-bold text-text-primary mb-6 font-serif">Consulenza Web e Soluzioni AI a Cremona, Crema, Casalmaggiore e Provincia</h3>
               <p className="text-base text-text-secondary font-light font-sans">
-                Cerchi una <strong className="text-text-primary font-medium">consulenza web a Piacenza</strong> capace di trasformare il tuo business locale? <strong className="text-text-primary font-medium">Presenza Digitale</strong> non è un'agenzia, ma il tuo partner strategico per la <strong className="text-text-primary font-medium">creazione di siti web professionali a Piacenza e provincia</strong>. Operiamo capillarmente su tutto il territorio emiliano, offrendo soluzioni di <strong className="text-text-primary font-medium">sviluppo siti internet a Rivergaro, Pontenure e Podenzano</strong>, garantendo visibilità massima ai professionisti di <strong className="text-text-primary font-medium">Gossolengo, Vigolzone e Rottofreno</strong>.
+                Vuoi una <strong className="text-text-primary font-medium">consulenza web a Cremona</strong> in grado di automatizzare e far crescere il tuo business? <strong className="text-text-primary font-medium">Presenza Digitale</strong> è il tuo partner nello <strong className="text-text-primary font-medium">sviluppo di siti web e soluzioni AI a Cremona, Crema, Casalmaggiore</strong> e comuni limitrofi come Castelleone, Soresina e Pandino. Creiamo strumenti digitali moderni e senza canoni mensili fissi, pensati per far fare un salto di qualità concreto al tuo marchio.
               </p>
             </div>
           </div>
@@ -249,12 +322,16 @@ export default function HomePage() {
       {/* FAQ Section - True Lazy Load */}
       <LazySection id="faq" height="500px">
         <Suspense fallback={<div className="h-96 bg-bg-secondary animate-pulse rounded-[3rem] m-6" />}>
-          <FaqSection />
+          <FaqSection city="Cremona" items={faqCremonaAI} />
         </Suspense>
       </LazySection>
 
       {/* Contact Section — sync import, always in DOM for reliable scroll-to */}
-      <ContactSection inviaWhatsApp={inviaWhatsApp} />
+      <ContactSection 
+        inviaWhatsApp={inviaWhatsApp} 
+        city="Cremona" 
+        placeholderText="Voglio integrare un assistente AI o realizzare un sito per la mia azienda a Cremona..." 
+      />
     </div>
   );
 }

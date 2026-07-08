@@ -37,12 +37,14 @@ function sitemapPlugin(): Plugin {
 
       // Static routes
       const staticRoutes: Array<{ loc: string; changefreq: string; priority: string }> = [
-        { loc: '/',              changefreq: 'weekly',  priority: '1.0' },
-        { loc: '/blog',          changefreq: 'weekly',  priority: '0.9' },
-        { loc: '/progetti',      changefreq: 'monthly', priority: '0.8' },
-        { loc: '/privacy',       changefreq: 'yearly',  priority: '0.3' },
-        { loc: '/cookie-policy', changefreq: 'yearly',  priority: '0.3' },
-        { loc: '/termini',       changefreq: 'yearly',  priority: '0.3' },
+        { loc: '/',                        changefreq: 'weekly',  priority: '1.0' },
+        { loc: '/blog',                    changefreq: 'weekly',  priority: '0.9' },
+        { loc: '/progetti',                changefreq: 'monthly', priority: '0.8' },
+        { loc: '/servizi/siti-web-piacenza', changefreq: 'weekly',  priority: '0.9' },
+        { loc: '/web-agency-cremona',      changefreq: 'weekly',  priority: '0.9' },
+        { loc: '/privacy',                 changefreq: 'yearly',  priority: '0.3' },
+        { loc: '/cookie-policy',           changefreq: 'yearly',  priority: '0.3' },
+        { loc: '/termini',                 changefreq: 'yearly',  priority: '0.3' },
       ];
 
       // Discover blog posts from src/content/blog/*.md
@@ -136,6 +138,9 @@ export default defineConfig(({ mode }) => {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
+      watch: {
+        ignored: ['**/dist/**', '**/seo-html/**', '**/public/sitemap.xml']
+      }
     },
   };
 });

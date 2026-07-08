@@ -4,7 +4,20 @@ import { ChevronDown } from 'lucide-react';
 import { faqItems } from '../../data/faqs';
 
 
-export default function FaqSection() {
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface FaqSectionProps {
+  city?: string;
+  items?: FaqItem[];
+}
+
+export default function FaqSection({
+  city = "Piacenza",
+  items = faqItems
+}: FaqSectionProps) {
   const shouldReduceMotion = useReducedMotion();
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
@@ -33,13 +46,13 @@ export default function FaqSection() {
             Domande Frequenti
           </h2>
           <p className="text-xl text-text-secondary font-light font-sans max-w-2xl mx-auto">
-            Tutto quello che c'è da sapere sulla creazione di siti web accessibili, posizionamento SEO locale a Piacenza e costi di sviluppo.
+            Tutto quello che c'è da sapere sulla creazione di siti web accessibili, posizionamento SEO locale a {city} e costi di sviluppo.
           </p>
         </div>
 
         {/* Lista Fisarmonica FAQ */}
         <div className="space-y-4">
-          {faqItems.map((item, index) => {
+          {items.map((item, index) => {
             const isOpen = openIndexes.includes(index);
             return (
               <div 

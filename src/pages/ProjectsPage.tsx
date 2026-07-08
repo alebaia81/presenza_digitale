@@ -12,6 +12,14 @@ const projects: Array<{
   badge?: { label: string; variant: 'demo' | 'coming-soon' };
 }> = [
   {
+    title: "Consulenza Finanziaria",
+    subtitle: "Pianificazione & Gestione Patrimoniale",
+    description: "Sito web professionale per una consulente finanziaria indipendente. Piattaforma progettata per comunicare trasparenza e autorevolezza, dotata di strumenti integrati per la simulazione dei rendimenti e l'analisi di portafoglio per clienti privati e aziende a Piacenza e Cremona.",
+    image: "/images/mockup-consulente.webp",
+    objectPosition: "left top",
+    badge: { label: "Prossimamente Online", variant: "coming-soon" }
+  },
+  {
     title: "E-commerce Abbigliamento",
     subtitle: "Moda & Stile Online",
     description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",

@@ -38,6 +38,7 @@ function getRoutes(): string[] {
     '/blog',
     '/progetti',
     '/servizi/siti-web-piacenza',
+    '/web-agency-cremona',
     '/privacy',
     '/cookie-policy',
     '/termini',

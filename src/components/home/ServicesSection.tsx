@@ -2,12 +2,20 @@ import { m } from 'motion/react';
 import { Layout, Zap, Globe, TrendingUp, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  city?: string;
+  serviceLink?: string;
+}
+
+export default function ServicesSection({ 
+  city = "Piacenza", 
+  serviceLink = "/servizi/siti-web-piacenza" 
+}: ServicesSectionProps) {
   return (
     <section id="servizi" className="py-24 px-6 relative border-t border-border-primary bg-bg-secondary transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight font-serif">Perché sceglierci a Piacenza.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight font-serif">Perché sceglierci a {city}.</h2>
           <p className="text-xl text-text-secondary max-w-2xl font-light font-sans">Non creiamo semplici siti vetrina, ma strumenti digitali studiati per superare i tuoi concorrenti e portare risultati concreti.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto md:auto-rows-[340px]">
@@ -22,7 +30,7 @@ export default function ServicesSection() {
                 <p className="text-text-secondary text-lg leading-relaxed max-w-lg font-light mb-6">
                   Dimentica i template copiati e incollati. Progettiamo layout unici, belli da vedere e facilissimi da usare, per massimizzare il tempo di permanenza dei tuoi clienti sul sito.
                 </p>
-                <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-2 text-gold-amber font-bold hover:gap-3 transition-all" aria-label="Scopri il servizio di realizzazione siti web">
+                <Link to={serviceLink} className="inline-flex items-center gap-2 text-gold-amber font-bold hover:gap-3 transition-all" aria-label="Scopri il servizio di realizzazione siti web">
                   Scopri di più <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
@@ -38,7 +46,7 @@ export default function ServicesSection() {
                 <div>
                   <h3 className="text-xl font-bold text-text-primary mb-2 font-serif">Velocità Estrema</h3>
                   <p className="text-text-secondary text-sm leading-relaxed font-light font-sans mb-3">L'80% degli utenti abbandona i siti lenti. Noi usiamo le tecnologie più veloci (React/Vite).</p>
-                  <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
+                  <Link to={serviceLink} className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
                     Scopri di più <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -52,8 +60,8 @@ export default function ServicesSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-text-primary mb-2 font-serif">SEO Locale</h3>
-                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans mb-3">Ti facciamo trovare prima su Google per le ricerche legate a Piacenza e provincia.</p>
-                  <Link to="/servizi/siti-web-piacenza" className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
+                  <p className="text-text-secondary text-sm leading-relaxed font-light font-sans mb-3">Ti facciamo trovare prima su Google per le ricerche legate a {city} e provincia.</p>
+                  <Link to={serviceLink} className="inline-flex items-center gap-1.5 text-gold-amber text-sm font-bold hover:gap-2 transition-all">
                     Scopri di più <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>

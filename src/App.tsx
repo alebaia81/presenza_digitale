@@ -18,6 +18,7 @@ const CookiePolicyPage = React.lazy(() => import('./pages/CookiePolicyPage'));
 const TermsPage = React.lazy(() => import('./pages/TermsPage'));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 const ServizioSitiWebPiacenzaPage = React.lazy(() => import('./pages/ServizioSitiWebPiacenzaPage'));
+const WebAgencyCremonaPage = React.lazy(() => import('./pages/web-agency-cremona'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -51,6 +52,7 @@ function AnimatedRoutes() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />
                 <Route path="/servizi/siti-web-piacenza" element={<ServizioSitiWebPiacenzaPage />} />
+                <Route path="/web-agency-cremona" element={<WebAgencyCremonaPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/cookie-policy" element={<CookiePolicyPage />} />
                 <Route path="/termini" element={<TermsPage />} />

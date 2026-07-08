@@ -1,30 +1,44 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 
-export default function TrustSection() {
-  const reviews = [
-    {
-      text: "Finalmente un professionista che capisce le realtà locali. Hanno rifatto il sito della mia trattoria e ora riceviamo molte più prenotazioni online. Assistenza rapidissima.",
-      author: "Marco R.",
-      role: "Ristoratore, Piacenza"
-    },
-    {
-      text: "Professionali e veloci. Mi serviva una landing page per la mia attività di artigiano e in pochi giorni ero online con un sito bellissimo e visibile su Google.",
-      author: "Andrea A.",
-      role: "Artigiano, Caorso"
-    },
-    {
-      text: "Avere un referente di zona fa la differenza. Ci siamo incontrati di persona e hanno capito subito cosa serviva alla mia attività. Consigliatissimi.",
-      author: "Elena T.",
-      role: "Libera Professionista, Piacenza"
-    }
-  ];
+interface Review {
+  text: string;
+  author: string;
+  role: string;
+}
 
+interface TrustSectionProps {
+  city?: string;
+  reviews?: Review[];
+}
+
+const defaultReviews: Review[] = [
+  {
+    text: "Finalmente un professionista che capisce le realtà locali. Hanno rifatto il sito della mia trattoria e ora riceviamo molte più prenotazioni online. Assistenza rapidissima.",
+    author: "Marco R.",
+    role: "Ristoratore, Piacenza"
+  },
+  {
+    text: "Professionali e veloci. Mi serviva una landing page per la mia attività di artigiano e in pochi giorni ero online con un sito bellissimo e visibile su Google.",
+    author: "Andrea A.",
+    role: "Artigiano, Caorso"
+  },
+  {
+    text: "Avere un referente di zona fa la differenza. Ci siamo incontrati di persona e hanno capito subito cosa serviva alla mia attività. Consigliatissimi.",
+    author: "Elena T.",
+    role: "Libera Professionista, Piacenza"
+  }
+];
+
+export default function TrustSection({
+  city = "Piacenza",
+  reviews = defaultReviews
+}: TrustSectionProps) {
   return (
     <div className="mt-24">
       <div className="text-center mb-12">
-        <h3 className="text-3xl font-bold text-text-primary mb-4 font-serif">I risultati parlano per noi</h3>
-        <p className="text-text-secondary font-light text-lg">Cosa dicono gli imprenditori e le attività commerciali di Piacenza che ci hanno scelto.</p>
+        <h2 className="text-3xl font-bold text-text-primary mb-4 font-serif">I risultati parlano per noi</h2>
+        <p className="text-text-secondary font-light text-lg">Cosa dicono gli imprenditori e le attività commerciali di {city} che ci hanno scelto.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {reviews.map((review, i) => (

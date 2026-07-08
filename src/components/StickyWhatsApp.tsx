@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { m, AnimatePresence } from 'motion/react';
-import { waLink } from '../constants';
+import { useLocation } from 'react-router-dom';
+import { getWaLink } from '../constants';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function StickyWhatsApp() {
+  const location = useLocation();
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function StickyWhatsApp() {
       </AnimatePresence>
 
       <m.a
-        href={waLink}
+        href={getWaLink(location.pathname)}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contattaci su WhatsApp"
