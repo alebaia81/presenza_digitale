@@ -169,6 +169,7 @@ export default function WebAgencyCremonaPage() {
         <title>Web Agency Cremona | Realizzazione Siti Web e AI | Presenza Digitale</title>
         <meta name="description" content="Creazione siti web, e-commerce avanzati e soluzioni con Intelligenza Artificiale a Cremona. Ottimizza il tuo business con Presenza Digitale." />
         <link rel="canonical" href="https://www.presenzadigitale.com/web-agency-cremona" />
+        <link rel="preload" href="/assets/images/hero-bg.avif" as="image" type="image/avif" fetchPriority="high" />
         <script type="application/ld+json">
           {JSON.stringify(professionalServiceSchema)}
         </script>
@@ -245,6 +246,8 @@ export default function WebAgencyCremonaPage() {
               <img
                 src="/assets/images/hero-bg.avif"
                 alt="Presenza Digitale Hero Background"
+                loading="eager"
+                fetchPriority="high"
                 className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
               />
             )}
