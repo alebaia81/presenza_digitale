@@ -2,13 +2,27 @@ import React from 'react';
 
 interface WhatsAppIconProps {
   className?: string;
+  style?: React.CSSProperties;
 }
 
 /** Official WhatsApp logo SVG — inline, zero network request */
-export default function WhatsAppIcon({ className = 'w-5 h-5' }: WhatsAppIconProps) {
+export default function WhatsAppIcon({ className = 'w-5 h-5', style }: WhatsAppIconProps) {
+  // Extract width/height based on className to set HTML attributes as fallback
+  let width = "20";
+  let height = "20";
+  
+  if (className.includes('w-4')) { width = "16"; height = "16"; }
+  else if (className.includes('w-5')) { width = "20"; height = "20"; }
+  else if (className.includes('w-6')) { width = "24"; height = "24"; }
+  else if (className.includes('w-7')) { width = "28"; height = "28"; }
+  else if (className.includes('w-8')) { width = "32"; height = "32"; }
+
   return (
     <svg
       className={className}
+      width={width}
+      height={height}
+      style={{ minWidth: `${width}px`, minHeight: `${height}px`, ...style }}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
