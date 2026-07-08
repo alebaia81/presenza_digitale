@@ -99,7 +99,7 @@ export default function HomePage() {
         <title>Presenza Digitale | Realizzazione Siti Web Piacenza</title>
         <meta name="description" content="Sviluppiamo siti web e landing page professionali, veloci e accessibili conformi WCAG 2.2 AA a Piacenza e provincia per massimizzare le tue conversioni." />
         <link rel="canonical" href="https://www.presenzadigitale.com/" />
-        <link rel="preload" href="/assets/images/hero-bg.avif" as="image" type="image/avif" fetchPriority="high" />
+        <link rel="preload" href="/assets/images/hero-bg.avif" as="image" type="image/avif" />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
@@ -174,7 +174,6 @@ export default function HomePage() {
                 src="/assets/images/hero-bg.avif"
                 alt="Presenza Digitale Hero Background"
                 loading="eager"
-                fetchPriority="high"
                 className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
               />
             )}
