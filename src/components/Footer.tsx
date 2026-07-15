@@ -53,12 +53,12 @@ export default function Footer() {
             <Link to="/privacy" className="underline hover:text-text-primary transition-colors">Privacy Policy</Link>
             <Link to="/cookie-policy" className="underline hover:text-text-primary transition-colors">Cookie Policy</Link>
             <Link to="/termini" className="underline hover:text-text-primary transition-colors">Termini e Condizioni</Link>
-            <button
-              onClick={() => window.dispatchEvent(new Event('show-cookie-banner'))}
-              className="underline hover:text-text-primary transition-colors cursor-pointer"
+            <a
+              href="#"
+              className="iubenda-cs-preferences-link underline hover:text-text-primary transition-colors"
             >
               Preferenze Cookie
-            </button>
+            </a>
           </nav>
 
           {/* Social icons */}

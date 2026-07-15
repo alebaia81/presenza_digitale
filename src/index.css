@@ -190,3 +190,45 @@ h2.text-gold-gradient {
   text-decoration-color: var(--gold-amber);
 }
 
+/* =============================================================================
+   IUBENDA COOKIE BANNER OVERRIDES (GDPR EQUAL VISIBILITY COMPLIANCE)
+   ============================================================================= */
+#iubenda-cs-banner {
+  font-family: 'Playfair Display', serif !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-trigger,
+#iubenda-cs-banner .iubenda-cs-btn {
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  padding: 10px 24px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Assicura che i pulsanti di Accetta e Rifiuta abbiano lo stesso peso e stile visivo */
+#iubenda-cs-banner .iubenda-cs-btn-accept,
+#iubenda-cs-banner .iubenda-cs-btn-reject {
+  display: inline-block !important;
+  margin: 6px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  height: 42px !important;
+  line-height: 22px !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  border-radius: 12px !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-btn-reject {
+  background-color: #1c1917 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+#iubenda-cs-banner .iubenda-cs-btn-accept {
+  background-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) !important;
+  color: #050505 !important;
+  border: none !important;
+}
+
