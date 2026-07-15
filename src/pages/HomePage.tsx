@@ -115,7 +115,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-bg-card border border-border-primary text-text-primary text-sm font-semibold shadow-lg backdrop-blur-md hero-badge transition-all"
             >
               <MapPin className="w-4 h-4 text-gold-amber" />
-              <span>Consulenza Digitale a Piacenza e Provincia</span>
+              <span>Creazione Siti Web: Fatti Trovare dai Clienti a Piacenza</span>
             </div>
             
             <h1 className="sr-only">Creazione Siti Web Piacenza</h1>
@@ -124,14 +124,13 @@ export default function HomePage() {
               aria-hidden="true"
               className="text-5xl md:text-7xl font-extrabold text-text-primary leading-[1.1] hero-title font-serif"
             >
-              Non ti serve solo un sito. <br />
-              Ti serve <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">presenza.</span>
+              Il tuo lavoro merita di essere <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">trovato.</span>
             </div>
             
             <p
               className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light max-w-xl hero-subtitle"
             >
-              Realizziamo siti su misura per attività locali che vogliono apparire credibili, professionali e riconoscibili online.
+              Creiamo siti web veloci, eleganti e ottimizzati per portare contatti reali alla tua attività, senza canoni mensili obbligatori e senza gergo tecnico.
             </p>
             
             <div
@@ -141,7 +140,7 @@ export default function HomePage() {
                 onClick={scrollToContact}
                 className="bg-text-primary text-bg-primary px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer"
               >
-                Richiedi un Preventivo <ArrowRight className="w-5 h-5" />
+                Verifica la tua visibilità (Gratis) <ArrowRight className="w-5 h-5" />
               </button>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="bg-[#075E54] hover:bg-[#0c4f47] text-white px-8 py-4 rounded-full text-lg font-bold transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(7,94,84,0.3)]">
                 <WhatsAppIcon className="w-6 h-6" /> WhatsApp
@@ -188,7 +187,7 @@ export default function HomePage() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/5 dark:bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/15 dark:group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sarti del Digital per le Eccellenze Locali</h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light font-sans">
-            Dall'artigiano di fiducia al ristorante storico, sappiamo come far brillare il tuo business a Piacenza. Progettiamo esperienze digitali <strong className="text-text-primary font-semibold">Sleek &amp; Gourmet Luxury</strong> e sistemi di vendita su WhatsApp studiati per il mercato locale.
+            Un sito web bellissimo che nessuno visita è come un negozio sperduto nel deserto. Che tu sia un ristorante che vuole riempire i tavoli senza pagare le commissioni dei portali di delivery, o un artigiano stanco di regalare clienti ai concorrenti su Google, creiamo la tua vetrina digitale su misura. Zero abbonamenti mensili obbligatori, prenotazioni dirette sul tuo WhatsApp e codice ottimizzato per farsi trovare a Piacenza e provincia.
           </p>
         </div>
       </section>
@@ -226,16 +225,10 @@ export default function HomePage() {
           
           <div className="space-y-6 text-text-secondary font-light leading-relaxed text-lg font-sans">
             <p>
-              Nel mercato odierno, avere una solida <strong className="text-text-primary font-medium">presenza digitale</strong> non è più un'opzione, ma una necessità assoluta per qualsiasi attività commerciale. A Piacenza e provincia, la competizione locale è sempre più accesa, e affidarsi a una <strong className="text-text-primary font-medium">consulenza web professionale</strong> esperta nella <strong className="text-text-primary font-medium">realizzazione siti web</strong> è il primo passo per distinguersi. Molti imprenditori sottovalutano l'impatto di un sito web professionale, accontentandosi di soluzioni amatoriali o pagine social non ottimizzate, perdendo così preziose opportunità di business a vantaggio dei competitor.
+              Cosa vede un cliente quando cerca il tuo nome o la tua attività su Google? Se non trova nulla, o se trova un sito lento e obsoleto, sceglierà un tuo concorrente. A Piacenza la competizione locale è reale: per questo la <strong className="text-text-primary font-medium">creazione siti web piacenza</strong> e una <strong className="text-text-primary font-medium">consulenza web piacenza</strong> professionale sono essenziali. Un sito web professionale non è un costo, ma un collaboratore attivo 24 ore su 24 che presenta i tuoi lavori migliori e raccoglie contatti mentre tu sei sul campo a lavorare.
             </p>
             <p>
-              Il nostro studio si specializza nella creazione di <strong className="text-text-primary font-medium">landing page ad alta conversione</strong>. Non ci limitiamo a fornire un design estetico "Dark Luxury": studiamo l'architettura dell'informazione, la user experience (UX) e le strategie di copywriting persuasivo per trasformare i visitatori in contatti concreti. Questo approccio è vitale per artigiani, ristoratori, liberi professionisti e piccole-medie imprese che desiderano un ritorno sull'investimento tangibile e misurabile. Un sito lento, confuso o non adattato per i dispositivi mobili (smartphone) danneggia gravemente la credibilità del tuo marchio aziendale.
-            </p>
-            <p>
-              Inoltre, il <strong className="text-text-primary font-medium">posizionamento SEO locale</strong> (Search Engine Optimization) gioca un ruolo cruciale. Essere visibili sui motori di ricerca quando un utente cerca i tuoi servizi a Piacenza significa intercettare una domanda consapevole e altamente profilata. Attraverso un'attenta ricerca delle parole chiave, l'ottimizzazione avanzata dei contenuti, la strutturazione semantica dei tag HTML e l'implementazione del markup strutturato, garantiamo che il tuo portale web non sia solo una "vetrina nel deserto", ma un potente strumento di lead generation integrato nel tuo ecosistema di vendita.
-            </p>
-            <p>
-              Investire nella tua infrastruttura digitale oggi significa proteggere e scalare il fatturato di domani. Affidati a professionisti del settore digital per curare ogni aspetto tecnico, strategico e visivo: dall'hosting ultraveloce alla stabilità del codice, per far sì che la tua azienda sia sempre un passo avanti ed emerga con un'immagine premium e inconfondibile.
+              Progettiamo siti web ultra-veloci (che non fanno perdere la pazienza a chi naviga da cellulare), occupandoci della <strong className="text-text-primary font-medium">realizzazione siti web</strong> con codice ottimizzato e totalmente a norma di legge sulla privacy e sull'accessibilità. Investire nella tua infrastruttura digitale oggi significa proteggere e far crescere il tuo fatturato di domani. Affidati a un professionista del settore per curare ogni aspetto tecnico, strategico e visivo.
             </p>
 
             <div className="pt-12 border-t border-border-primary">
