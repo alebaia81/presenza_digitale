@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer
-      role="contentinfo"
+    <div
       className="bg-bg-primary text-text-secondary py-12 border-t border-border-primary transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8 text-center md:text-left">
@@ -100,6 +99,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }

@@ -29,22 +29,26 @@ function AnimatedRoutes() {
       <div className="min-h-screen bg-bg-primary text-text-primary selection:bg-selection-bg transition-colors duration-300 flex flex-col">
         {/* WCAG 2.4.1 — Skip Link: primo elemento assoluto del DOM */}
         <SkipLink />
-        <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+        
+        <header role="banner">
+          <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+        </header>
+
         <ScrollToTop />
 
-          {/*
-            AnimatePresence with initial={false}: skips the initial mount animation
-            so the first page load is NEVER hidden behind opacity:0.
-            Exit animations still work on page transitions (navigate away).
-          */}
-          <AnimatePresence mode="wait" initial={false}>
-            {/* WCAG 2.4.1 — id="main-content" è il target del SkipLink */}
-            <main
-              id="main-content"
-              key={location.pathname}
-              className="flex-grow page-enter"
-              tabIndex={-1}
-            >
+        {/*
+          AnimatePresence with initial={false}: skips the initial mount animation
+          so the first page load is NEVER hidden behind opacity:0.
+          Exit animations still work on page transitions (navigate away).
+        */}
+        <AnimatePresence mode="wait" initial={false}>
+          {/* WCAG 2.4.1 — id="main-content" è il target del SkipLink */}
+          <main
+            id="main-content"
+            key={location.pathname}
+            className="flex-grow page-enter"
+            tabIndex={-1}
+          >
             <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-bg-primary transition-colors duration-300"><div className="w-10 h-10 border-4 border-gold-amber/20 border-t-gold-amber rounded-full animate-spin"></div></div>}>
               <Routes location={location}>
                 <Route path="/" element={<HomePage />} />
@@ -62,7 +66,10 @@ function AnimatedRoutes() {
           </main>
         </AnimatePresence>
 
-        <Footer />
+        <footer role="contentinfo">
+          <Footer />
+        </footer>
+
         <StickyWhatsApp />
         <CookieBanner />
         <SpeedInsights />

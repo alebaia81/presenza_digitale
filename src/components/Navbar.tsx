@@ -44,7 +44,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-border-primary bg-bg-primary/80 backdrop-blur-xl transition-colors duration-300">
+    <div className="fixed top-0 inset-x-0 z-50 border-b border-border-primary bg-bg-primary/80 backdrop-blur-xl transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <div className="w-[76px] h-[76px] flex items-center justify-center drop-shadow-[0_0_8px_rgba(161,68,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(191,149,63,0.3)] shrink-0">
@@ -121,6 +121,6 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           </button>
         </motion.div>
       )}
-    </header>
+    </div>
   );
 }
