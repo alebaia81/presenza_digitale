@@ -50,10 +50,16 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-4 text-sm">
 
           {/* Legal nav links */}
-          <nav aria-label="Link legali" className="flex flex-wrap gap-4 justify-center md:justify-end">
+          <nav aria-label="Link legali" className="flex flex-wrap gap-4 justify-center md:justify-end items-center">
             <Link to="/privacy" className="underline hover:text-text-primary transition-colors">Privacy Policy</Link>
             <Link to="/cookie-policy" className="underline hover:text-text-primary transition-colors">Cookie Policy</Link>
             <Link to="/termini" className="underline hover:text-text-primary transition-colors">Termini e Condizioni</Link>
+            <button
+              onClick={() => window.dispatchEvent(new Event('show-cookie-banner'))}
+              className="underline hover:text-text-primary transition-colors cursor-pointer"
+            >
+              Preferenze Cookie
+            </button>
           </nav>
 
           {/* Social icons */}

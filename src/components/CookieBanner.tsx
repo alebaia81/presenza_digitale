@@ -24,12 +24,29 @@ export default function CookieBanner() {
     if (!isConsentValid()) {
       setIsVisible(true);
     }
+
+    const handleShowBanner = () => {
+      setIsVisible(true);
+    };
+
+    window.addEventListener('show-cookie-banner', handleShowBanner);
+    return () => {
+      window.removeEventListener('show-cookie-banner', handleShowBanner);
+    };
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem(
       COOKIE_CONSENT_KEY,
       JSON.stringify({ timestamp: Date.now(), accepted: true })
+    );
+    setIsVisible(false);
+  };
+
+  const handleReject = () => {
+    localStorage.setItem(
+      COOKIE_CONSENT_KEY,
+      JSON.stringify({ timestamp: Date.now(), accepted: false })
     );
     setIsVisible(false);
   };
@@ -61,19 +78,18 @@ export default function CookieBanner() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3 w-full md:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0">
               <button
-                onClick={handleAccept}
-                className="flex-1 md:flex-none bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-6 py-2.5 rounded-xl font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(191,149,63,0.3)]"
+                onClick={handleReject}
+                className="flex-1 md:flex-none bg-zinc-800 hover:bg-zinc-700 text-white border border-white/10 px-5 py-2.5 rounded-xl font-bold text-sm transition-all cursor-pointer text-center"
               >
-                Ho capito
+                Solo necessari
               </button>
               <button
                 onClick={handleAccept}
-                className="p-2 text-zinc-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
-                aria-label="Chiudi banner cookie"
+                className="flex-1 md:flex-none bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#b38728] text-black px-5 py-2.5 rounded-xl font-bold text-sm hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(191,149,63,0.2)] cursor-pointer text-center"
               >
-                <X className="w-5 h-5" aria-hidden="true" />
+                Accetta tutti
               </button>
             </div>
           </div>
