@@ -36,7 +36,7 @@ export default function CookiePolicyPage() {
         <p>I cookie sono piccoli file di testo che i sites web visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Vengono utilizzati per diverse finalità, come memorizzare preferenze, migliorare l'esperienza di navigazione e raccogliere informazioni statistiche.</p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">2. Tipologie di Cookie utilizzati</h2>
-        <p>Questo sito utilizza <strong>esclusivamente cookie tecnici</strong>, che non richiedono il consenso preventivo dell'utente ai sensi della normativa vigente.</p>
+        <p>Questo sito utilizza cookie tecnici e analitici anonimizzati (terze parti) soggetti al consenso dell'utente tramite la Modalità di consenso di Google (Consent Mode v2).</p>
         
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-collapse">
@@ -53,22 +53,35 @@ export default function CookiePolicyPage() {
               <tr className="border-b border-border-primary/40">
                 <td className="py-3 pr-4 font-mono text-sm">cookie_consent</td>
                 <td className="py-3 pr-4">Tecnico (proprio)</td>
-                <td className="py-3 pr-4">Memorizza l'avvenuta presa visione del banner cookie</td>
+                <td className="py-3 pr-4">Memorizza le preferenze di consenso espresse dall'utente sul banner</td>
                 <td className="py-3">12 mesi</td>
+              </tr>
+              <tr className="border-b border-border-primary/40">
+                <td className="py-3 pr-4 font-mono text-sm">_ga</td>
+                <td className="py-3 pr-4">Analitico (terze parti - Google)</td>
+                <td className="py-3 pr-4">Utilizzato per distinguere gli utenti unici in forma anonimizzata</td>
+                <td className="py-3">2 anni</td>
+              </tr>
+              <tr className="border-b border-border-primary/40">
+                <td className="py-3 pr-4 font-mono text-sm">_ga_*</td>
+                <td className="py-3 pr-4">Analitico (terze parti - Google)</td>
+                <td className="py-3 pr-4">Utilizzato per mantenere lo stato della sessione di navigazione</td>
+                <td className="py-3">2 anni</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">3. Cookie di Terze Parti</h2>
-        <p>Il sito si avvale di servizi esterni che potrebbero installare cookie tecnici propri:</p>
+        <p>Il sito si avvale di servizi esterni che installano cookie propri solo previo consenso dell'utente:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Google Fonts</strong> (Google LLC) — utilizzato per il caricamento dei caratteri tipografici. Google potrebbe raccogliere dati tecnici come l'indirizzo IP dell'utente. Si tratta di cookie tecnici di CDN, non di profilazione. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
+          <li><strong>Google Analytics 4</strong> (Google Ireland Limited) — Strumento di Web Analytics per monitorare statistiche sugli accessi in forma aggregata. I cookie vengono installati solo se l'utente clicca su "Accetta tutti". <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
+          <li><strong>Google Fonts</strong> (Google LLC) — utilizzato per il caricamento dei caratteri tipografici. Google potrebbe raccogliere dati tecnici come l'indirizzo IP dell'utente. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">4. Cookie di Profilazione</h2>
+        <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">4. Cookie di Profilazione e Tracciamento</h2>
         <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-6">
-          <p className="text-emerald-600 dark:text-emerald-350 font-medium mb-0">✅ Questo sito <strong>NON utilizza cookie di profilazione</strong>, cookie analitici di terze parti, né strumenti di tracciamento pubblicitario (es. Google Analytics, Facebook Pixel, ecc.).</p>
+          <p className="text-emerald-600 dark:text-emerald-350 font-medium mb-0">✅ Questo sito <strong>NON utilizza cookie di profilazione pubblicitaria</strong> (es. Facebook Pixel o remarketing). Gli unici cookie analitici presenti sono quelli di Google Analytics 4, rigorosamente anonimizzati e attivabili esclusivamente previo consenso dell'utente.</p>
         </div>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">5. Come gestire i Cookie</h2>

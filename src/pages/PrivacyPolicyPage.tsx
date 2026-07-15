@@ -93,6 +93,7 @@ export default function PrivacyPolicyPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">6. Servizi di Terze Parti</h2>
         <p>Il sito utilizza i seguenti servizi esterni:</p>
         <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Google Analytics 4</strong> (Google Ireland Limited) — Servizio di analisi web per tracciare e analizzare il traffico del sito in forma aggregata ed anonima. I dati di tracciamento sono attivati solo a seguito del consenso esplicito dell'utente ed in linea con la Modalità di consenso di Google (Consent Mode v2). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
           <li><strong>Google Fonts</strong> — per il caricamento dei caratteri tipografici. Google può raccogliere dati tecnici (indirizzo IP). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
           <li><strong>WhatsApp (Meta)</strong> — il form di contatto reindirizza a WhatsApp per l'invio del messaggio. <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di WhatsApp</a>.</li>
         </ul>
