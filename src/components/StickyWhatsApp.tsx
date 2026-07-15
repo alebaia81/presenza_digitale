@@ -18,7 +18,10 @@ export default function StickyWhatsApp() {
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-3 pointer-events-none">
+    <aside 
+      className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-3 pointer-events-none"
+      aria-label="Contatti rapidi WhatsApp"
+    >
       <AnimatePresence>
         {showTooltip && (
           <m.div
@@ -86,6 +89,6 @@ export default function StickyWhatsApp() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]"></span>
         </span>
       </m.a>
-    </div>
+    </aside>
   );
 }

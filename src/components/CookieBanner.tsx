@@ -59,12 +59,13 @@ export default function CookieBanner() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
+        <motion.aside
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
           className="fixed bottom-0 left-0 right-0 z-[200] p-4 md:p-6"
+          aria-label="Informativa sui cookie"
         >
           <div className="max-w-4xl mx-auto bg-zinc-900/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-6 shadow-[0_-10px_60px_rgba(0,0,0,0.5)] flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
             <div className="flex items-start gap-3 flex-1">
@@ -98,7 +99,7 @@ export default function CookieBanner() {
               </button>
             </div>
           </div>
-        </motion.div>
+        </motion.aside>
       )}
     </AnimatePresence>
   );
