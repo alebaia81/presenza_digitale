@@ -41,6 +41,11 @@ export default function CookieBanner() {
       JSON.stringify({ timestamp: Date.now(), accepted: true })
     );
     setIsVisible(false);
+
+    // Attiva Google Analytics dopo il consenso esplicito
+    if (typeof (window as any).initGA === 'function') {
+      (window as any).initGA();
+    }
   };
 
   const handleReject = () => {
