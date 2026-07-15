@@ -232,3 +232,11 @@ h2.text-gold-gradient {
   border: none !important;
 }
 
+/* Nasconde il widget/bottone fluttuante di Iubenda per evitare la sovrapposizione con WhatsApp */
+.iubenda-cs-floating-btn,
+.iubenda-cs-floating-btn-container,
+#iubenda-cs-btn-container,
+#iub-cookie-solution-floating-btn {
+  display: none !important;
+}
+
