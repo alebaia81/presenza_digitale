@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Cookie, X } from 'lucide-react';
+import { Cookie } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const COOKIE_CONSENT_KEY = 'cookie_consent';
-const CONSENT_EXPIRY_MS = 365 * 24 * 60 * 60 * 1000; // 12 mesi
-
-function isConsentValid(): boolean {
-  const stored = localStorage.getItem(COOKIE_CONSENT_KEY);
-  if (!stored) return false;
-  try {
-    const { timestamp } = JSON.parse(stored);
-    return Date.now() - timestamp < CONSENT_EXPIRY_MS;
-  } catch {
-    return false;
-  }
-}
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!isConsentValid()) {
+    // Controllo al caricamento: se non c'è consenso, mostriamo il banner
+    const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+    if (!consent) {
       setIsVisible(true);
+    } else {
+      // Se c'è già un consenso salvato, applichiamo la configurazione
+      applyConsent(consent);
     }
 
     const handleShowBanner = () => {
@@ -35,25 +28,35 @@ export default function CookieBanner() {
     };
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem(
-      COOKIE_CONSENT_KEY,
-      JSON.stringify({ timestamp: Date.now(), accepted: true })
-    );
-    setIsVisible(false);
+  const applyConsent = (decision: string) => {
+    const status = decision === 'granted' ? 'granted' : 'denied';
+    
+    // Invia lo stato a Google Tag Manager / GA4
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('consent', 'update', {
+        'analytics_storage': status,
+        'ad_storage': 'denied', // Non usi pubblicità
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    }
 
-    // Attiva Google Analytics dopo il consenso esplicito
-    if (typeof (window as any).initGA === 'function') {
-      (window as any).initGA();
+    if (decision === 'granted') {
+      // Carica lo script di Analytics solo se concesso
+      loadAnalyticsScript();
     }
   };
 
-  const handleReject = () => {
-    localStorage.setItem(
-      COOKIE_CONSENT_KEY,
-      JSON.stringify({ timestamp: Date.now(), accepted: false })
-    );
+  const handleAccept = () => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'granted');
     setIsVisible(false);
+    applyConsent('granted');
+  };
+
+  const handleReject = () => {
+    localStorage.setItem(COOKIE_CONSENT_KEY, 'denied');
+    setIsVisible(false);
+    applyConsent('denied');
   };
 
   return (
@@ -74,7 +77,7 @@ export default function CookieBanner() {
               </div>
               <div>
                 <p className="text-zinc-200 text-sm leading-relaxed">
-                  Questo sito utilizza esclusivamente <strong className="text-white">cookie tecnici</strong> necessari al corretto funzionamento. Non utilizziamo cookie di profilazione né strumenti di tracciamento.{' '}
+                  Questo sito utilizza cookie tecnici e analitici per comprendere come navighi. I cookie analitici (Google Analytics 4) vengono attivati solo se fornisci il tuo consenso.{' '}
                   <Link 
                     to="/cookie-policy" 
                     className="text-[#FFBF00] hover:text-white transition-colors underline underline-offset-2"
@@ -104,3 +107,21 @@ export default function CookieBanner() {
     </AnimatePresence>
   );
 }
+
+// Funzione helper per caricare lo script di GA4 dinamicamente
+const loadAnalyticsScript = () => {
+  if (document.getElementById('ga-script')) return;
+  const script = document.createElement('script');
+  script.id = 'ga-script';
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZPJVEH8NC9';
+  script.async = true;
+  document.head.appendChild(script);
+
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  function gtag(...args: any[]) {
+    (window as any).dataLayer.push(arguments);
+  }
+  (window as any).gtag = (window as any).gtag || gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-ZPJVEH8NC9', { 'anonymize_ip': true });
+};

@@ -1,50 +1,18 @@
 <!doctype html>
 <html lang="it">
   <head>
-    <!-- Google tag (gtag.js) - Delayed Load with GDPR Consent Block -->
+    <!-- Google Consent Mode v2 (Default Denied under GDPR) -->
     <script>
-      window.initGA = function() {
-        if (window.gaInitialized) return;
-        window.gaInitialized = true;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
 
-        var gtmLoaded = false;
-        function loadGTM() {
-          if (gtmLoaded) return;
-          gtmLoaded = true;
-          window.removeEventListener('scroll', loadGTM);
-          window.removeEventListener('mousemove', loadGTM);
-          window.removeEventListener('touchstart', loadGTM);
-          
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZPJVEH8NC9";
-          document.head.appendChild(script);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', 'G-ZPJVEH8NC9', { 'anonymize_ip': true });
-        }
-
-        window.addEventListener('scroll', loadGTM, { passive: true });
-        window.addEventListener('mousemove', loadGTM, { passive: true });
-        window.addEventListener('touchstart', loadGTM, { passive: true });
-        setTimeout(loadGTM, 4000);
-      };
-
-      /* Carica GA all'avvio solo se c'è già il consenso salvato in localStorage */
-      (function() {
-        try {
-          var consent = localStorage.getItem('cookie_consent');
-          if (consent) {
-            var parsed = JSON.parse(consent);
-            if (parsed.accepted) {
-              window.initGA();
-            }
-          }
-        } catch (e) {}
-      })();
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
