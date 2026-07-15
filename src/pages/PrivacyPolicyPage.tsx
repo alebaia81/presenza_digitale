@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
           <li><strong>Nominativo:</strong> Alessandro Baiamonte</li>
           <li><strong>Status:</strong> Persona Fisica (Attività professionale privata)</li>
           <li><strong>Sede:</strong> Italia</li>
-          <li><strong>Email:</strong> <a href="mailto:alebaia81@gmail.com" className="text-gold-amber hover:underline transition-colors">alebaia81@gmail.com</a></li>
+          <li><strong>Email:</strong> <a href="mailto:presenzadigitalec@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalec@gmail.com</a></li>
         </ul>
         
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">2. Tipologia di Dati Raccolti</h2>
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
           <li><strong>Limitazione</strong> — ottenere la limitazione del trattamento.</li>
           <li><strong>Opposizione</strong> — opporsi al trattamento per motivi legittimi.</li>
         </ul>
-        <p>Per esercitare i propri diritti, l'utente può inviare una richiesta a: <a href="mailto:alebaia81@gmail.com" className="text-gold-amber hover:underline transition-colors">alebaia81@gmail.com</a></p>
+        <p>Per esercitare i propri diritti, l'utente può inviare una richiesta a: <a href="mailto:presenzadigitalec@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalec@gmail.com</a></p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">9. Diritto di Reclamo</h2>
         <p>L'interessato ha il diritto di proporre reclamo all'autorità di controllo competente:</p>
