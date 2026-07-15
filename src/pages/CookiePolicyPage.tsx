@@ -28,15 +28,15 @@ export default function CookiePolicyPage() {
       </h1>
       
       <div className="prose dark:prose-invert max-w-none text-text-secondary space-y-6">
-        <p><strong>Ultimo aggiornamento:</strong> 08 maggio 2026</p>
+        <p><strong>Ultimo aggiornamento:</strong> 15 Luglio 2026</p>
         
         <p>La presente Cookie Policy è resa ai sensi dell'art. 122 del D.Lgs. 196/2003, delle <strong>Linee Guida del Garante per la Protezione dei Dati Personali del 10 giugno 2021</strong>, e del Regolamento (UE) 2016/679 (GDPR).</p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">1. Cosa sono i Cookie</h2>
-        <p>I cookie sono piccoli file di testo che i sites web visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Vengono utilizzati per diverse finalità, come memorizzare preferenze, migliorare l'esperienza di navigazione e raccogliere informazioni statistiche.</p>
+        <p>I cookie sono piccoli file di testo che i siti web visitati inviano al browser dell'utente, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla visita successiva. Vengono utilizzati per diverse finalità, come memorizzare preferenze, migliorare l'esperienza di navigazione e raccogliere informazioni statistiche.</p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">2. Tipologie di Cookie utilizzati</h2>
-        <p>Questo sito utilizza cookie tecnici e analitici anonimizzati (terze parti) soggetti al consenso dell'utente tramite la Modalità di consenso di Google (Consent Mode v2).</p>
+        <p>Questo sito utilizza cookie tecnici e analitici anonimizzati (terze parti) soggetti al consenso preventivo dell'utente.</p>
         
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm border-collapse">
@@ -75,8 +75,7 @@ export default function CookiePolicyPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">3. Cookie di Terze Parti</h2>
         <p>Il sito si avvale di servizi esterni che installano cookie propri solo previo consenso dell'utente:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Google Analytics 4</strong> (Google Ireland Limited) — Strumento di Web Analytics per monitorare statistiche sugli accessi in forma aggregata. I cookie vengono installati solo se l'utente clicca su "Accetta tutti". <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
-          <li><strong>Google Fonts</strong> (Google LLC) — utilizzato per il caricamento dei caratteri tipografici. Google potrebbe raccogliere dati tecnici come l'indirizzo IP dell'utente. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
+          <li><strong>Google Analytics 4 (Google Ireland Limited)</strong> — Strumento di Web Analytics per monitorare statistiche sugli accessi in forma aggregata. I cookie vengono installati solo se l'utente clicca su "Accetta tutti". <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">4. Cookie di Profilazione e Tracciamento</h2>

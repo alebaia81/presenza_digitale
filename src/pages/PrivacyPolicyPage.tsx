@@ -28,24 +28,24 @@ export default function PrivacyPolicyPage() {
       </h1>
       
       <div className="prose dark:prose-invert max-w-none text-text-secondary space-y-6">
-        <p><strong>Ultimo aggiornamento:</strong> 08 maggio 2026</p>
+        <p><strong>Ultimo aggiornamento:</strong> 15 Luglio 2026</p>
         
-        <p>La presente informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito web <strong>presenzadigitale.com</strong>, gestito da Alessandro Baiamonte in qualità di professionista privato.</p>
+        <p>La presente informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e descrive le modalità di trattamento dei dati personali degli utenti che consultano il sito web <strong>presenzadigitale.com</strong>, gestito da Alessandro Baiamonte in qualità di persona fisica.</p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">1. Titolare del Trattamento</h2>
         <p>Il Titolare del trattamento dei dati personali è:</p>
         <ul className="list-disc pl-5 space-y-2">
           <li><strong>Nominativo:</strong> Alessandro Baiamonte</li>
-          <li><strong>Status:</strong> Attività professionale privata (Collaborazione Occasionale)</li>
-          <li><strong>Sede:</strong> Piacenza (PC), Italia</li>
-          <li><strong>Email:</strong> <a href="mailto:presenzadigitalepc@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalepc@gmail.com</a></li>
+          <li><strong>Status:</strong> Persona Fisica (Attività professionale privata)</li>
+          <li><strong>Sede:</strong> Italia</li>
+          <li><strong>Email:</strong> <a href="mailto:alebaia81@gmail.com" className="text-gold-amber hover:underline transition-colors">alebaia81@gmail.com</a></li>
         </ul>
         
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">2. Tipologia di Dati Raccolti</h2>
         <p>Il sito raccoglie le seguenti categorie di dati personali:</p>
         <ul className="list-disc pl-5 space-y-2">
           <li><strong>Dati di navigazione:</strong> I sistemi informatici e le procedure software preposte al funzionamento del sito acquisiscono, nel corso del loro normale esercizio, alcuni dati personali la cui trasmissione è implicita nell'uso dei protocolli di comunicazione di Internet (es. indirizzi IP, tipo di browser, sistema operativo, pagine visitate).</li>
-          <li><strong>Dati forniti volontariamente dall'utente:</strong> L'invio volontario di messaggi tramite il modulo di contatto presente sul sito comporta l'acquisizione del nome, dell'indirizzo email e del contenuto del messaggio inseriti dall'utente.</li>
+          <li><strong>Dati di interazione:</strong> Il sito fornisce collegamenti per inoltrare richieste (es. pulsante WhatsApp). Il sito non raccoglie dati personali prima del reindirizzamento alle piattaforme esterne.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">3. Finalità e Base Giuridica del Trattamento</h2>
@@ -61,16 +61,12 @@ export default function PrivacyPolicyPage() {
             </thead>
             <tbody>
               <tr className="border-b border-border-primary/40">
-                <td className="py-3 pr-4">Rispondere alle richieste di contatto e preventivi</td>
-                <td className="py-3">Consenso dell'interessato (art. 6, par. 1, lett. a)</td>
-              </tr>
-              <tr className="border-b border-border-primary/40">
-                <td className="py-3 pr-4">Garantire il funzionamento tecnico del sito</td>
+                <td className="py-3 pr-4">Garantire il funzionamento tecnico e la stabilità del sito</td>
                 <td className="py-3">Legittimo interesse del Titolare (art. 6, par. 1, lett. f)</td>
               </tr>
               <tr className="border-b border-border-primary/40">
-                <td className="py-3 pr-4">Adempiere ad obblighi di legge</td>
-                <td className="py-3">Obbligo legale (art. 6, par. 1, lett. c)</td>
+                <td className="py-3 pr-4">Analisi statistica aggregata ed anonima del traffico</td>
+                <td className="py-3">Consenso dell'interessato (art. 6, par. 1, lett. a)</td>
               </tr>
             </tbody>
           </table>
@@ -79,27 +75,27 @@ export default function PrivacyPolicyPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">4. Periodo di Conservazione</h2>
         <p>I dati personali saranno conservati per il tempo strettamente necessario al raggiungimento delle finalità per cui sono stati raccolti:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Dati di contatto</strong> (nome, email, messaggio): conservati per un massimo di <strong>12 mesi</strong> dalla ricezione, salvo diversa richiesta dell'interessato.</li>
-          <li><strong>Dati di navigazione</strong> (log tecnici): conservati per un massimo di <strong>90 giorni</strong>.</li>
+          <li><strong>Dati di navigazione</strong> (log tecnici dell'hosting Vercel): conservati secondo le policy del provider.</li>
+          <li><strong>Dati di tracciamento</strong> (cookie analitici di Google Analytics 4): conservati per un massimo di <strong>24 mesi</strong>.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">5. Comunicazione e Diffusione dei Dati</h2>
         <p>I dati personali <strong>non saranno ceduti a terzi</strong> per finalità commerciali o di marketing. Potranno essere comunicati a:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li>Fornitori di servizi tecnici necessari al funzionamento del sito (es. provider di hosting).</li>
+          <li>Fornitori di servizi tecnici necessari al funzionamento del sito (es. provider di hosting Vercel).</li>
           <li>Autorità competenti, nei casi previsti dalla legge.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">6. Servizi di Terze Parti</h2>
         <p>Il sito utilizza i seguenti servizi esterni:</p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Google Analytics 4</strong> (Google Ireland Limited) — Servizio di analisi web per tracciare e analizzare il traffico del sito in forma aggregata ed anonima. I dati di tracciamento sono attivati solo a seguito del consenso esplicito dell'utente ed in linea con la Modalità di consenso di Google (Consent Mode v2). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
-          <li><strong>Google Fonts</strong> — per il caricamento dei caratteri tipografici. Google può raccogliere dati tecnici (indirizzo IP). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
-          <li><strong>WhatsApp (Meta)</strong> — il form di contatto reindirizza a WhatsApp per l'invio del messaggio. <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di WhatsApp</a>.</li>
+          <li><strong>Vercel (Vercel Inc.)</strong> — Piattaforma di hosting del sito web. Raccoglie log tecnici e indirizzi IP per ragioni di stabilità e sicurezza del server. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Vercel</a>.</li>
+          <li><strong>Google Analytics 4 (Google Ireland Limited)</strong> — Servizio di analisi web per tracciare e analizzare il traffico del sito in forma aggregata ed anonima. I cookie analitici sono attivati solo a seguito del consenso esplicito dell'utente ed in linea con Google Consent Mode v2. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di Google</a>.</li>
+          <li><strong>WhatsApp (Meta Platforms, Inc.)</strong> — Collegamento ipertestuale che indirizza gli utenti a WhatsApp per inviare messaggi. Nessun dato viene salvato sul sito prima del redirect. <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-gold-amber hover:underline transition-colors">Privacy Policy di WhatsApp</a>.</li>
         </ul>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">7. Cookie</h2>
-        <p>Il sito utilizza esclusivamente cookie tecnici necessari al corretto funzionamento. Per maggiori informazioni, consulta la nostra <Link to="/cookie-policy" className="text-gold-amber hover:underline transition-colors">Cookie Policy</Link>.</p>
+        <p>Il sito utilizza cookie tecnici e cookie analitici (Google Analytics 4). Per maggiori informazioni o per modificare le preferenze, consulta la nostra <Link to="/cookie-policy" className="text-gold-amber hover:underline transition-colors">Cookie Policy</Link>.</p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">8. Diritti dell'Interessato</h2>
         <p>Ai sensi degli artt. 15-22 del GDPR, l'utente ha il diritto di:</p>
@@ -108,10 +104,9 @@ export default function PrivacyPolicyPage() {
           <li><strong>Rettifica</strong> — ottenere la correzione di dati inesatti o incompleti.</li>
           <li><strong>Cancellazione</strong> — ottenere la cancellazione dei propri dati ("diritto all'oblio").</li>
           <li><strong>Limitazione</strong> — ottenere la limitazione del trattamento.</li>
-          <li><strong>Portabilità</strong> — ricevere i propri dati in formato strutturato e leggibile.</li>
           <li><strong>Opposizione</strong> — opporsi al trattamento per motivi legittimi.</li>
         </ul>
-        <p>Per esercitare i propri diritti, l'utente può inviare una richiesta a: <a href="mailto:presenzadigitalepc@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalepc@gmail.com</a></p>
+        <p>Per esercitare i propri diritti, l'utente può inviare una richiesta a: <a href="mailto:alebaia81@gmail.com" className="text-gold-amber hover:underline transition-colors">alebaia81@gmail.com</a></p>
 
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">9. Diritto di Reclamo</h2>
         <p>L'interessato ha il diritto di proporre reclamo all'autorità di controllo competente:</p>
