@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MonitorSmartphone, ArrowRight, X, Menu } from 'lucide-react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { getWaLink } from '../constants';
 import WhatsAppIcon from './WhatsAppIcon';
 import ThemeToggle from './ThemeToggle';
@@ -92,7 +92,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div 
+        <m.div 
           id="mobile-menu"
           role="dialog"
           aria-label="Menu di navigazione mobile"
@@ -119,7 +119,7 @@ export default function Navbar({ isMobileMenuOpen, setIsMobileMenuOpen }: Navbar
           <button onClick={() => scrollToSection('contatti')} className="bg-text-primary text-bg-primary px-6 py-4 rounded-full text-center font-bold hover:scale-105 transition-all text-lg shadow-[0_0_30px_rgba(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer">
             Inizia Ora
           </button>
-        </motion.div>
+        </m.div>
       )}
     </div>
   );

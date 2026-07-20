@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function CookiePolicyPage() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -103,6 +103,6 @@ export default function CookiePolicyPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">7. Titolare del Trattamento</h2>
         <p>Per qualsiasi richiesta relativa ai cookie utilizzati dal sito, è possibile contattare il Titolare del trattamento all'indirizzo: <a href="mailto:presenzadigitalepc@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalepc@gmail.com</a></p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

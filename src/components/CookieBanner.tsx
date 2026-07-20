@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { m, AnimatePresence } from 'motion/react';
 import { Cookie } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -62,7 +62,7 @@ export default function CookieBanner() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.aside
+        <m.aside
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -102,7 +102,7 @@ export default function CookieBanner() {
               </button>
             </div>
           </div>
-        </motion.aside>
+        </m.aside>
       )}
     </AnimatePresence>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function TermsPage() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -51,6 +51,6 @@ export default function TermsPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">7. Contatti</h2>
         <p>Per qualsiasi domanda relativa ai presenti Termini e Condizioni, è possibile contattarci all'indirizzo: <a href="mailto:presenzadigitalepc@gmail.com" className="text-gold-amber hover:underline transition-colors">presenzadigitalepc@gmail.com</a></p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

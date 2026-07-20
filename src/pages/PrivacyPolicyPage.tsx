@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { m } from 'motion/react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function PrivacyPolicyPage() {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -117,6 +117,6 @@ export default function PrivacyPolicyPage() {
         <h2 className="text-2xl font-semibold text-text-primary mt-8 mb-4">10. Modifiche alla presente informativa</h2>
         <p>Il Titolare si riserva il diritto di modificare la presente informativa in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con indicazione della data di ultimo aggiornamento.</p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

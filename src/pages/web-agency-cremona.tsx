@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect, useRef } from 'react';
-import { m, useScroll, useTransform } from 'motion/react';
+import { m } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, PlayCircle, MapPin
@@ -82,19 +82,16 @@ const faqCremonaAI = [
 ];
 
 export default function WebAgencyCremonaPage() {
-  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const checkIsDesktop = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };
+    checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
     return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
-
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 180], [0, 1]);
-  const y = useTransform(scrollY, [0, 180], [80, 0]);
 
   const scrollToContact = () => {
     scrollToElement('contatti');
