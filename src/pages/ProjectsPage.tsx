@@ -9,15 +9,17 @@ const projects: Array<{
   description: string;
   image: string;
   objectPosition?: string;
-  badge?: { label: string; variant: 'demo' | 'coming-soon' };
+  badge?: { label: string; variant: 'demo' | 'coming-soon' | 'online' };
+  link?: string;
 }> = [
   {
-    title: "Consulenza Finanziaria",
+    title: "Ilaria Fruchi — Consulente Finanziaria",
     subtitle: "Pianificazione & Gestione Patrimoniale",
-    description: "Sito web professionale per una consulente finanziaria indipendente. Piattaforma progettata per comunicare trasparenza e autorevolezza, dotata di strumenti integrati per la simulazione dei rendimenti e l'analisi di portafoglio per clienti privati e aziende a Piacenza e Cremona.",
+    description: "Sito web professionale per la consulente finanziaria indipendente Ilaria Fruchi. Piattaforma progettata per comunicare trasparenza e autorevolezza, con architettura ottimizzata per la visibilità locale e la conversione di contatti qualificati.",
     image: "/images/mockup-consulente.webp",
     objectPosition: "left top",
-    badge: { label: "Prossimamente Online", variant: "coming-soon" }
+    badge: { label: "Sito Online", variant: "online" },
+    link: "https://ilariafruchi.it/"
   },
   {
     title: "E-commerce Abbigliamento",
@@ -117,23 +119,45 @@ export default function ProjectsPage() {
               className="group"
             >
               <div className="relative aspect-[16/10] bg-bg-card rounded-[2rem] overflow-hidden mb-6 border border-border-primary transition-all duration-500 group-hover:border-gold-amber/40 group-hover:shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:group-hover:shadow-[0_0_50px_rgba(255,255,255,0.05)]">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  width="800"
-                  height="500"
-                  loading="lazy"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
-                  style={{ objectPosition: project.objectPosition ?? 'center' }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      width="800"
+                      height="500"
+                      loading="lazy"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
+                      style={{ objectPosition: project.objectPosition ?? 'center' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  </a>
+                ) : (
+                  <>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      width="800"
+                      height="500"
+                      loading="lazy"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[0.2] group-hover:grayscale-0"
+                      style={{ objectPosition: project.objectPosition ?? 'center' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  </>
+                )}
 
                 {/* Project badge */}
                 {project.badge && (
-                  <div className="absolute top-4 left-4 z-10">
+                  <div className="absolute top-4 left-4 z-10 pointer-events-none">
                     {project.badge.variant === 'coming-soon' ? (
                       <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-yellow-400 text-black text-xs font-bold uppercase tracking-wider shadow-lg">
                         <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
+                        {project.badge.label}
+                      </span>
+                    ) : project.badge.variant === 'online' ? (
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                         {project.badge.label}
                       </span>
                     ) : (
@@ -149,7 +173,18 @@ export default function ProjectsPage() {
                 <h3 className="text-3xl font-bold text-text-primary mb-3 flex items-center gap-3 font-serif">
                   {project.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed max-w-md font-light">{project.description}</p>
+                <p className="text-text-secondary leading-relaxed max-w-md font-light mb-4">{project.description}</p>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-gold-amber hover:text-gold-amber/80 transition-colors group/link"
+                  >
+                    <span>Visita il sito online</span>
+                    <ExternalLink className="w-4 h-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </a>
+                )}
               </div>
             </m.div>
           ))}
