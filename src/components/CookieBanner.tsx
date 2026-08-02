@@ -13,17 +13,24 @@ const gtag = (...args: unknown[]) => {
   }
 };
 
-// Carica lo script GA4 una sola volta (idempotente)
-const loadGA4Script = () => {
-  if (document.getElementById('ga4-script')) return;
+// Carica lo script GA4 una sola volta (idempotente).
+// onReady viene chiamato DOPO il caricamento, o subito se già presente.
+const loadGA4Script = (onReady?: () => void) => {
+  const existing = document.getElementById('ga4-script');
+  if (existing) {
+    // Script già in DOM: esegui subito il callback (script già pronto)
+    onReady?.();
+    return;
+  }
   const script = document.createElement('script');
   script.id = 'ga4-script';
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   script.async = true;
+  if (onReady) script.onload = onReady;
   document.head.appendChild(script);
 };
 
-// Aggiorna il consenso analytics e registra la pageview
+// Aggiorna il consenso e registra config/pageview DOPO che GA4 è pronto
 const grantAnalytics = () => {
   gtag('consent', 'update', {
     analytics_storage: 'granted',
@@ -31,9 +38,10 @@ const grantAnalytics = () => {
     ad_user_data: 'denied',
     ad_personalization: 'denied',
   });
-  loadGA4Script();
-  // Registra config + pageview iniziale per la sessione corrente
-  gtag('config', GA_ID, { anonymize_ip: true });
+  loadGA4Script(() => {
+    // Eseguito dopo onload (o immediatamente se script già presente)
+    gtag('config', GA_ID, { anonymize_ip: true });
+  });
 };
 
 // Mantiene il deny esplicito (ridondante ma chiaro per audit)
