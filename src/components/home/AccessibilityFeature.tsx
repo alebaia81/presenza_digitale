@@ -7,16 +7,16 @@ export default function AccessibilityFeature() {
 
   const checklistItems = [
     {
-      title: "Navigazione da tastiera",
-      description: "Tutte le funzionalità sono utilizzabili tramite tasti TAB, Invio e Spazio, senza necessità di puntamento del mouse (Criterio WCAG 2.1.1)."
+      title: "Più Clienti",
+      description: "Nessun utente abbandona il sito per problemi di leggibilità o navigazione."
     },
     {
-      title: "Contrasti cromatici certificati",
-      description: "Rapporto di contrasto elevato superiore a 4.5:1 per tutti i testi principali e di 3:1 per elementi grafici, garantendo leggibilità ottimale (Criterio WCAG 1.4.3)."
+      title: "Miglior Posizionamento SEO",
+      description: "Google premia i siti strutturati secondo gli standard di usabilità ufficiali."
     },
     {
-      title: "Ottimizzazione per Screen Reader",
-      description: "Struttura HTML5 semantica nativa, attributi ARIA precisi e gestione dinamica degli avvisi per ipovedenti o non vedenti (Criterio WCAG 1.3.1)."
+      title: "100% A Norma di Legge",
+      description: "Piena conformità con le direttive europee ed AgID sulla leggibilità digitale, senza dover pagare extra."
     }
   ];
 
@@ -79,13 +79,13 @@ export default function AccessibilityFeature() {
               role="status"
               tabIndex={0}
               className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-sm font-medium transition-all duration-300 hover:bg-emerald-500/20 focus-visible:outline-3 cursor-pointer"
-              title="Questo sito web rispetta i requisiti legali di accessibilità WCAG 2.2 AA."
+              title="Standard di usabilità certificato secondo le direttive europee ed AgID."
             >
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" aria-hidden="true"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
               </span>
-              <span>Conformità Verificata: Livello AA</span>
+              <span>Standard di Usabilità Certificato</span>
             </div>
           </m.div>
 
@@ -95,8 +95,8 @@ export default function AccessibilityFeature() {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-extrabold text-[#2d2a26] dark:text-text-primary leading-[1.15] font-serif tracking-tight"
           >
-            Inclusività Legale ed Etica: <br />
-            Sviluppiamo Soluzioni Conformi WCAG 2.2
+            Il tuo sito rende difficile l'acquisto <br />
+            al 20% dei clienti. <span className="text-gold-gradient">E Google lo penalizza.</span>
           </m.h2>
 
           {/* Immagine di Supporto Mobile (visibile solo su mobile) */}
@@ -121,7 +121,7 @@ export default function AccessibilityFeature() {
             variants={itemVariants}
             className="text-lg text-text-secondary leading-relaxed font-light font-sans max-w-xl"
           >
-            L'accessibilità web non è un optional: è un pilastro che migliora il posizionamento SEO locale, aumenta le conversioni accogliendo tutti i potenziali clienti e protegge l'azienda da sanzioni legislative. Sviluppiamo codice pulito e accessibile sin dalla prima riga.
+            Se un sito ha testi illeggibili, bottoni piccoli o contrasti sbagliati, oltre 4 milioni di persone in Italia lo abbandonano subito per andare dalla concorrenza. Noi progettiamo la tua presenza digitale per essere perfetta, fluida e accessibile da qualsiasi dispositivo e da chiunque — facendoti guadagnare più clienti e una posizione più alta nei risultati di ricerca su Google.
           </m.p>
 
           {/* Checklist Semantica */}
@@ -157,7 +157,7 @@ export default function AccessibilityFeature() {
               href="#contatti"
               className="inline-flex items-center gap-2 text-gold-amber hover:text-amber-700 dark:hover:text-amber-400 font-bold text-lg transition-colors group cursor-pointer focus-visible:outline-3 focus-visible:outline-offset-3"
             >
-              Fai un test di accessibilità gratuito
+              Richiedi un'analisi di usabilità del tuo sito
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
             </a>
           </m.div>
