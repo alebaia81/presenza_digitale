@@ -39,8 +39,8 @@ export default function ServicesSection({
           <div className="grid grid-rows-2 gap-6">
             <m.div whileHover={{ scale: 0.98 }} className="bg-bg-card border border-border-primary rounded-[2rem] p-6 relative overflow-hidden group flex flex-col justify-center transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10 flex items-start gap-4">
-                <div className="w-12 h-12 bg-black/5 dark:bg-white/10 rounded-xl flex items-center justify-center text-emerald-500 dark:text-emerald-455 shrink-0 will-change-transform shadow-inner">
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="w-12 h-12 bg-black/5 dark:bg-white/10 rounded-xl flex items-center justify-center text-emerald-500 dark:text-emerald-455 shrink-0 self-start mt-1 will-change-transform shadow-inner">
                   <Zap className="w-6 h-6" />
                 </div>
                 <div>
@@ -54,8 +54,8 @@ export default function ServicesSection({
             </m.div>
             <m.div whileHover={{ scale: 0.98 }} className="bg-bg-card border border-border-primary rounded-[2rem] p-6 relative overflow-hidden group flex flex-col justify-center transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10 flex items-start gap-4">
-                <div className="w-12 h-12 bg-black/5 dark:bg-white/10 rounded-xl flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 will-change-transform shadow-inner">
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="w-12 h-12 bg-black/5 dark:bg-white/10 rounded-xl flex items-center justify-center text-amber-500 dark:text-amber-400 shrink-0 self-start mt-1 will-change-transform shadow-inner">
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
