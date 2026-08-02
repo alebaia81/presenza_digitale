@@ -161,14 +161,14 @@ export default function HomePage() {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left"
               />
             ) : (
               <img
                 src="/assets/images/hero-bg.avif"
                 alt="Presenza Digitale Hero Background"
                 loading="eager"
-                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left"
               />
             )}
           </m.div>
