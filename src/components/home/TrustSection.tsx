@@ -14,6 +14,11 @@ interface TrustSectionProps {
 
 const defaultReviews: Review[] = [
   {
+    text: "Ho collaborato con Alessandro per la creazione del mio sito web e l'esperienza è stata impeccabile. Si è mostrato estremamente disponibile ad accogliere ogni mia richiesta, ma il vero valore aggiunto è stata la sua consulenza: ha saputo guidarmi con i consigli giusti, ottimizzando le mie idee. Ha messo in pratica tutto in tempi record, permettendoci di andare online addirittura prima del termine previsto. Consigliatissimo per chi cerca qualità, competenza e puntualità.",
+    author: "Ilaria F.",
+    role: "Consulente Finanziario"
+  },
+  {
     text: "Finalmente un professionista che capisce le realtà locali. Hanno rifatto il sito della mia trattoria e ora riceviamo molte più prenotazioni online. Assistenza rapidissima.",
     author: "Marco R.",
     role: "Ristoratore, Piacenza"
@@ -40,7 +45,7 @@ export default function TrustSection({
         <h2 className="text-3xl font-bold text-text-primary mb-4 font-serif">I risultati parlano per noi</h2>
         <p className="text-text-secondary font-light text-lg">Cosa dicono gli imprenditori e le attività commerciali di {city} che ci hanno scelto.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {reviews.map((review, i) => (
           <div key={i} className="bg-bg-card border border-border-primary rounded-3xl p-8 hover:bg-bg-secondary hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
             <div>
