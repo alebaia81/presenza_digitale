@@ -13,35 +13,32 @@ const gtag = (...args: unknown[]) => {
   }
 };
 
-// Carica lo script GA4 una sola volta (idempotente).
-// onReady viene chiamato DOPO il caricamento, o subito se già presente.
-const loadGA4Script = (onReady?: () => void) => {
-  const existing = document.getElementById('ga4-script');
-  if (existing) {
-    // Script già in DOM: esegui subito il callback (script già pronto)
-    onReady?.();
-    return;
-  }
+// Inietta lo script GA4 una sola volta nel <head> (idempotente).
+// Non usa onload: gtag() scrive nella coda dataLayer e GA4 la processa al caricamento.
+const loadGA4Script = () => {
+  if (document.getElementById('ga4-script')) return; // già presente, skip
   const script = document.createElement('script');
-  script.id = 'ga4-script';
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  script.id    = 'ga4-script';
   script.async = true;
-  if (onReady) script.onload = onReady;
-  document.head.appendChild(script);
+  script.src   = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script); // step 1: script in <head>
 };
 
-// Aggiorna il consenso e registra config/pageview DOPO che GA4 è pronto
+// Aggiorna il consenso e registra subito la pageview.
+// Pattern canonico GA4: inject script → push config in coda dataLayer →
+// GA4 processa la coda appena caricato (funziona su Safari/iOS anche su reti lente).
 const grantAnalytics = () => {
+  // step 1 — aggiorna consenso (prima di tutto, come richiesto da Consent Mode v2)
   gtag('consent', 'update', {
-    analytics_storage: 'granted',
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
+    analytics_storage:    'granted',
+    ad_storage:           'denied',
+    ad_user_data:         'denied',
+    ad_personalization:   'denied',
   });
-  loadGA4Script(() => {
-    // Eseguito dopo onload (o immediatamente se script già presente)
-    gtag('config', GA_ID, { anonymize_ip: true });
-  });
+  // step 2 — inietta script in <head> (se non già presente)
+  loadGA4Script();
+  // step 3 — metti config in coda dataLayer: GA4 la processa appena caricato
+  gtag('config', GA_ID, { send_page_view: true, anonymize_ip: true });
 };
 
 // Mantiene il deny esplicito (ridondante ma chiaro per audit)
