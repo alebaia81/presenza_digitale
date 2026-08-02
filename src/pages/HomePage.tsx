@@ -180,9 +180,9 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.1)] dark:shadow-[0_0_50px_rgba(191,149,63,0.15)] group hover:shadow-[0_0_80px_rgba(191,149,63,0.2)] transition-all duration-700 border-gold-amber/30">
           <div className="absolute inset-0 bg-gradient-to-br from-[#fdfcfb] via-bg-primary to-[#f8f5ee] dark:from-[#1a150c] dark:via-[#050505] dark:to-[#1a150c] -z-10 transition-colors duration-300" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/5 dark:bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/15 dark:group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sarti del Digital per le Eccellenze Locali</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Non vendiamo semplici siti web. Vendiamo clienti nuovi.</h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light font-sans">
-            Un sito web bellissimo che nessuno visita è come un negozio sperduto nel deserto. Che tu sia un ristorante che vuole riempire i tavoli senza pagare le commissioni dei portali di delivery, o un artigiano stanco di regalare clienti ai concorrenti su Google, creiamo la tua vetrina digitale su misura. Zero abbonamenti mensili obbligatori, prenotazioni dirette sul tuo WhatsApp e codice ottimizzato per farsi trovare a Piacenza e provincia.
+            Un sito bellissimo che nessuno visita è come un negozio aperto nel deserto. Che tu abbia un ristorante, uno studio professionale o un'attività artigianale a Piacenza: ti costruiamo una presenza digitale progettata per convertire visite in prenotazioni, chiamate e messaggi WhatsApp — senza canoni mensili e senza dover spiegare nulla a un tecnico.
           </p>
         </div>
       </section>
