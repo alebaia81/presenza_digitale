@@ -62,12 +62,10 @@ export default function HomePage() {
     event.preventDefault();
     const mioNumero = "393398156719"; 
     const nome = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
     const messaggioCorpo = (document.getElementById('message') as HTMLTextAreaElement).value;
 
     const testo = `*Nuovo Contatto da Presenza Digitale*%0A%0A` +
                   `👤 *Nome:* ${nome}%0A` +
-                  `📧 *Email:* ${email}%0A` +
                   `💬 *Messaggio:* ${messaggioCorpo}`;
 
     const url = `https://wa.me/${mioNumero}?text=${testo}`;

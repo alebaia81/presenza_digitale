@@ -101,12 +101,10 @@ export default function WebAgencyCremonaPage() {
     event.preventDefault();
     const mioNumero = "393398156719"; 
     const nome = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
     const messaggioCorpo = (document.getElementById('message') as HTMLTextAreaElement).value;
 
-    const testo = `*Nuovo Contatto da Presenza Digitale (Cremona AI)*%0A%0A` +
+    const testo = `*Nuovo Contatto da Presenza Digitale (Cremona)*%0A%0A` +
                   `👤 *Nome:* ${nome}%0A` +
-                  `📧 *Email:* ${email}%0A` +
                   `💬 *Messaggio:* ${messaggioCorpo}`;
 
     const url = `https://wa.me/${mioNumero}?text=${testo}`;
@@ -189,19 +187,19 @@ export default function WebAgencyCremonaPage() {
               <span>Consulenza Digitale e AI a Cremona e Provincia</span>
             </div>
             
-            <h1 className="sr-only">Web Agency Cremona | Sviluppo Siti Web e Soluzioni AI</h1>
+            <h1 className="sr-only">Siti Web a Cremona | Presenza Digitale</h1>
             <div
               aria-hidden="true"
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-text-primary leading-[1.1] hero-title font-serif"
             >
-              Web Agency Cremona <br />
-              Siti Web e <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">Soluzioni AI.</span>
+              Siti Web a Cremona <br />
+              che portano <span className="font-serif italic pb-1 pr-4 inline-block text-gold-gradient">clienti veri.</span>
             </div>
             
             <p
               className="text-xl md:text-2xl text-text-secondary leading-relaxed font-light max-w-xl hero-subtitle"
             >
-              Realizziamo siti web ed e-commerce a Cremona e provincia integrati con assistenti AI personalizzati, automazioni e strategie di conversione per far crescere il tuo business.
+              Sei un'attività, uno studio o un artigiano a Cremona? Ti costruiamo una presenza digitale progettata per convertire visite in prenotazioni, chiamate e messaggi WhatsApp — senza canoni mensili.
             </p>
             
             <div
@@ -211,7 +209,7 @@ export default function WebAgencyCremonaPage() {
                 onClick={scrollToContact}
                 className="bg-text-primary text-bg-primary px-8 py-4 rounded-full text-lg font-bold hover:scale-105 transition-transform flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(0,0,0,0.08)] dark:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer"
               >
-                Richiedi un Preventivo <ArrowRight className="w-5 h-5" />
+                Ricevi più contatti <ArrowRight className="w-5 h-5" />
               </button>
               <a href={cremonaWaLink} target="_blank" rel="noopener noreferrer" className="bg-[#075E54] hover:bg-[#0c4f47] text-white px-8 py-4 rounded-full text-lg font-bold transition-colors flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(7,94,84,0.3)]">
                 <WhatsAppIcon className="w-6 h-6" /> WhatsApp
@@ -223,7 +221,7 @@ export default function WebAgencyCremonaPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-7 relative lg:h-[620px] w-full rounded-[2.5rem] overflow-hidden border border-border-primary shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] group transition-colors duration-300"
+            className="lg:col-span-7 relative lg:h-[620px] w-full rounded-[2.5rem] overflow-hidden border border-border-primary shadow-[0_0_50px_rgba(0,0,0,0.05)] dark:shadow-[0_0_50px_rgba(255,255,255,0.05)] transition-colors duration-300"
           >
             <div className="absolute inset-0 bg-bg-secondary/50 backdrop-blur-xl flex items-center justify-center -z-10">
               <PlayCircle className="w-16 h-16 text-gold-amber/50 animate-pulse" />
@@ -237,14 +235,14 @@ export default function WebAgencyCremonaPage() {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left"
               />
             ) : (
               <img
                 src="/assets/images/hero-bg.avif"
                 alt="Presenza Digitale Hero Background"
                 loading="eager"
-                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left transform group-hover:scale-[1.18] transition-transform duration-1000 ease-in-out"
+                className="absolute inset-0 w-full h-full object-cover scale-[1.12] origin-top-left"
               />
             )}
           </m.div>
@@ -256,9 +254,9 @@ export default function WebAgencyCremonaPage() {
         <div className="max-w-5xl mx-auto rounded-[3rem] p-10 md:p-16 border relative overflow-hidden text-center shadow-[0_0_50px_rgba(191,149,63,0.1)] dark:shadow-[0_0_50px_rgba(191,149,63,0.15)] group hover:shadow-[0_0_80px_rgba(191,149,63,0.2)] transition-all duration-700 border-gold-amber/30">
           <div className="absolute inset-0 bg-gradient-to-br from-[#fdfcfb] via-bg-primary to-[#f8f5ee] dark:from-[#1a150c] dark:via-[#050505] dark:to-[#1a150c] -z-10 transition-colors duration-300" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#bf953f]/5 dark:bg-[#bf953f]/15 blur-[100px] pointer-events-none group-hover:bg-[#bf953f]/15 dark:group-hover:bg-[#bf953f]/25 transition-colors duration-700" />
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Sarti del Digital e dell'Intelligenza Artificiale</h2>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 font-serif tracking-wide pb-2 pr-2 text-gold-gradient">Non vendiamo semplici siti web. Vendiamo clienti nuovi.</h2>
           <p className="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light font-sans">
-            Dall'artigiano di fiducia all'azienda strutturata, sappiamo come far brillare e automatizzare il tuo business a Cremona. Progettiamo esperienze digitali <strong className="text-text-primary font-semibold">Sleek &amp; Gourmet Luxury</strong>, integrando assistenti virtuali intelligenti e sistemi di conversione automatici studiati per superare la concorrenza locale.
+            Un sito bellissimo che nessuno visita è come un negozio aperto nel deserto. Che tu abbia un ristorante, uno studio professionale o un'attività artigianale a Cremona: ti costruiamo una presenza digitale progettata per convertire visite in prenotazioni, chiamate e messaggi WhatsApp — senza canoni mensili e senza dover spiegare nulla a un tecnico.
           </p>
         </div>
       </section>
@@ -329,7 +327,7 @@ export default function WebAgencyCremonaPage() {
       <ContactSection 
         inviaWhatsApp={inviaWhatsApp} 
         city="Cremona" 
-        placeholderText="Voglio integrare un assistente AI o realizzare un sito per la mia azienda a Cremona..." 
+        placeholderText="Es. Voglio un sito per la mia attività a Cremona / Vorrei più contatti e prenotazioni..." 
       />
     </div>
   );
