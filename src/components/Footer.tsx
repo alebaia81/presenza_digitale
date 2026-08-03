@@ -7,7 +7,7 @@ export default function Footer() {
     <div
       className="bg-bg-primary text-text-secondary py-12 border-t border-border-primary transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-8 text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-center md:text-left">
 
         {/* Brand + Legal Info */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
@@ -38,7 +38,7 @@ export default function Footer() {
         {/* Right column: links + social + compliance */}
         <div className="flex flex-col items-center md:items-start gap-4 text-sm">
           <p className="font-semibold text-text-primary text-xs uppercase tracking-widest">Servizi</p>
-          <nav aria-label="Link servizi" className="flex flex-col gap-2">
+          <nav aria-label="Link servizi" className="flex flex-col gap-2 items-center md:items-start">
             <Link to="/servizi/siti-web-piacenza" className="hover:text-text-primary transition-colors">Realizzazione Siti Web Piacenza</Link>
             <Link to="/progetti" className="hover:text-text-primary transition-colors">Portfolio Progetti</Link>
             <Link to="/blog" className="hover:text-text-primary transition-colors">Blog</Link>
