@@ -22,12 +22,13 @@ const projects: Array<{
     link: "https://ilariafruchi.it/"
   },
   {
-    title: "E-commerce Abbigliamento",
-    subtitle: "Moda & Stile Online",
-    description: "Negozio digitale progettato per convertire. Architettura prodotto ottimizzata per la ricerca organica, esperienza d'acquisto fluida e identità visiva coerente con il brand.",
+    title: "Segreta Style — Boutique & Shopping Online",
+    subtitle: "Moda Donna & Accessori",
+    description: "Boutique e shop online per il brand Segreta Style a Monticelli d'Ongina. Piattaforma e-commerce moderna e accattivante, progettata per esaltare le collezioni moda donna, garantire acquisti rapidi e favorire l'interazione diretta via WhatsApp e ritiro in sede.",
     image: "/images/mockup-segreta.webp",
     objectPosition: "top",
-    badge: { label: "Prossimamente Online", variant: "coming-soon" }
+    badge: { label: "Sito Online", variant: "online" },
+    link: "https://segretastyle.it/"
   },
   {
     title: "Artigiano Tinteggiatore",
