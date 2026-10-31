@@ -13,13 +13,13 @@ const projects: Array<{
   link?: string;
 }> = [
   {
-    title: "Ilaria Fruchi — Consulente Finanziaria",
-    subtitle: "Pianificazione & Gestione Patrimoniale",
-    description: "Sito web professionale per la consulente finanziaria indipendente Ilaria Fruchi. Piattaforma progettata per comunicare trasparenza e autorevolezza, con architettura ottimizzata per la visibilità locale e la conversione di contatti qualificati.",
-    image: "/images/mockup-consulente.webp",
-    objectPosition: "left top",
+    title: "Brilla Cafè — Bar, Cartoleria & Edicola",
+    subtitle: "Cartoleria, Edicola & Idee Regalo",
+    description: "Shop online per Brilla Cafè a Castelnuovo Bocca d'Adda. Piattaforma e-commerce veloce e intuitiva progettata per ordinare in 30 secondi articoli di cartoleria, scuola, edicola e idee regalo, con comodo servizio Scegli & Ritira al bancone e spedizioni in tutta Italia.",
+    image: "/images/mockup-brillacafe.webp",
+    objectPosition: "top",
     badge: { label: "Sito Online", variant: "online" },
-    link: "https://ilariafruchi.it/"
+    link: "https://brillacafe.it/"
   },
   {
     title: "Segreta Style — Boutique & Shopping Online",
@@ -29,6 +29,15 @@ const projects: Array<{
     objectPosition: "top",
     badge: { label: "Sito Online", variant: "online" },
     link: "https://segretastyle.it/"
+  },
+  {
+    title: "Ilaria Fruchi — Consulente Finanziaria",
+    subtitle: "Pianificazione & Gestione Patrimoniale",
+    description: "Sito web professionale per la consulente finanziaria indipendente Ilaria Fruchi. Piattaforma progettata per comunicare trasparenza e autorevolezza, con architettura ottimizzata per la visibilità locale e la conversione di contatti qualificati.",
+    image: "/images/mockup-consulente.webp",
+    objectPosition: "left top",
+    badge: { label: "Sito Online", variant: "online" },
+    link: "https://ilariafruchi.it/"
   },
   {
     title: "Artigiano Tinteggiatore",
